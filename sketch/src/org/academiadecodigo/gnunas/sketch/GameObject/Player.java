@@ -8,7 +8,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
-public class Player implements KeyboardHandler, Movable {
+public class Player extends GameObject implements KeyboardHandler, Movable {
 
     private boolean keyHolder;
     private boolean alive;
@@ -59,7 +59,6 @@ public class Player implements KeyboardHandler, Movable {
         pos.moveRight();
         player.translate((pos.getX() - prevPos), 0);
     }
-
 
 
     @Override

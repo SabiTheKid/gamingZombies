@@ -18,12 +18,8 @@ public class GameObject implements Collidable {
     public Position getPos() {
         return pos;
     }
-}
 
-    /*@Override
-    public boolean isColliding(GameObject object) {
-
-        return (this.pos.equals(object.pos));
+    public void collided(){
 
     }
-}*/
+}
