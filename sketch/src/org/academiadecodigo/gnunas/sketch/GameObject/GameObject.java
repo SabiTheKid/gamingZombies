@@ -2,20 +2,21 @@ package org.academiadecodigo.gnunas.sketch.GameObject;
 
 import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class GameObject implements Collidable {
 
-    private Rectangle picture;
+    private Picture picture;
     private Position pos;
 
-    public GameObject(Position pos) {
+    public GameObject(Position pos, Picture picture) {
 
-        this.picture = new Rectangle(pos.getX(), pos.getY(), 10, 10);
+        this.picture = picture;
         this.pos = pos;
-        picture.fill();
+        picture.draw();
     }
 
-    public Rectangle getPicture() {
+    public Picture getPicture() {
         return picture;
     }
 
