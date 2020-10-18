@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" afterDir="false" />
+    </list>
+>>>>>>> 5bd2f85a78bea7e4cb36e6a3ff55d7f3c40f8e73
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +97,10 @@
       </method>
     </configuration>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 5bd2f85a78bea7e4cb36e6a3ff55d7f3c40f8e73
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -133,10 +143,14 @@
       <workItem from="1602949908827" duration="3269000" />
       <workItem from="1602954930855" duration="149000" />
       <workItem from="1602955314525" duration="991000" />
+<<<<<<< HEAD
       <workItem from="1602959654728" duration="519000" />
       <workItem from="1602955314525" duration="6958000" />
       <workItem from="1602970264431" duration="3000" />
       <workItem from="1603029745661" duration="3211000" />
+=======
+      <workItem from="1602959175770" duration="3052000" />
+>>>>>>> 5bd2f85a78bea7e4cb36e6a3ff55d7f3c40f8e73
     </task>
     <servers />
   </component>
@@ -173,6 +187,7 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1602951791962" />
+<<<<<<< HEAD
     <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1603038645477">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -193,6 +208,28 @@
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603038645476" />
     <state width="1878" height="263" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1602954924672" />
+=======
+    <state width="1016" height="264" key="GridCell.Tab.0.bottom" timestamp="1602962236191">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888998" />
+    <state width="1016" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1602962236191" />
+    <state width="1016" height="264" key="GridCell.Tab.0.center" timestamp="1602962236191">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888997" />
+    <state width="1016" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1602962236191" />
+    <state width="1016" height="264" key="GridCell.Tab.0.left" timestamp="1602962236190">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888997" />
+    <state width="1016" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1602962236190" />
+    <state width="1016" height="264" key="GridCell.Tab.0.right" timestamp="1602962236191">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888998" />
+    <state width="1016" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1602962236191" />
+>>>>>>> 5bd2f85a78bea7e4cb36e6a3ff55d7f3c40f8e73
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
