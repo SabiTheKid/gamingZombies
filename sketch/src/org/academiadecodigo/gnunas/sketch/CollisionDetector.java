@@ -13,13 +13,7 @@ public class CollisionDetector {
          this.objectsGame = objectsGame;
      }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-
-=======
-=======
->>>>>>> master
      public void checkCollision( GameObject object){
 
          for ( GameObject obj : objectsGame){
@@ -33,8 +27,5 @@ public class CollisionDetector {
              }
          }
      }
-<<<<<<< HEAD
->>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
-=======
->>>>>>> master
+
 }
