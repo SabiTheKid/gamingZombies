@@ -8,6 +8,7 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
@@ -18,13 +19,15 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     private KeyboardEvent keyboardEventMoveLeft;
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
+    private int velocity;
 
 
     public Player(Position pos) {
 
-        super(pos);
+        super(pos,new Picture());
         this.keyHolder = false;
         this.alive = true;
+        this.velocity = 5;
         keyboard = new Keyboard(this);
 
         keyboardEventMoveRight = new KeyboardEvent();
@@ -75,19 +78,21 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         //Position previousPosition = pos;
         int prevPosX = super.getPos().getX();
         int prevPosY = super.getPos().getY();
-        switch (direction) {
-            case RIGHT:
-                super.getPos().moveRight();
-                break;
-            case LEFT:
-                super.getPos().moveLeft();
-                break;
-            case UP:
-                super.getPos().moveUp();
-                break;
-            case DOWN:
-                super.getPos().moveDown();
-                break;
+        for (int i = 0; i < velocity; i++) {
+            switch (direction) {
+                case RIGHT:
+                    super.getPos().moveRight();
+                    break;
+                case LEFT:
+                    super.getPos().moveLeft();
+                    break;
+                case UP:
+                    super.getPos().moveUp();
+                    break;
+                case DOWN:
+                    super.getPos().moveDown();
+                    break;
+            }
         }
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
         super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
@@ -122,8 +127,48 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
         if (object instanceof Key) {
             Key key = (Key) object;
-            setKeyHolder(true);
+            keyHolder = true;
             key.removeKey();
+        }
+        int rightLimitX = getPos().getX() + getPicture().getWidth();
+        int leftLimitX = getPos().getX();
+        int lowerLimitY = getPos().getY() + getPicture().getHeight();
+        int upperLimitY = getPos().getY();
+        int objLeftLimitX = object.getPos().getX();
+        int objRightLimitX = object.getPos().getX() + object.getPicture().getWidth();
+        int objLowerLimitY = object.getPos().getY() + object.getPicture().getHeight();
+        int objUpperLimitY = object.getPos().getY();
+
+        if (rightLimitX >= objLeftLimitX) {
+            int difference = rightLimitX - objLeftLimitX;
+            for (int i = 0; i < difference; i++){
+                getPos().moveLeft();
+            }
+            getPicture().translate(-difference, 0);
+        }
+
+        if (leftLimitX <= objRightLimitX) {
+            int difference = leftLimitX - objRightLimitX;
+            for (int i = 0; i < difference; i++){
+                getPos().moveRight();
+            }
+            getPicture().translate(difference, 0);
+        }
+
+        if (upperLimitY <= objLowerLimitY) {
+            int difference = objLowerLimitY - upperLimitY;
+            for (int i = 0; i < difference; i++){
+                getPos().moveDown();
+            }
+            getPicture().translate(0, difference);
+        }
+
+        if (lowerLimitY >= objUpperLimitY) {
+            int difference = lowerLimitY - objUpperLimitY;
+            for (int i = 0; i < difference; i++){
+                getPos().moveUp();
+            }
+            getPicture().translate(0, -difference);
         }
     }
 }
