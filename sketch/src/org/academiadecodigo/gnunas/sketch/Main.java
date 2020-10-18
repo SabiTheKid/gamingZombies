@@ -10,6 +10,5 @@ public class Main {
         Player player = new Player(new Position(50, 50));
         //Key key = new Key(new Position(50, 50, field), new Rectangle(50, 50, 10,10));
 
-
     }
 }
