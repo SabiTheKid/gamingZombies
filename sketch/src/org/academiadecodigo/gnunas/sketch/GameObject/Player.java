@@ -23,7 +23,7 @@ public class Player implements KeyboardHandler, Movable {
         this.field = field;
         this.keyHolder = false;
         this.alive = true;
-        this.pos = new Position(field.PADDING, field.height/2, field);
+        this.pos = new Position(field.PADDING, field.height/2);
         this.player = new Rectangle(pos.getX(), pos.getY(), 10, 10);
         player.fill();
         keyboard = new Keyboard(this);

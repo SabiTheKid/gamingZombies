@@ -1,26 +1,42 @@
 package org.academiadecodigo.gnunas.sketch;
 
 import org.academiadecodigo.gnunas.sketch.GameObject.GameObject;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+
+import java.util.LinkedList;
 
 public class GameObjectFactory {
 
-    public static GameObject createWallLimits() {
-        int padding = Field.PADDING;
-        int wallHeight;
-        int wallWidth;
+    public static LinkedList<GameObject> createWallLimits(Field field) {
+        LinkedList<GameObject> gameObjectsList = new LinkedList<>();
+        int padding = field.PADDING;
+        int wallHeight = padding;
+        int wallWidth = padding;
 
-        for(int y = Field.PADDING; y < Field.height; y += wallHeight ) {
-            return new GameObject(new Position(Field.PADDING, y, /*No Field*/));
+        //Create left wall
+        for(int y = 0; y < field.height+padding*2; y += wallHeight ) {
+            if(y == field.height/2){
+                continue;
+            }
+            gameObjectsList.add(new GameObject(new Position(0, y), new Picture(0, y, "wall_32.png")));
         }
-        for(int y = Field.PADDING; y < Field.height; y += wallHeight) {
-            return new GameObject(new Position((Field.width, y, /*No Field*/));
+        //Create right wall
+        for(int y = 0; y < field.height+padding*2; y += wallHeight) {
+            if(y == field.height/2){
+                continue;
+            }
+            gameObjectsList.add(new GameObject(new Position(field.width+padding, y), new Picture(field.width+padding, y,"wall_32.png" )));
         }
-        for(int x = Field.PADDING; x < Field.height; x += wallWidth ) {
-            return new GameObject(new Position(Field.PADDING, y, /*No Field*/));
+        //Create up wall
+        for(int x = padding; x < field.width+padding; x += wallWidth ) {
+            gameObjectsList.add(new GameObject(new Position(x, 0), new Picture(x, 0, "wall_32.png")));
         }
-        for(int x = Field.PADDING; x < Field.height; x += wallWidth ) {
-            return new GameObject(new Position(Field.PADDING, y, /*No Field*/));
+        //Create down wall
+        for(int x = padding; x < field.width+padding; x += wallWidth ) {
+            gameObjectsList.add(new GameObject(new Position(x, field.height+padding), new Picture(x, field.height+padding, "wall_32.png")));
         }
+        return gameObjectsList;
     }
 
 

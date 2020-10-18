@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,14 +60,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.academiadecodigo.gnunas.sketch" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
   </component>
   <component name="RunManager">
@@ -70,15 +78,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,11 +118,23 @@
       <workItem from="1602954930855" duration="149000" />
       <workItem from="1602955314525" duration="991000" />
       <workItem from="1602959175770" duration="3052000" />
+      <workItem from="1603036568418" duration="5671000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="448" y="93" key="#Project_Structure" timestamp="1602753377235">
@@ -137,26 +155,42 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1602951791962" />
-    <state width="1016" height="264" key="GridCell.Tab.0.bottom" timestamp="1602962236191">
+    <state width="1505" height="264" key="GridCell.Tab.0.bottom" timestamp="1603043161646">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888998" />
-    <state width="1016" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1602962236191" />
-    <state width="1016" height="264" key="GridCell.Tab.0.center" timestamp="1602962236191">
+    <state width="1505" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603043161646" />
+    <state width="1505" height="264" key="GridCell.Tab.0.center" timestamp="1603043161643">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888997" />
-    <state width="1016" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1602962236191" />
-    <state width="1016" height="264" key="GridCell.Tab.0.left" timestamp="1602962236190">
+    <state width="1505" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603043161643" />
+    <state width="1505" height="264" key="GridCell.Tab.0.left" timestamp="1603043161642">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888997" />
-    <state width="1016" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1602962236190" />
-    <state width="1016" height="264" key="GridCell.Tab.0.right" timestamp="1602962236191">
+    <state width="1505" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603043161642" />
+    <state width="1505" height="264" key="GridCell.Tab.0.right" timestamp="1603043161645">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602949888998" />
-    <state width="1016" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1602962236191" />
+    <state width="1505" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603043161645" />
+    <state width="1505" height="326" key="GridCell.Tab.1.bottom" timestamp="1603039717536">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1505" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603039717536" />
+    <state width="1505" height="326" key="GridCell.Tab.1.center" timestamp="1603039717536">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1505" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603039717536" />
+    <state width="1505" height="326" key="GridCell.Tab.1.left" timestamp="1603039717535">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1505" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603039717535" />
+    <state width="1505" height="326" key="GridCell.Tab.1.right" timestamp="1603039717536">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1505" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603039717536" />
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
