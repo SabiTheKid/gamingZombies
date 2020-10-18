@@ -13,6 +13,23 @@ public class CollisionDetector {
          this.objectsGame = objectsGame;
      }
 
+<<<<<<< HEAD
 
 
+=======
+     public void checkCollision( GameObject object){
+
+         for ( GameObject obj : objectsGame){
+
+             if ( obj == object){
+                 continue;
+             }
+
+             if (obj.getPos().equals(object.getPos())){
+                 obj.collided(object);
+             }
+         }
+
+     }
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
 }

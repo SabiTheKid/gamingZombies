@@ -1,6 +1,9 @@
 package org.academiadecodigo.gnunas.sketch.GameObject;
 
+<<<<<<< HEAD
 import org.academiadecodigo.gnunas.sketch.Direction;
+=======
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
 import org.academiadecodigo.gnunas.sketch.Field;
 import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -9,17 +12,25 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
+<<<<<<< HEAD
 public class Player implements KeyboardHandler, Movable {
+=======
+public class Player extends GameObject implements KeyboardHandler, Movable {
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
 
     private boolean keyHolder;
     private boolean alive;
     private Position pos;
     private org.academiadecodigo.simplegraphics.graphics.Rectangle player;
     private Keyboard keyboard;
+<<<<<<< HEAD
     private KeyboardEvent keyboardEventMoveRight;
     private KeyboardEvent keyboardEventMoveLeft;
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
+=======
+    private KeyboardEvent keyboardEvent;
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
     private Field field;
 
 
@@ -30,6 +41,7 @@ public class Player implements KeyboardHandler, Movable {
         this.pos = new Position(field.PADDING, field.height/2, field);
         this.player = new Rectangle(pos.getX(), pos.getY(), 10, 10);
         player.fill();
+<<<<<<< HEAD
 
         keyboard = new Keyboard(this);
 
@@ -54,6 +66,15 @@ public class Player implements KeyboardHandler, Movable {
         keyboard.addEventListener(keyboardEventMoveDown);
 
         //Insert position, graphic representation, alive = true etc...
+=======
+        keyboard = new Keyboard(this);
+        keyboardEvent = new KeyboardEvent();
+        keyboardEvent.setKey(KeyboardEvent.KEY_RIGHT);
+        keyboardEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(keyboardEvent);
+
+      //Insert position, graphic representation, alive = true etc...
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
     }
 
     public boolean isKeyHolder() {
@@ -74,6 +95,7 @@ public class Player implements KeyboardHandler, Movable {
     }
 
     @Override
+<<<<<<< HEAD
     public void move(Direction direction){
         //Implement every type of movement
         //Position previousPosition = pos;
@@ -99,6 +121,16 @@ public class Player implements KeyboardHandler, Movable {
 
 
 
+=======
+    public void move(){
+        //Implement every type of movement
+        int prevPos = pos.getX();
+        pos.moveRight();
+        player.translate((pos.getX() - prevPos), 0);
+    }
+
+
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
@@ -109,6 +141,7 @@ public class Player implements KeyboardHandler, Movable {
         //implement keys for movement
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT){
+<<<<<<< HEAD
             move(Direction.RIGHT);
         }
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_LEFT){
@@ -119,6 +152,9 @@ public class Player implements KeyboardHandler, Movable {
         }
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_DOWN){
             move(Direction.DOWN);
+=======
+            move();
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
         }
     }
 }

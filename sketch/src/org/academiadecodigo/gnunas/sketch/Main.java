@@ -9,6 +9,10 @@ public class Main {
         Field field = new Field();
         Player player = new Player(field);
         //Key key = new Key(new Position(50, 50, field), new Rectangle(50, 50, 10,10));
+<<<<<<< HEAD
+=======
+        player.move();
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
 
     }
 }
