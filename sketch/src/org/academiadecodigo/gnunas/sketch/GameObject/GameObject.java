@@ -23,11 +23,23 @@ public class GameObject implements Collidable {
     public Position getPos() {
         return pos;
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+    /*@Override
+=======
+>>>>>>> master
     public boolean isColliding(GameObject object) {
 
         return (this.pos.equals(object.pos));
 
     }
+<<<<<<< HEAD
+}*/
+=======
+=======
+>>>>>>> master
 
     public void collided() {
 
@@ -66,3 +78,7 @@ public class GameObject implements Collidable {
         return false;
     }
 }
+<<<<<<< HEAD
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
+=======
+>>>>>>> master

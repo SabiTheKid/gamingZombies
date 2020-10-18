@@ -20,6 +20,10 @@ public class Position {
     }
 
     public void moveRight() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         x += 1;
     }
 
@@ -33,6 +37,12 @@ public class Position {
 
     public void moveDown(){
         y += 1;
+<<<<<<< HEAD
+=======
+        x += 2;
+>>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
+=======
+>>>>>>> master
     }
 
 }
