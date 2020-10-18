@@ -7,7 +7,11 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 public class Key extends GameObject {
 
 
-    public Key(Position pos, Rectangle picture) {
-        super(pos, picture);
+    public Key(Position pos) {
+        super(pos);
+    }
+
+    public void removeKey(){
+        super.deletePicture();
     }
 }

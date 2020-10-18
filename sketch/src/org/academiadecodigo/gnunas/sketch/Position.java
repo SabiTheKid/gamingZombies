@@ -5,12 +5,10 @@ public class Position {
 
     private int x;
     private int y;
-    private Field field;
 
-    public Position(int x, int y, Field fielda) {
+    public Position(int x, int y) {
         this.x = x;
         this.y = y;
-        field = fielda;
     }
 
     public int getX() {
@@ -22,7 +20,20 @@ public class Position {
     }
 
     public void moveRight() {
-        x += 2;
+        x += 1;
+    }
+
+    public void moveLeft(){
+        x -= 1;
+    }
+
+    public void moveUp(){
+        y -= 1;
+    }
+
+    public void moveDown(){
+        y += 1;
     }
 
 }
+
