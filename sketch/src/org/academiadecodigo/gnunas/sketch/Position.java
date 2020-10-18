@@ -22,7 +22,20 @@ public class Position {
     }
 
     public void moveRight() {
-        x += 2;
+        x += 1;
+    }
+
+    public void moveLeft(){
+        x -= 1;
+    }
+
+    public void moveUp(){
+        y -= 1;
+    }
+
+    public void moveDown(){
+        y += 1;
     }
 
 }
+

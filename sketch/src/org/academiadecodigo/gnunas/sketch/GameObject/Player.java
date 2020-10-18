@@ -1,5 +1,6 @@
 package org.academiadecodigo.gnunas.sketch.GameObject;
 
+import org.academiadecodigo.gnunas.sketch.Direction;
 import org.academiadecodigo.gnunas.sketch.Field;
 import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -15,7 +16,10 @@ public class Player implements KeyboardHandler, Movable {
     private Position pos;
     private org.academiadecodigo.simplegraphics.graphics.Rectangle player;
     private Keyboard keyboard;
-    private KeyboardEvent keyboardEvent;
+    private KeyboardEvent keyboardEventMoveRight;
+    private KeyboardEvent keyboardEventMoveLeft;
+    private KeyboardEvent keyboardEventMoveUp;
+    private KeyboardEvent keyboardEventMoveDown;
     private Field field;
 
 
@@ -26,13 +30,30 @@ public class Player implements KeyboardHandler, Movable {
         this.pos = new Position(field.PADDING, field.height/2, field);
         this.player = new Rectangle(pos.getX(), pos.getY(), 10, 10);
         player.fill();
-        keyboard = new Keyboard(this);
-        keyboardEvent = new KeyboardEvent();
-        keyboardEvent.setKey(KeyboardEvent.KEY_RIGHT);
-        keyboardEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboard.addEventListener(keyboardEvent);
 
-      //Insert position, graphic representation, alive = true etc...
+        keyboard = new Keyboard(this);
+
+        keyboardEventMoveRight = new KeyboardEvent();
+        keyboardEventMoveRight.setKey(KeyboardEvent.KEY_RIGHT);
+        keyboardEventMoveRight.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(keyboardEventMoveRight);
+
+        keyboardEventMoveLeft = new KeyboardEvent();
+        keyboardEventMoveLeft.setKey(KeyboardEvent.KEY_LEFT);
+        keyboardEventMoveLeft.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(keyboardEventMoveLeft);
+
+        keyboardEventMoveUp = new KeyboardEvent();
+        keyboardEventMoveUp.setKey(KeyboardEvent.KEY_UP);
+        keyboardEventMoveUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(keyboardEventMoveUp);
+
+        keyboardEventMoveDown = new KeyboardEvent();
+        keyboardEventMoveDown.setKey(KeyboardEvent.KEY_DOWN);
+        keyboardEventMoveDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(keyboardEventMoveDown);
+
+        //Insert position, graphic representation, alive = true etc...
     }
 
     public boolean isKeyHolder() {
@@ -53,11 +74,27 @@ public class Player implements KeyboardHandler, Movable {
     }
 
     @Override
-    public void move(){
+    public void move(Direction direction){
         //Implement every type of movement
-        int prevPos = pos.getX();
-        pos.moveRight();
-        player.translate((pos.getX() - prevPos), 0);
+        //Position previousPosition = pos;
+        int prevPosX = pos.getX();
+        int prevPosY = pos.getY();
+        switch (direction){
+            case RIGHT:
+                pos.moveRight();
+                break;
+            case LEFT:
+                pos.moveLeft();
+                break;
+            case UP:
+                pos.moveUp();
+                break;
+            case DOWN:
+                pos.moveDown();
+                break;
+        }
+        //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
+        player.translate((pos.getX() - prevPosX), (pos.getY() - prevPosY));
     }
 
 
@@ -72,7 +109,16 @@ public class Player implements KeyboardHandler, Movable {
         //implement keys for movement
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT){
-            move();
+            move(Direction.RIGHT);
+        }
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_LEFT){
+            move(Direction.LEFT);
+        }
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_UP){
+            move(Direction.UP);
+        }
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_DOWN){
+            move(Direction.DOWN);
         }
     }
 }
