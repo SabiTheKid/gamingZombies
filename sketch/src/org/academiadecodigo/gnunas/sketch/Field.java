@@ -12,7 +12,7 @@ public class Field {
 
     public Field(){
         this.width = 1024;
-        this.height = 761;
+        this.height = 768;
         map = new Picture(PADDING, PADDING,"game_field.jpg");
         map.draw();
     }
