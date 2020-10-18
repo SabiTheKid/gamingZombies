@@ -9,28 +9,22 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
-public class Player implements KeyboardHandler, Movable {
+public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
     private boolean keyHolder;
     private boolean alive;
-    private Position pos;
-    private org.academiadecodigo.simplegraphics.graphics.Rectangle player;
     private Keyboard keyboard;
     private KeyboardEvent keyboardEventMoveRight;
     private KeyboardEvent keyboardEventMoveLeft;
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
-    private Field field;
 
 
-    public Player(Field field){
-        this.field = field;
+    public Player(Position pos) {
+
+        super(pos);
         this.keyHolder = false;
         this.alive = true;
-        this.pos = new Position(field.PADDING, field.height/2, field);
-        this.player = new Rectangle(pos.getX(), pos.getY(), 10, 10);
-        player.fill();
-
         keyboard = new Keyboard(this);
 
         keyboardEventMoveRight = new KeyboardEvent();
@@ -54,6 +48,8 @@ public class Player implements KeyboardHandler, Movable {
         keyboard.addEventListener(keyboardEventMoveDown);
 
         //Insert position, graphic representation, alive = true etc...
+
+        //Insert position, graphic representation, alive = true etc...
     }
 
     public boolean isKeyHolder() {
@@ -64,7 +60,7 @@ public class Player implements KeyboardHandler, Movable {
         return alive;
     }
 
-    public void setKeyHolder(boolean keyHolder){
+    public void setKeyHolder(boolean keyHolder) {
         this.keyHolder = keyHolder;
 
     }
@@ -74,29 +70,28 @@ public class Player implements KeyboardHandler, Movable {
     }
 
     @Override
-    public void move(Direction direction){
+    public void move(Direction direction) {
         //Implement every type of movement
         //Position previousPosition = pos;
-        int prevPosX = pos.getX();
-        int prevPosY = pos.getY();
-        switch (direction){
+        int prevPosX = super.getPos().getX();
+        int prevPosY = super.getPos().getY();
+        switch (direction) {
             case RIGHT:
-                pos.moveRight();
+                super.getPos().moveRight();
                 break;
             case LEFT:
-                pos.moveLeft();
+                super.getPos().moveLeft();
                 break;
             case UP:
-                pos.moveUp();
+                super.getPos().moveUp();
                 break;
             case DOWN:
-                pos.moveDown();
+                super.getPos().moveDown();
                 break;
         }
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
-        player.translate((pos.getX() - prevPosX), (pos.getY() - prevPosY));
+        super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
     }
-
 
 
     @Override
@@ -108,17 +103,27 @@ public class Player implements KeyboardHandler, Movable {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         //implement keys for movement
 
-        if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT){
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT) {
             move(Direction.RIGHT);
         }
-        if (keyboardEvent.getKey() == KeyboardEvent.KEY_LEFT){
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_LEFT) {
             move(Direction.LEFT);
         }
-        if (keyboardEvent.getKey() == KeyboardEvent.KEY_UP){
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_UP) {
             move(Direction.UP);
         }
-        if (keyboardEvent.getKey() == KeyboardEvent.KEY_DOWN){
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_DOWN) {
             move(Direction.DOWN);
+        }
+    }
+
+    @Override
+    public void collided(GameObject object) {
+
+        if (object instanceof Key) {
+            Key key = (Key) object;
+            setKeyHolder(true);
+            key.removeKey();
         }
     }
 }
