@@ -10,4 +10,8 @@ public class Key extends GameObject {
     public Key(Position pos, Rectangle picture) {
         super(pos, picture);
     }
+
+    public void removeKey(){
+    super.deletePicture();
+    }
 }

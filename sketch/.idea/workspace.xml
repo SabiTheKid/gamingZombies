@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Collidable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Collidable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +54,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.academiadecodigo.gnunas.sketch" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -112,6 +111,8 @@
       <workItem from="1602949908827" duration="3269000" />
       <workItem from="1602954930855" duration="149000" />
       <workItem from="1602955314525" duration="6958000" />
+      <workItem from="1602970264431" duration="3000" />
+      <workItem from="1603029745661" duration="3211000" />
     </task>
     <servers />
   </component>
@@ -123,11 +124,11 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="448" y="93" key="#Project_Structure/0.23.1920.977@0.23.1920.977" timestamp="1602753377235" />
-    <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser" timestamp="1602966590455">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1603031945208">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1602966590455" />
-    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1602886696453" />
+    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1603031945208" />
     <state x="718" y="422" width="822" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602952445546">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
