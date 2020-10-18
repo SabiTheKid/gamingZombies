@@ -6,7 +6,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Field {
 
     private Picture map;
-    private Rectangle rectangle;
     public final int PADDING = 32;
     public final int width;
     public final int height;
@@ -14,7 +13,7 @@ public class Field {
     public Field(){
         this.width = 1024;
         this.height = 768;
-        map = new Picture(PADDING, PADDING,"field_bg_2.png");
+        map = new Picture(PADDING, PADDING,"game_field.jpg");
         map.draw();
     }
 

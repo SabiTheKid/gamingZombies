@@ -1,7 +1,6 @@
 package org.academiadecodigo.gnunas.sketch;
 
 import org.academiadecodigo.gnunas.sketch.GameObject.GameObject;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.util.LinkedList;
@@ -10,9 +9,10 @@ public class GameObjectFactory {
 
     public static LinkedList<GameObject> createWallLimits(Field field) {
         LinkedList<GameObject> gameObjectsList = new LinkedList<>();
+        Picture wallPicture = new Picture(0,0,"wall_32.png");
         int padding = field.PADDING;
-        int wallHeight = padding;
-        int wallWidth = padding;
+        int wallHeight = wallPicture.getHeight();
+        int wallWidth = wallPicture.getWidth();
 
         //Create left wall
         for(int y = 0; y < field.height+padding*2; y += wallHeight ) {
