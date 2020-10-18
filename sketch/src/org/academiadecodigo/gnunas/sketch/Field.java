@@ -5,16 +5,15 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Field {
 
-    private Rectangle map;
-    public final int PADDING = 10;
+    private Picture map;
+    public final int PADDING = 32;
     public final int width;
     public final int height;
 
     public Field(){
-        this.width = 1900;
-        this.height = 1060;
-        map = new Rectangle(PADDING, PADDING, width, height);
-        //map = new Picture(PADDING, PADDING,"game_field.jpg");
+        this.width = 1024;
+        this.height = 768;
+        map = new Picture(PADDING, PADDING,"game_field.jpg");
         map.draw();
     }
 

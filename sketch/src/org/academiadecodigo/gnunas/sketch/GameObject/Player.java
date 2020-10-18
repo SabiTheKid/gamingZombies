@@ -8,6 +8,7 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
@@ -22,7 +23,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
     public Player(Position pos) {
 
-        super(pos);
+        super(pos, new Picture());
         this.keyHolder = false;
         this.alive = true;
         keyboard = new Keyboard(this);
