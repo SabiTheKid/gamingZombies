@@ -8,27 +8,37 @@ public class GameObject implements Collidable {
     private Rectangle picture;
     private Position pos;
 
-    public GameObject(Position pos, Rectangle picture) {
+    public GameObject(Position pos) {
 
-        this.picture = picture;
+        this.picture = new Rectangle(pos.getX(), pos.getY(), 10, 10);
         this.pos = pos;
-        picture.draw();
+        picture.fill();
+    }
+
+    public Rectangle getPicture() {
+        return picture;
     }
 
     public Position getPos() {
         return pos;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
     /*@Override
+=======
+>>>>>>> master
     public boolean isColliding(GameObject object) {
 
         return (this.pos.equals(object.pos));
 
     }
+<<<<<<< HEAD
 }*/
 =======
+=======
+>>>>>>> master
 
     public void collided() {
 
@@ -38,6 +48,11 @@ public class GameObject implements Collidable {
         picture.delete();
     }
 
+
+    @Override
+    public void collided(GameObject object) {
+
+    }
 
     @Override
     public boolean equals(Object object) {
@@ -63,4 +78,7 @@ public class GameObject implements Collidable {
         return false;
     }
 }
+<<<<<<< HEAD
 >>>>>>> 860c2ea86bf1126d45525bca8d35eb3d39850409
+=======
+>>>>>>> master
