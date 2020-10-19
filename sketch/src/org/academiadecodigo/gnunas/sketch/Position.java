@@ -19,7 +19,11 @@ public class Position {
         return y;
     }
 
-    public void moveRight() {
+    public void moveRight(boolean keyHolder) {
+
+        if (x == Field.width && y == Field.height / 2 && keyHolder == true){
+            x += 1;
+        }
         if(x == Field.PADDING + Field.width-32){
             return;
         }

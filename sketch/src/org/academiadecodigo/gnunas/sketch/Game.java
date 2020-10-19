@@ -24,7 +24,7 @@ public class Game {
         gameObjectFactory = new GameObjectFactory();
         gameObjects = GameObjectFactory.createWallLimits(field);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(50,50));
+        player = new Player(new Position(50, (field.getHeight()/2)));
         Key key = new Key(new Position(500, 500), new Picture(500, 500, "wall_32.png"));
         gameObjects.add(key);
     }

@@ -24,7 +24,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
     public Player(Position pos) {
 
-        super(pos,new Picture(pos.getX(), pos.getY(), "wall_32.png"));
+        super(pos,new Picture(pos.getX(), pos.getY(), "player_right.png"));
         this.hittedWall = false;
         velocity = 5;
         hittedWall = false;
@@ -89,16 +89,20 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         for (int i = 0; i < velocity; i++) {
             switch (direction) {
                 case RIGHT:
-                    super.getPos().moveRight();
+                    super.getPos().moveRight(keyHolder);
+                    super.getPicture().load("player_right.png");
                     break;
                 case LEFT:
                     super.getPos().moveLeft();
+                    super.getPicture().load("player_left.png");
                     break;
                 case UP:
                     super.getPos().moveUp();
+                    super.getPicture().load("player_up.png");
                     break;
                 case DOWN:
                     super.getPos().moveDown();
+                    super.getPicture().load("player_down.png");
                     break;
             }
         }

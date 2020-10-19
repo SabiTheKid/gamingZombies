@@ -11,7 +11,7 @@ public class Field {
     public static final int height = 768;
 
     public Field(){
-        map = new Picture(PADDING, PADDING,"game_field.jpg");
+        map = new Picture(PADDING, PADDING,"floor_bg.png");
         map.draw();
     }
 
