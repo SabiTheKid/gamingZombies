@@ -56,7 +56,7 @@ public class GameObject implements Collidable {
             int objLowerLimitY = object1.getPos().getY() + object1.getPicture().getHeight();
             int objUpperLimitY = object1.getPos().getY();
 
-            if (rightLimitX >= objLeftLimitX || leftLimitX <= objRightLimitX || upperLimitY <= objLowerLimitY || lowerLimitY >= objUpperLimitY) {
+            if ((rightLimitX >= objLeftLimitX || leftLimitX <= objRightLimitX)  && (upperLimitY <= objLowerLimitY || lowerLimitY >= objUpperLimitY)) {
                     return true;
             }
         }
