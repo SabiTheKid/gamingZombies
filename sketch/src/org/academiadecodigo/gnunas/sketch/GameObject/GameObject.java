@@ -40,7 +40,7 @@ public class GameObject implements Collidable {
 
     }
 
-    @Override
+  /*  @Override
     public boolean equals(Object object) {
 
         if (object instanceof GameObject) {
@@ -61,5 +61,5 @@ public class GameObject implements Collidable {
             }
         }
         return false;
-    }
+    }*/
 }

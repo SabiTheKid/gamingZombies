@@ -20,7 +20,7 @@ public class Position {
     }
 
     public void moveRight() {
-        if(x == Field.PADDING + Field.width - 150){
+        if(x == Field.PADDING + Field.width-32){
             return;
         }
         x += 1;
@@ -41,7 +41,7 @@ public class Position {
     }
 
     public void moveDown(){
-        if (y == Field.PADDING + Field.height - 150){
+        if (y == Field.PADDING + Field.height-32){
             return;
         }
         y += 1;

@@ -1,6 +1,5 @@
 package org.academiadecodigo.gnunas.sketch.GameObject;
 
-import org.academiadecodigo.gnunas.sketch.CollideFace;
 import org.academiadecodigo.gnunas.sketch.Direction;
 import org.academiadecodigo.gnunas.sketch.Field;
 import org.academiadecodigo.gnunas.sketch.Position;
@@ -14,6 +13,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
     private boolean hittedWall;
+    private int velocity;
     private boolean keyHolder;
     private boolean alive;
     private Keyboard keyboard;
@@ -21,13 +21,13 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     private KeyboardEvent keyboardEventMoveLeft;
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
-    private int velocity;
-
 
     public Player(Position pos) {
 
-        super(pos,new Picture(pos.getX(), pos.getY(), "player_still_up.png"));
+        super(pos,new Picture(pos.getX(), pos.getY(), "wall_32.png"));
         this.hittedWall = false;
+        velocity = 5;
+        hittedWall = false;
         this.keyHolder = false;
         this.alive = true;
         this.velocity = 5;
@@ -73,6 +73,11 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    @Override
+    public void move() {
+
     }
 
     @Override
@@ -136,7 +141,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         }
 
         hittedWall = true;
-
+    }
         /*int rightLimitX = getPos().getX() + picture.getWidth();
         int leftLimitX = getPos().getX();
         int lowerLimitY = getPos().getY() + picture.getHeight();
@@ -226,5 +231,4 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         }
 */
 
-    }
 }
