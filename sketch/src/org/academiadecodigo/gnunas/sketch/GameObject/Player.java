@@ -101,6 +101,11 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     }
 
     @Override
+    public void move() {
+
+    }
+
+    @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         //implement keys for movement
 
