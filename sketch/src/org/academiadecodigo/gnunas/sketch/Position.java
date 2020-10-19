@@ -2,9 +2,9 @@ package org.academiadecodigo.gnunas.sketch;
 
 
 public class Position {
-
     private int x;
     private int y;
+    private int padding = Field.PADDING;
 
     public Position(int x, int y) {
         this.x = x;
@@ -20,18 +20,30 @@ public class Position {
     }
 
     public void moveRight() {
+        if(x == Field.PADDING + Field.width - 150){
+            return;
+        }
         x += 1;
     }
 
     public void moveLeft(){
+        if (x == Field.PADDING){
+            return;
+        }
         x -= 1;
     }
 
     public void moveUp(){
+        if (y == Field.PADDING){
+            return;
+        }
         y -= 1;
     }
 
     public void moveDown(){
+        if (y == Field.PADDING + Field.height - 150){
+            return;
+        }
         y += 1;
 
     }
