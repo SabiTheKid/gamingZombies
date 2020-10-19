@@ -15,6 +15,7 @@ public class CollisionDetector {
          this.objectsGame = objectsGame;
      }
 
+
      public void checkCollision( GameObject object){
 
          for ( GameObject obj : objectsGame){
@@ -28,4 +29,5 @@ public class CollisionDetector {
              }
          }
      }
+
 }

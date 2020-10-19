@@ -16,18 +16,15 @@ public class GameObject implements Collidable {
         picture.draw();
     }
 
-    public Picture getPicture() {
+    public Picture  getPicture() {
         return picture;
     }
 
     public Position getPos() {
         return pos;
     }
-    public boolean isColliding(GameObject object) {
 
-        return (this.pos.equals(object.pos));
 
-    }
 
     public void collided() {
 
@@ -52,16 +49,15 @@ public class GameObject implements Collidable {
 
             int rightLimitX = getPos().getX() + picture.getWidth();
             int leftLimitX = getPos().getX();
-            int objRightLimitX = object1.getPos().getX();
-            int objLeftLimitX = object1.getPos().getX() + object1.picture.getWidth();
+            int lowerLimitY = getPos().getY() + picture.getHeight();
+            int upperLimitY = getPos().getY();
+            int objLeftLimitX = object1.getPos().getX();
+            int objRightLimitX = object1.getPos().getX() + object1.getPicture().getWidth();
+            int objLowerLimitY = object1.getPos().getY() + object1.getPicture().getHeight();
+            int objUpperLimitY = object1.getPos().getY();
 
-            if (rightLimitX >= objLeftLimitX || leftLimitX <= objRightLimitX) {
-
-                if (getPos().getY() <= object1.getPos().getY() + object1.picture.getHeight() || getPos().getY() + picture.getHeight() >= object1.getPos().getY()) {
-
+            if (rightLimitX >= objLeftLimitX || leftLimitX <= objRightLimitX || upperLimitY <= objLowerLimitY || lowerLimitY >= objUpperLimitY) {
                     return true;
-                }
-
             }
         }
         return false;
