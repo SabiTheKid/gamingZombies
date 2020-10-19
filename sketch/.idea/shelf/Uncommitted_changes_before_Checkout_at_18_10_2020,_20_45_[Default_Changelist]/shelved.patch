@@ -1,0 +1,316 @@
+Index: src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch.GameObject;\n\nimport org.academiadecodigo.gnunas.sketch.Field;\nimport org.academiadecodigo.gnunas.sketch.Position;\nimport org.academiadecodigo.simplegraphics.graphics.Rectangle;\nimport org.academiadecodigo.simplegraphics.keyboard.Keyboard;\nimport org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;\nimport org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;\nimport org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;\n\n<<<<<<< HEAD\npublic class Player implements KeyboardHandler, Movable {\n=======\npublic class Player extends GameObject implements KeyboardHandler, Movable {\n>>>>>>> CollisionDetector\n\n    private boolean keyHolder;\n    private boolean alive;\n    private Position pos;\n    private org.academiadecodigo.simplegraphics.graphics.Rectangle player;\n    private Keyboard keyboard;\n    private KeyboardEvent keyboardEvent;\n    private Field field;\n\n\n    public Player(Field field){\n        this.field = field;\n        this.keyHolder = false;\n        this.alive = true;\n        this.pos = new Position(field.PADDING, field.height/2, field);\n        this.player = new Rectangle(pos.getX(), pos.getY(), 10, 10);\n        player.fill();\n        keyboard = new Keyboard(this);\n        keyboardEvent = new KeyboardEvent();\n        keyboardEvent.setKey(KeyboardEvent.KEY_RIGHT);\n        keyboardEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);\n        keyboard.addEventListener(keyboardEvent);\n\n      //Insert position, graphic representation, alive = true etc...\n    }\n\n    public boolean isKeyHolder() {\n        return keyHolder;\n    }\n\n    public boolean isAlive() {\n        return alive;\n    }\n\n    public void setKeyHolder(boolean keyHolder){\n        this.keyHolder = keyHolder;\n\n    }\n\n    public void setAlive(boolean alive) {\n        this.alive = alive;\n    }\n\n    @Override\n    public void move(){\n        //Implement every type of movement\n        int prevPos = pos.getX();\n        pos.moveRight();\n        player.translate((pos.getX() - prevPos), 0);\n    }\n\n\n<<<<<<< HEAD\n\n=======\n>>>>>>> CollisionDetector\n    @Override\n    public void keyReleased(KeyboardEvent keyboardEvent) {\n\n    }\n\n    @Override\n    public void keyPressed(KeyboardEvent keyboardEvent) {\n        //implement keys for movement\n\n        if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT){\n            move();\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java	(date 1603043022483)
+@@ -8,11 +8,7 @@
+ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+ 
+-<<<<<<< HEAD
+-public class Player implements KeyboardHandler, Movable {
+-=======
+ public class Player extends GameObject implements KeyboardHandler, Movable {
+->>>>>>> CollisionDetector
+ 
+     private boolean keyHolder;
+     private boolean alive;
+@@ -24,6 +20,7 @@
+ 
+ 
+     public Player(Field field){
++        super()
+         this.field = field;
+         this.keyHolder = false;
+         this.alive = true;
+@@ -39,6 +36,10 @@
+       //Insert position, graphic representation, alive = true etc...
+     }
+ 
++    public Player() {
++        super();
++    }
++
+     public boolean isKeyHolder() {
+         return keyHolder;
+     }
+@@ -57,18 +58,12 @@
+     }
+ 
+     @Override
+-    public void move(){
++    public void move() {
+         //Implement every type of movement
+         int prevPos = pos.getX();
+         pos.moveRight();
+         player.translate((pos.getX() - prevPos), 0);
+     }
+-
+-
+-<<<<<<< HEAD
+-
+-=======
+->>>>>>> CollisionDetector
+     @Override
+     public void keyReleased(KeyboardEvent keyboardEvent) {
+ 
+Index: src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.GameObject;\n\npublic class CollisionDetector {\n\n    //Implements the logic for analysing the collisions between objects( Player and Walls)\n\n    // Have an array with all the gameObjects\n     private GameObject[] objectsGame;\n\n     public CollisionDetector(GameObject[] objectsGame){\n         this.objectsGame = objectsGame;\n     }\n\n<<<<<<< HEAD\n\n\n=======\n     public void checkCollision( GameObject object){\n\n         for ( GameObject obj : objectsGame){\n\n             if ( obj == object){\n                 continue;\n             }\n\n             if (obj.getPos().equals(object.getPos())){\n                 obj.collided(object);\n             }\n         }\n\n     }\n>>>>>>> CollisionDetector\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java	(date 1603038074404)
+@@ -13,10 +13,6 @@
+          this.objectsGame = objectsGame;
+      }
+ 
+-<<<<<<< HEAD
+-
+-
+-=======
+      public void checkCollision( GameObject object){
+ 
+          for ( GameObject obj : objectsGame){
+@@ -31,5 +27,4 @@
+          }
+ 
+      }
+->>>>>>> CollisionDetector
+ }
+Index: src/org/academiadecodigo/gnunas/sketch/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.Player;\n\npublic class Main {\n\n    public static void main(String[] args) {\n\n        Field field = new Field();\n        Player player = new Player(field);\n        //Key key = new Key(new Position(50, 50, field), new Rectangle(50, 50, 10,10));\n        player.move();\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/Main.java	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ src/org/academiadecodigo/gnunas/sketch/Main.java	(date 1603038074407)
+@@ -7,7 +7,7 @@
+     public static void main(String[] args) {
+ 
+         Field field = new Field();
+-        Player player = new Player(field);
++        Player player = new Player();
+         //Key key = new Key(new Position(50, 50, field), new Rectangle(50, 50, 10,10));
+         player.move();
+ 
+Index: src/org/academiadecodigo/gnunas/sketch/NewPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.GameObject;\n<<<<<<< HEAD\nimport org.academiadecodigo.simplegraphics.graphics.Rectangle;\n\npublic class NewPlayer extends GameObject {\n=======\nimport org.academiadecodigo.gnunas.sketch.GameObject.Key;\nimport org.academiadecodigo.gnunas.sketch.GameObject.Movable;\nimport org.academiadecodigo.simplegraphics.graphics.Rectangle;\n\npublic class NewPlayer extends GameObject implements Movable {\n>>>>>>> CollisionDetector\n\n    public boolean alive;\n    public boolean keyHolder;\n\n    public NewPlayer(Position pos, Rectangle picture) {\n        super(pos, picture);\n        alive = true;\n        keyHolder = false;\n    }\n\n    public boolean isAlive() {\n        return alive;\n    }\n\n    public void setKeyHolder(boolean holder){\n        this.keyHolder = holder;\n    }\n\n<<<<<<< HEAD\n=======\n    @Override\n    public void collided(GameObject object) {\n\n        if (object instanceof Key) {\n            Key key = (Key) object;\n            setKeyHolder(true);\n            key.removeKey();\n        }\n\n        // else is a GameObject and the player has to change the direction of the movement\n\n        // for example invoking the method move after asking for a new movement\n\n\n    }\n\n    @Override\n    public void move() {\n\n    }\n>>>>>>> CollisionDetector\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/NewPlayer.java	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ src/org/academiadecodigo/gnunas/sketch/NewPlayer.java	(date 1603050334502)
+@@ -1,56 +1,49 @@
+ package org.academiadecodigo.gnunas.sketch;
+ 
+ import org.academiadecodigo.gnunas.sketch.GameObject.GameObject;
+-<<<<<<< HEAD
+ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+-
+-public class NewPlayer extends GameObject {
+-=======
+-import org.academiadecodigo.gnunas.sketch.GameObject.Key;
++        import org.academiadecodigo.gnunas.sketch.GameObject.Key;
+ import org.academiadecodigo.gnunas.sketch.GameObject.Movable;
+ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+ 
+-public class NewPlayer extends GameObject implements Movable {
+->>>>>>> CollisionDetector
++    public class NewPlayer extends GameObject implements Movable {
+ 
+-    public boolean alive;
+-    public boolean keyHolder;
++        public boolean alive;
++        public boolean keyHolder;
+ 
+-    public NewPlayer(Position pos, Rectangle picture) {
+-        super(pos, picture);
+-        alive = true;
+-        keyHolder = false;
+-    }
++        public NewPlayer(Position pos, Rectangle picture) {
++            super(pos, picture);
++            alive = true;
++            keyHolder = false;
++        }
+ 
+-    public boolean isAlive() {
+-        return alive;
+-    }
++        public boolean isAlive() {
++            return alive;
++        }
+ 
+-    public void setKeyHolder(boolean holder){
+-        this.keyHolder = holder;
+-    }
++        public void setKeyHolder(boolean holder) {
++            this.keyHolder = holder;
++        }
+ 
+-<<<<<<< HEAD
+-=======
+-    @Override
+-    public void collided(GameObject object) {
++        @Override
++        public void collided(GameObject object) {
+ 
+-        if (object instanceof Key) {
+-            Key key = (Key) object;
+-            setKeyHolder(true);
+-            key.removeKey();
+-        }
++            if (object instanceof Key) {
++                Key key = (Key) object;
++                setKeyHolder(true);
++                key.removeKey();
++            }
+ 
+-        // else is a GameObject and the player has to change the direction of the movement
++            // else is a GameObject and the player has to change the direction of the movement
+ 
+-        // for example invoking the method move after asking for a new movement
++            // for example invoking the method move after asking for a new movement
+ 
+ 
+-    }
++        }
+ 
+-    @Override
+-    public void move() {
++        @Override
++        public void move() {
+ 
+-    }
+->>>>>>> CollisionDetector
+-}
++        }
++    }
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9eb20561-3304-41cf-acc6-06ecc0b81567\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n<<<<<<< HEAD\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java\" afterDir=\"false\" />\n=======\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java\" afterDir=\"false\" />\n>>>>>>> CollisionDetector\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"mavenHome\" value=\"$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"1isuqr091ciHoYmLUv3ANjJjQPp\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\n  </component>\n  <component name=\"RecentsManager\">\n<<<<<<< HEAD\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"org.academiadecodigo.gnunas.sketch\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n=======\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"org.academiadecodigo.gnunas.sketch\" />\n    </key>\n    <key name=\"CreateClassDialog.RecentsKey\">\n>>>>>>> CollisionDetector\n      <recent name=\"org.academiadecodigo.gnunas.sketch\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/resources\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.academiadecodigo.gnunas.sketch.Main\" />\n      <module name=\"sketch\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"ArquillianJUnit\" factoryName=\"\" nameIsGenerated=\"true\">\n      <option name=\"arquillianRunConfiguration\">\n        <value>\n          <option name=\"containerStateName\" value=\"\" />\n        </value>\n      </option>\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9eb20561-3304-41cf-acc6-06ecc0b81567\" name=\"Default Changelist\" comment=\"\" />\n      <created>1602708813585</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1602708813585</updated>\n      <workItem from=\"1602708814595\" duration=\"198000\" />\n      <workItem from=\"1602709166994\" duration=\"134000\" />\n      <workItem from=\"1602753373764\" duration=\"320000\" />\n      <workItem from=\"1602795111171\" duration=\"1092000\" />\n      <workItem from=\"1602798178357\" duration=\"3457000\" />\n      <workItem from=\"1602864699379\" duration=\"164000\" />\n      <workItem from=\"1602884226109\" duration=\"335000\" />\n      <workItem from=\"1602884592712\" duration=\"73000\" />\n      <workItem from=\"1602884688086\" duration=\"3157000\" />\n      <workItem from=\"1602942880004\" duration=\"2084000\" />\n      <workItem from=\"1602948126233\" duration=\"1417000\" />\n      <workItem from=\"1602949908827\" duration=\"3269000\" />\n      <workItem from=\"1602954930855\" duration=\"149000\" />\n<<<<<<< HEAD\n      <workItem from=\"1602955314525\" duration=\"991000\" />\n=======\n      <workItem from=\"1602955314525\" duration=\"6958000\" />\n      <workItem from=\"1602970264431\" duration=\"3000\" />\n      <workItem from=\"1603029745661\" duration=\"3211000\" />\n>>>>>>> CollisionDetector\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"448\" y=\"93\" key=\"#Project_Structure\" timestamp=\"1602753377235\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"448\" y=\"93\" key=\"#Project_Structure/0.23.1920.977@0.23.1920.977\" timestamp=\"1602753377235\" />\n<<<<<<< HEAD\n    <state x=\"773\" y=\"252\" key=\"#com.intellij.ide.util.MemberChooser\" timestamp=\"1602886696453\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"773\" y=\"253\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602800056413\" />\n    <state x=\"773\" y=\"252\" key=\"#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977\" timestamp=\"1602886696453\" />\n=======\n    <state x=\"773\" y=\"252\" key=\"#com.intellij.ide.util.MemberChooser\" timestamp=\"1603031945208\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"773\" y=\"253\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602966590455\" />\n    <state x=\"773\" y=\"252\" key=\"#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977\" timestamp=\"1603031945208\" />\n>>>>>>> CollisionDetector\n    <state x=\"718\" y=\"422\" width=\"822\" height=\"205\" key=\"#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes\" timestamp=\"1602952445546\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"718\" y=\"441\" width=\"822\" height=\"205\" key=\"#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602951051661\" />\n    <state x=\"718\" y=\"422\" width=\"822\" height=\"205\" key=\"#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.977@0.23.1920.977\" timestamp=\"1602952445546\" />\n    <state x=\"698\" y=\"265\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1602951791962\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"698\" y=\"265\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977\" timestamp=\"1602951791962\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1602954924673\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602949888998\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977\" timestamp=\"1602954924673\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.center\" timestamp=\"1602954924672\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602949888997\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977\" timestamp=\"1602954924672\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.left\" timestamp=\"1602954924671\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602949888997\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977\" timestamp=\"1602954924671\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.right\" timestamp=\"1602954924672\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"305\" key=\"GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602949888998\" />\n    <state width=\"1878\" height=\"263\" key=\"GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977\" timestamp=\"1602954924672\" />\n    <state x=\"589\" y=\"246\" key=\"NewModule_or_Project.wizard\" timestamp=\"1602945295911\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1080\" />\n    </state>\n    <state x=\"589\" y=\"246\" key=\"NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602945295911\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ .idea/workspace.xml	(date 1603050334505)
+@@ -3,14 +3,12 @@
+   <component name="ChangeListManager">
+     <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-<<<<<<< HEAD
+       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" afterDir="false" />
+-=======
+       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/NewPlayer.java" afterDir="false" />
+->>>>>>> CollisionDetector
+     </list>
++    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -58,12 +56,10 @@
+     <property name="project.structure.side.proportion" value="0.0" />
+   </component>
+   <component name="RecentsManager">
+-<<<<<<< HEAD
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="org.academiadecodigo.gnunas.sketch" />
+     </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+-=======
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="org.academiadecodigo.gnunas.sketch" />
+     </key>
+@@ -79,17 +75,6 @@
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.gnunas.sketch.Main" />
+       <module name="sketch" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+-      <option name="arquillianRunConfiguration">
+-        <value>
+-          <option name="containerStateName" value="" />
+-        </value>
+-      </option>
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+Index: src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch.GameObject;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.GameObject;\nimport org.academiadecodigo.gnunas.sketch.Position;\nimport org.academiadecodigo.simplegraphics.graphics.Rectangle;\n\npublic class Key extends GameObject {\n\n\n    public Key(Position pos, Rectangle picture) {\n        super(pos, picture);\n    }\n<<<<<<< HEAD\n=======\n\n    public void removeKey(){\n    super.deletePicture();\n    }\n>>>>>>> CollisionDetector\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java	(date 1603038074386)
+@@ -10,11 +10,8 @@
+     public Key(Position pos, Rectangle picture) {
+         super(pos, picture);
+     }
+-<<<<<<< HEAD
+-=======
+ 
+     public void removeKey(){
+     super.deletePicture();
+     }
+->>>>>>> CollisionDetector
+ }
+Index: src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch.GameObject;\n\nimport org.academiadecodigo.gnunas.sketch.Position;\nimport org.academiadecodigo.simplegraphics.graphics.Rectangle;\n\npublic class GameObject implements Collidable {\n\n    private Rectangle picture;\n    private Position pos;\n\n    public GameObject(Position pos, Rectangle picture) {\n\n        this.picture = picture;\n        this.pos = pos;\n        picture.draw();\n    }\n\n    public Position getPos() {\n        return pos;\n    }\n<<<<<<< HEAD\n}\n\n    /*@Override\n    public boolean isColliding(GameObject object) {\n\n        return (this.pos.equals(object.pos));\n\n    }\n}*/\n=======\n\n    public void collided() {\n\n    }\n\n    public void deletePicture() {\n        picture.delete();\n    }\n\n\n    @Override\n    public boolean equals(Object object) {\n\n        if (object instanceof GameObject) {\n\n            GameObject object1 = (GameObject) object;\n\n            int rightLimitX = getPos().getX() + picture.getWidth();\n            int leftLimitX = getPos().getX();\n            int objRightLimitX = object1.getPos().getX();\n            int objLeftLimitX = object1.getPos().getX() + object1.picture.getWidth();\n\n            if (rightLimitX >= objLeftLimitX || leftLimitX <= objRightLimitX) {\n\n                if (getPos().getY() <= object1.getPos().getY() + object1.picture.getHeight() || getPos().getY() + picture.getHeight() >= object1.getPos().getY()) {\n\n                    return true;\n                }\n\n            }\n        }\n        return false;\n    }\n}\n>>>>>>> CollisionDetector\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java	(revision ccb34fd5bbe7838842640ed39808e93f74c3cef9)
++++ src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java	(date 1603038074396)
+@@ -18,8 +18,6 @@
+     public Position getPos() {
+         return pos;
+     }
+-<<<<<<< HEAD
+-}
+ 
+     /*@Override
+     public boolean isColliding(GameObject object) {
+@@ -28,7 +26,6 @@
+ 
+     }
+ }*/
+-=======
+ 
+     public void collided() {
+ 
+@@ -62,5 +59,9 @@
+         }
+         return false;
+     }
+-}
+->>>>>>> CollisionDetector
++
++    @Override
++    public void collided(GameObject object) {
++
++    }
++}
+\ No newline at end of file

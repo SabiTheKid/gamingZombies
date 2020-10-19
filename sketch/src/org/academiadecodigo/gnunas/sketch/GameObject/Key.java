@@ -5,14 +5,16 @@ import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
+
 public class Key extends GameObject {
 
 
-    public Key(Position pos, Picture picture) {
-        super(pos, picture);
+    public Key(Position pos) {
+        super(pos, new Picture());
     }
 
     public void removeKey(){
-        super.deletePicture();
+        super.getPicture().delete();
     }
+
 }

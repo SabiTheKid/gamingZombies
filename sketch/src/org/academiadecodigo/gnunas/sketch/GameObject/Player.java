@@ -23,7 +23,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
     public Player(Position pos) {
 
-        super(pos, new Picture());
+        super(pos, new Picture(pos.getX(), pos.getY(),"wall_32.pgn"));
         this.keyHolder = false;
         this.alive = true;
         keyboard = new Keyboard(this);

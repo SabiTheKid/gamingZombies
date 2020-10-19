@@ -33,6 +33,7 @@ public class Position {
 
     public void moveDown(){
         y += 1;
+
     }
 
 }
