@@ -1,5 +1,6 @@
 package org.academiadecodigo.gnunas.sketch.GameObject;
 
+import org.academiadecodigo.gnunas.sketch.CollideFace;
 import org.academiadecodigo.gnunas.sketch.Direction;
 import org.academiadecodigo.gnunas.sketch.Field;
 import org.academiadecodigo.gnunas.sketch.Position;
@@ -12,6 +13,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
+    private boolean hittedWall;
     private boolean keyHolder;
     private boolean alive;
     private Keyboard keyboard;
@@ -25,6 +27,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     public Player(Position pos) {
 
         super(pos,new Picture(pos.getX(), pos.getY(), "player_still_up.png"));
+        this.hittedWall = false;
         this.keyHolder = false;
         this.alive = true;
         this.velocity = 5;
@@ -94,6 +97,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
                     break;
             }
         }
+
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
         super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
     }
@@ -130,6 +134,31 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             keyHolder = true;
             key.removeKey();
         }
+
+        hittedWall = true;
+
+        /*int rightLimitX = getPos().getX() + picture.getWidth();
+        int leftLimitX = getPos().getX();
+        int lowerLimitY = getPos().getY() + picture.getHeight();
+        int upperLimitY = getPos().getY();
+        int objLeftLimitX = object1.getPos().getX();
+        int objRightLimitX = object1.getPos().getX() + object1.getPicture().getWidth();
+        int objLowerLimitY = object1.getPos().getY() + object1.getPicture().getHeight();
+        int objUpperLimitY = object1.getPos().getY();
+
+        if(rightLimitX >= objLeftLimitX) {
+            return CollideFace.RIGHT;
+        }
+        if(leftLimitX <= objRightLimitX) {
+            return CollideFace.LEFT;
+        }
+        if(upperLimitY <= objLowerLimitY) {
+            return CollideFace.UP;
+        }
+        if(lowerLimitY >= objUpperLimitY) {
+            return CollideFace.DOWN;
+        }
+
         int rightLimitX = getPos().getX() + getPicture().getWidth();
         int leftLimitX = getPos().getX();
         int lowerLimitY = getPos().getY() + getPicture().getHeight();
@@ -170,5 +199,32 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             }
             getPicture().translate(0, -difference);
         }
+    }
+
+    public CollideFace hitWall(){
+        hittedWall = true;
+        int rightLimitX = getPos().getX() + picture.getWidth();
+        int leftLimitX = getPos().getX();
+        int lowerLimitY = getPos().getY() + picture.getHeight();
+        int upperLimitY = getPos().getY();
+        int objLeftLimitX = object1.getPos().getX();
+        int objRightLimitX = object1.getPos().getX() + object1.getPicture().getWidth();
+        int objLowerLimitY = object1.getPos().getY() + object1.getPicture().getHeight();
+        int objUpperLimitY = object1.getPos().getY();
+
+        if(rightLimitX >= objLeftLimitX) {
+            return CollideFace.RIGHT;
+        }
+        if(leftLimitX <= objRightLimitX) {
+            return CollideFace.LEFT;
+        }
+        if(upperLimitY <= objLowerLimitY) {
+            return CollideFace.UP;
+        }
+        if(lowerLimitY >= objUpperLimitY) {
+            return CollideFace.DOWN;
+        }
+*/
+
     }
 }
