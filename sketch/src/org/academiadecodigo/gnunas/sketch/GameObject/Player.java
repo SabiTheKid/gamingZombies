@@ -23,7 +23,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
     public Player(Position pos) {
 
-        super(pos, new Picture(pos.getX(), pos.getY(),"wall_32.pgn"));
+        super(pos, new Picture(pos.getX(), pos.getY(),"wall_32.png"));
         this.keyHolder = false;
         this.alive = true;
         keyboard = new Keyboard(this);
@@ -92,6 +92,8 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         }
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
         super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
+
+
     }
 
 

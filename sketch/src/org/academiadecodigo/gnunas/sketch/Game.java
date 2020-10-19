@@ -26,7 +26,9 @@ public class Game {
         gameObjectFactory = new GameObjectFactory();
         gameObjects = GameObjectFactory.createWallLimits(field);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(0,0));
+        player = new Player(new Position(50,50));
+
+        collisiondetector.checkCollision(player);
     }
 
     public void start() throws InterruptedException {
