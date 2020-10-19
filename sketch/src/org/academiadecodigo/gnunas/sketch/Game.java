@@ -24,7 +24,7 @@ public class Game {
     public void init(){
         field = new Field();
         gameObjectFactory = new GameObjectFactory();
-        gameObjects = GameObjectFactory.createWallLimits(field);
+        gameObjects = GameObjectFactory.createAllGameObjects();
         collisiondetector = new CollisionDetector(gameObjects);
         player = new Player(new Position(0,0));
     }

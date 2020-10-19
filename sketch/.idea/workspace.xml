@@ -20,25 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="&quot;Game class implemented 1&quot;">
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="CollisionDetector" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -137,6 +149,9 @@
       <workItem from="1602955314525" duration="6958000" />
       <workItem from="1602970264431" duration="3000" />
       <workItem from="1603029745661" duration="3211000" />
+      <workItem from="1603147283889" duration="51000" />
+      <workItem from="1603147343461" duration="12000" />
+      <workItem from="1603147421678" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Compatible problems with master fixed and merged with the master&quot;">
       <created>1603048682721</created>
@@ -213,26 +228,26 @@
     </state>
     <state x="1032" y="115" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603127880266" />
     <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603130024362" />
-    <state width="1878" height="226" key="GridCell.Tab.0.bottom" timestamp="1603130165689">
+    <state width="862" height="264" key="GridCell.Tab.0.bottom" timestamp="1603147273263">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433543" />
-    <state width="1878" height="226" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603130165689" />
-    <state width="1878" height="226" key="GridCell.Tab.0.center" timestamp="1603130165689">
+    <state width="862" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603147273263" />
+    <state width="862" height="264" key="GridCell.Tab.0.center" timestamp="1603147273263">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433542" />
-    <state width="1878" height="226" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603130165689" />
-    <state width="1878" height="226" key="GridCell.Tab.0.left" timestamp="1603130165688">
+    <state width="862" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603147273263" />
+    <state width="862" height="264" key="GridCell.Tab.0.left" timestamp="1603147273262">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433542" />
-    <state width="1878" height="226" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603130165688" />
-    <state width="1878" height="226" key="GridCell.Tab.0.right" timestamp="1603130165689">
+    <state width="862" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603147273262" />
+    <state width="862" height="264" key="GridCell.Tab.0.right" timestamp="1603147273263">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433543" />
-    <state width="1878" height="226" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603130165689" />
+    <state width="862" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603147273263" />
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
