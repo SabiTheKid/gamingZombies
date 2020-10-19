@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3385145d-5492-4a87-bc9a-3e5048c161f4" name="Default Changelist" comment="&quot;Compatible problems with master fixed, merged with the master&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,14 +76,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.academiadecodigo.gnunas.sketch" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -94,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -181,25 +184,29 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1602951791962" />
-    <state width="939" height="305" key="GridCell.Tab.0.bottom" timestamp="1603098813276">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1064" height="261" key="GridCell.Tab.0.bottom" timestamp="1603128763335">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="939" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603098813276" />
+    <state width="1064" height="261" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603128763335" />
     <state width="1731" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603044162206" />
-    <state width="939" height="305" key="GridCell.Tab.0.center" timestamp="1603098813275">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1064" height="261" key="GridCell.Tab.0.center" timestamp="1603128763334">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="939" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603098813275" />
+    <state width="1064" height="261" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603128763334" />
     <state width="1731" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603044162205" />
-    <state width="939" height="305" key="GridCell.Tab.0.left" timestamp="1603098813274">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1064" height="261" key="GridCell.Tab.0.left" timestamp="1603128763333">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="939" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603098813274" />
+    <state width="1064" height="261" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603128763333" />
     <state width="1731" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603044162204" />
-    <state width="939" height="305" key="GridCell.Tab.0.right" timestamp="1603098813275">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1064" height="261" key="GridCell.Tab.0.right" timestamp="1603128763335">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="939" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603098813275" />
+    <state width="1064" height="261" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603128763335" />
     <state width="1731" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603044162206" />
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
