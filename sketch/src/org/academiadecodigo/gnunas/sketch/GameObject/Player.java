@@ -12,6 +12,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
+    private boolean hittedWall;
+    private int velocity;
     private boolean keyHolder;
     private boolean alive;
     private Keyboard keyboard;
@@ -20,10 +22,11 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
 
-
     public Player(Position pos) {
 
-        super(pos, new Picture(pos.getX(), pos.getY(),"wall_32.pgn"));
+        super(pos, new Picture(pos.getX(), pos.getY(),"player_still_up.png"));
+        velocity = 5;
+        hittedWall = false;
         this.keyHolder = false;
         this.alive = true;
         keyboard = new Keyboard(this);
@@ -76,19 +79,21 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         //Position previousPosition = pos;
         int prevPosX = super.getPos().getX();
         int prevPosY = super.getPos().getY();
-        switch (direction) {
-            case RIGHT:
-                super.getPos().moveRight();
-                break;
-            case LEFT:
-                super.getPos().moveLeft();
-                break;
-            case UP:
-                super.getPos().moveUp();
-                break;
-            case DOWN:
-                super.getPos().moveDown();
-                break;
+        for (int i = 0; i < velocity; i++) {
+            switch (direction) {
+                case RIGHT:
+                    super.getPos().moveRight();
+                    break;
+                case LEFT:
+                    super.getPos().moveLeft();
+                    break;
+                case UP:
+                    super.getPos().moveUp();
+                    break;
+                case DOWN:
+                    super.getPos().moveDown();
+                    break;
+            }
         }
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
         super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
@@ -131,6 +136,8 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             setKeyHolder(true);
             key.removeKey();
         }
+
+        hittedWall = true;
     }
 }
 
