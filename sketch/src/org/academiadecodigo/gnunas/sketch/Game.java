@@ -1,9 +1,7 @@
 package org.academiadecodigo.gnunas.sketch;
 
-import org.academiadecodigo.gnunas.sketch.GameObject.Door;
-import org.academiadecodigo.gnunas.sketch.GameObject.GameObject;
-import org.academiadecodigo.gnunas.sketch.GameObject.Player;
-import org.academiadecodigo.gnunas.sketch.GameObject.Zombie;
+import org.academiadecodigo.gnunas.sketch.GameObject.*;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.util.List;
 
@@ -26,7 +24,9 @@ public class Game {
         gameObjectFactory = new GameObjectFactory();
         gameObjects = GameObjectFactory.createAllGameObjects();
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(0,0));
+        player = new Player(new Position(50, (field.getHeight()/2)));
+        Key key = new Key(new Position(500, 500), new Picture(500, 500, "wall_32.png"));
+        gameObjects.add(key);
     }
 
     public void start() throws InterruptedException {
@@ -35,6 +35,8 @@ public class Game {
 
             // Pause for a while
             Thread.sleep(delay);
+
+            collisiondetector.checkCollision(player);
 
             moveZombies();
 
