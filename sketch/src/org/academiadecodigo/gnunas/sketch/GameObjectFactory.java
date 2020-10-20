@@ -2,6 +2,7 @@ package org.academiadecodigo.gnunas.sketch;
 
 import org.academiadecodigo.gnunas.sketch.GameObject.Door;
 import org.academiadecodigo.gnunas.sketch.GameObject.GameObject;
+import org.academiadecodigo.gnunas.sketch.GameObject.Key;
 import org.academiadecodigo.gnunas.sketch.GameObject.Zombie;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -9,17 +10,23 @@ import java.util.ArrayList;
 
 public class GameObjectFactory {
 
-    public static ArrayList<Zombie> createZombies() {
+    public static ArrayList<Zombie> createZombies(Level level) {
         ArrayList<Zombie> zombieList = new ArrayList<>();
-        zombieList.add(new Zombie(new Position(200, 200), new Picture(200, 200, "wall_32.png")));
+        Position position = generatePositionForKeyAndZombies();
+        for(int i = 0; i < level.getNumberOfZombies(); i++) {
+            position = generatePositionForKeyAndZombies();
+            zombieList.add(new Zombie(position, new Picture(position.getX(), position.getY(), "zombie_2_left.png")));
+        }
+        zombieList.add(new Zombie(generatePositionForKeyAndZombies(), new Picture(200, 200, "zombie_2_left.png")));
         return zombieList;
     }
 
-    public static ArrayList<GameObject> createAllGameObjects() {
-        ArrayList<GameObject> gameObjectsList = createObjectLimits();
-        gameObjectsList.add(new Zombie(new Position(100, 100), new Picture(100, 100, "wall_32.png")));
-        return gameObjectsList;
+    public static ArrayList<GameObject> createFixedGameObjects() {
+        ArrayList<GameObject> gameFixedObjectsList = createObjectLimits();
+        gameFixedObjectsList.add(new Key(generatePositionForKeyAndZombies()));
+        return gameFixedObjectsList;
     }
+
 
 
     public static ArrayList<GameObject> createObjectLimits() {
@@ -58,6 +65,13 @@ public class GameObjectFactory {
 
     public static ArrayList<GameObject> createWall() {
         return null;
+    }
+
+    public static Position generatePositionForKeyAndZombies() {
+        int safeZone = 100;
+        int randomYPosition = (int) (Math.random()*(Field.height-Field.PADDING)) + Field.PADDING;
+        int randomXPosition = (int) (Math.random()*(Field.width-Field.PADDING-safeZone)) + Field.PADDING + safeZone;
+        return new Position(randomXPosition, randomYPosition);
     }
 
     

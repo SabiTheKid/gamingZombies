@@ -10,29 +10,37 @@ public class Game {
     private Field field;
     private CollisionDetector collisiondetector;
     private List<GameObject> gameObjects;
-    private GameObjectFactory gameObjectFactory;
+    private GameObjectFactory gameObjectFactory = new GameObjectFactory();
     private List<Zombie> zombieList;
-    private int delay;
     private Player player;
-    private Door door;
 
-    public Game(int delay){
-        this.delay = delay;
+    public Game(){
+
     }
 
     public void init(){
         field = new Field();
-        gameObjectFactory = new GameObjectFactory();
-        gameObjects = GameObjectFactory.createAllGameObjects();
+    }
+    public void initLevelOne() throws InterruptedException {
+
+        gameObjects = GameObjectFactory.createFixedGameObjects();
+        zombieList = GameObjectFactory.createZombies(Level.ONE);
         collisiondetector = new CollisionDetector(gameObjects);
         player = new Player(new Position(50, (field.getHeight()/2)));
-        Key key = new Key(new Position(500, 500));
-        gameObjects.add(key);
+        start(Level.ONE.getDelay());
+    }
+    public void initLevelTwo() throws InterruptedException {
+
+        gameObjects = GameObjectFactory.createFixedGameObjects();
+        zombieList = GameObjectFactory.createZombies(Level.TWO);
+        collisiondetector = new CollisionDetector(gameObjects);
+        player = new Player(new Position(50, (field.getHeight()/2)));
+        start(Level.TWO.getDelay());
     }
 
-    public void start() throws InterruptedException {
+    public void start(int delay) throws InterruptedException {
 
-        while(player.isAlive() || !door.isOpened()) {
+        while(player.isAlive()/* || !door.isOpened()*/) {
 
             // Pause for a while
             Thread.sleep(delay);
@@ -48,7 +56,7 @@ public class Game {
 
     public void moveZombies(){
 
-        for (GameObject zombie : gameObjects){
+        for (Zombie zombie : zombieList){
 
             if (zombie instanceof Zombie){
 

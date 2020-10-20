@@ -6,11 +6,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Game game = new Game(20);
+        Game game = new Game();
 
         game.init();
         try {
-            game.start();
+            game.initLevelTwo();
         } catch (Exception ex){
             System.out.println(ex);
         }
