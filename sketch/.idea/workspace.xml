@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="&quot;Game class implemented 1&quot;" />
+    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,17 +91,6 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.gnunas.sketch.Main" />
       <module name="sketch" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -183,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603140702971</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot;Monday player collisions and catch key&quot;">
+      <created>1603144471899</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603144471899</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +201,8 @@
     <MESSAGE value="&quot;Compatible problems with master fixed&quot;" />
     <MESSAGE value="&quot;Game class implemented&quot;" />
     <MESSAGE value="&quot;Game class implemented 1&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Game class implemented 1&quot;" />
+    <MESSAGE value="&quot;Monday player collisions and catch key&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Monday player collisions and catch key&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="448" y="93" key="#Project_Structure" timestamp="1602753377235">
@@ -226,55 +223,55 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1603142516418" />
-    <state x="859" y="127" key="CommitChangelistDialog2" timestamp="1603140702780">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state x="936" y="57" key="CommitChangelistDialog2" timestamp="1603144471784">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1032" y="115" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603127880266" />
+    <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
     <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603140702780" />
-    <state width="1054" height="226" key="GridCell.Tab.0.bottom" timestamp="1603143994641">
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom" timestamp="1603144893945">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433543" />
-    <state width="1054" height="226" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603143994641" />
-    <state width="1054" height="226" key="GridCell.Tab.0.center" timestamp="1603143994640">
+    <state width="1878" height="326" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state width="1878" height="326" key="GridCell.Tab.0.center" timestamp="1603144893944">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433542" />
-    <state width="1054" height="226" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603143994640" />
-    <state width="1054" height="226" key="GridCell.Tab.0.left" timestamp="1603143994639">
+    <state width="1878" height="326" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603144893944" />
+    <state width="1878" height="326" key="GridCell.Tab.0.left" timestamp="1603144893936">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433542" />
-    <state width="1054" height="226" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603143994639" />
-    <state width="1054" height="226" key="GridCell.Tab.0.right" timestamp="1603143994640">
+    <state width="1878" height="326" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603144893936" />
+    <state width="1878" height="326" key="GridCell.Tab.0.right" timestamp="1603144893944">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="454" height="263" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603127433543" />
-    <state width="1054" height="226" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603143994640" />
-    <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603139113814">
+    <state width="1878" height="326" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603144893944" />
+    <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603144893946">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603139113814" />
-    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603139113813">
+    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603144893946" />
+    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603144893945">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603139113813" />
-    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1603139113812">
+    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1603144893945">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603139113812" />
-    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1603139113814">
+    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1603144893945">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603139113814" />
+    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="589" y="246" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1602945295911" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603140708807">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state x="580" y="252" key="Vcs.Push.Dialog.v2" timestamp="1603144487353">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603127889538" />
+    <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144487353" />
     <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603140708807" />
     <state x="0" y="36" width="1666" height="704" key="dock-window-1" timestamp="1603136839614">
       <screen x="0" y="23" width="1920" height="977" />
