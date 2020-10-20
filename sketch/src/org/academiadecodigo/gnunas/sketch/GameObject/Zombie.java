@@ -6,11 +6,13 @@ import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Zombie extends GameObject implements Movable, Collidable{
-    private ZombieDirection direction;
-    private int moves = 0;
+    private Direction direction;
+    private Direction previousDirection;
+    private int movesCounter = 0;
     private Picture ZombiePicture = new Picture(0,0,"wall_32.png");
     int ZombiePictureHeight = ZombiePicture.getHeight();
     int ZombiePictureWidth = ZombiePicture.getWidth();
+    private boolean canIMove;
 
 
     public Zombie(Position pos, Picture picture) {
@@ -20,52 +22,72 @@ public class Zombie extends GameObject implements Movable, Collidable{
     @Override
     public void move(Direction direction) {
     }
-    public ZombieDirection turn() {
-        direction = ZombieDirection.random();
-        return direction.isOpposite(direction) ? turn() : direction;
+
+    public Direction turn() {
+        if (movesCounter < 50 && movesCounter != 0 && canIMove == true) {
+            return direction;
+        }
+        direction = Direction.random();
+        if (!canTurn(direction)) {
+            turn();
+        }
+        if (direction.isOpposite(previousDirection)) {
+            turn();
+        }
+        movesCounter = 0;
+
+        return direction;
     }
 
 
     @Override
     public void move() {
-        /*if (moves % getSpeed() == 0) {
-            direction = turn();
-        }*/
 
-        moves++;
+        direction = turn();
+
+
 
         if (!canTurn(direction)) {
-            return;
+            canIMove = false;
+            turn();
         }
+        canIMove = true;
+        movesCounter++;
+        /*
+        movesCounter++;
         switch (direction) {
             case UP:
-                getPos().moveUp();
-                return;
+                //getPos().moveUp();
+                break;
             case DOWN:
-                getPos().moveDown();
-                return;
+                //getPos().moveDown();
+                break;
             case RIGHT:
-                getPos().moveRight();
-                return;
+                //getPos().moveRight(keyHolder);
+                break;
             case LEFT:
-                getPos().moveLeft();
-                return;
-        }
+                //getPos().moveLeft();
+                break;
+        }*/
+        //super.getPicture().translate(10,0);
+        super.getPicture().translate(direction.getXDifference(), direction.getYDifference());
+        getPos().move(direction);
+        previousDirection = direction;
     }
 
-    private boolean canTurn(ZombieDirection direction) {
+    private boolean canTurn(Direction direction) {
         switch (direction) {
             case RIGHT:
-                return getPos().getX()+ZombiePictureWidth + direction.getColumnDifference() < Field.width;
-                case LEFT:
-                    return getPos().getX() + direction.getColumnDifference() >= Field.PADDING;
-                    case UP:
-                    return getPos().getY() + direction.getRowDifference() >= Field.PADDING;
-                case DOWN:
-                    return getPos().getY() + direction.getRowDifference() < Field.height;
-                default:
-                    return false;
-            }
-
+                return getPos().getX()+ZombiePictureWidth + direction.getXDifference() < Field.width+Field.PADDING;
+            case LEFT:
+                return getPos().getX() + direction.getXDifference() > Field.PADDING;
+            case UP:
+                return getPos().getY() + direction.getYDifference() > Field.PADDING;
+            case DOWN:
+                return getPos().getY()+ZombiePictureHeight + direction.getYDifference() < Field.height+Field.PADDING;
+            default:
+                return false;
         }
+
+    }
 }

@@ -10,7 +10,7 @@ public class Key extends GameObject {
 
 
     public Key(Position pos) {
-        super(pos, new Picture());
+        super(pos, new Picture(pos.getX(), pos.getY(), "door_card.png"));
     }
 
     public void removeKey(){

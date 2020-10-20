@@ -1,6 +1,5 @@
 package org.academiadecodigo.gnunas.sketch;
 
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Field {
@@ -11,7 +10,7 @@ public class Field {
     public static final int height = 768;
 
     public Field(){
-        map = new Picture(PADDING, PADDING,"game_field.jpg");
+        map = new Picture(PADDING, PADDING,"field_bg_4.png");
         map.draw();
     }
 
