@@ -14,6 +14,10 @@ public class Field {
         map.draw();
     }
 
+    public Picture getMap() {
+        return map;
+    }
+
     public int getHeight() {
         return height;
     }
