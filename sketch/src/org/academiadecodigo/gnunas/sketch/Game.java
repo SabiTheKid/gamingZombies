@@ -11,6 +11,7 @@ public class Game {
     private CollisionDetector collisiondetector;
     private List<GameObject> gameObjects;
     private GameObjectFactory gameObjectFactory;
+    private List<Zombie> zombieList;
     private int delay;
     private Player player;
     private Door door;
@@ -41,6 +42,8 @@ public class Game {
             moveZombies();
 
         }
+
+        throw new InterruptedException("morreu");
     }
 
     public void moveZombies(){

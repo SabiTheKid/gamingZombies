@@ -1,10 +1,11 @@
 package org.academiadecodigo.gnunas.sketch;
 
 
+import org.academiadecodigo.gnunas.sketch.GameObject.ZombieDirection;
+
 public class Position {
     private int x;
     private int y;
-    private int padding = Field.PADDING;
 
     public Position(int x, int y) {
         this.x = x;
@@ -45,11 +46,15 @@ public class Position {
     }
 
     public void moveDown(){
-        if (y == Field.PADDING + Field.height-32){
+        if (y >= Field.PADDING + Field.height-32){
             return;
         }
         y += 1;
 
+    }
+    public void move(ZombieDirection zombieDirection) {
+        x += zombieDirection.getXDifference();
+        y += zombieDirection.getYDifference();
     }
 
 }

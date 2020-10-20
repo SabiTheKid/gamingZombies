@@ -143,7 +143,10 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             keyHolder = true;
             key.removeKey();
         }
-
+        if (object instanceof Zombie){
+            Zombie zombie1 = (Zombie) object;
+            setAlive(false);
+        }
         hittedWall = true;
     }
         /*int rightLimitX = getPos().getX() + picture.getWidth();

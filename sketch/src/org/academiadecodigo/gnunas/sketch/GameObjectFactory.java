@@ -9,9 +9,15 @@ import java.util.LinkedList;
 
 public class GameObjectFactory {
 
+    public static ArrayList<Zombie> createZombies() {
+        ArrayList<Zombie> zombieList = new ArrayList<>();
+        zombieList.add(new Zombie(new Position(200, 200), new Picture(200, 200, "wall_32.png")));
+        return zombieList;
+    }
+
     public static ArrayList<GameObject> createAllGameObjects() {
         ArrayList<GameObject> gameObjectsList = createWallLimits();
-        new Zombie(new Position(500, 500), new Picture(500, 500, "wall_32.png"));
+        gameObjectsList.add(new Zombie(new Position(100, 100), new Picture(100, 100, "wall_32.png")));
         return gameObjectsList;
     }
 
