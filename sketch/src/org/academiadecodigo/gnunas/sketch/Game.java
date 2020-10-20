@@ -26,7 +26,7 @@ public class Game {
         gameObjects = GameObjectFactory.createAllGameObjects();
         collisiondetector = new CollisionDetector(gameObjects);
         player = new Player(new Position(50, (field.getHeight()/2)));
-        Key key = new Key(new Position(500, 500), new Picture(500, 500, "wall_32.png"));
+        Key key = new Key(new Position(500, 500));
         gameObjects.add(key);
     }
 

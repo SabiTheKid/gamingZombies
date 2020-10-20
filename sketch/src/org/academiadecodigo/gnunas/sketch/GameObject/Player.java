@@ -53,9 +53,6 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         keyboardEventMoveDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(keyboardEventMoveDown);
 
-        //Insert position, graphic representation, alive = true etc...
-
-        //Insert position, graphic representation, alive = true etc...
     }
 
     public boolean isKeyHolder() {
@@ -144,8 +141,11 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             key.removeKey();
         }
         if (object instanceof Zombie){
-            Zombie zombie1 = (Zombie) object;
             setAlive(false);
+        }
+        if (object instanceof Door && keyHolder){
+            Door door = (Door) object;
+            door.openDoor();
         }
         hittedWall = true;
     }

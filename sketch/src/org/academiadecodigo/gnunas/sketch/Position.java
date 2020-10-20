@@ -1,8 +1,6 @@
 package org.academiadecodigo.gnunas.sketch;
 
 
-import org.academiadecodigo.gnunas.sketch.GameObject.ZombieDirection;
-
 public class Position {
     private int x;
     private int y;
@@ -52,9 +50,9 @@ public class Position {
         y += 1;
 
     }
-    public void move(ZombieDirection zombieDirection) {
-        x += zombieDirection.getXDifference();
-        y += zombieDirection.getYDifference();
+    public void move(Direction direction) {
+        x += direction.getXDifference();
+        y += direction.getYDifference();
     }
 
 }

@@ -9,8 +9,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Key extends GameObject {
 
 
-    public Key(Position pos, Picture picture) {
-        super(pos, picture);
+    public Key(Position pos) {
+        super(pos, new Picture(pos.getX(), pos.getY(), "door_card.png"));
     }
 
     public void removeKey(){

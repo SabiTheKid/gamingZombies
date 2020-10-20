@@ -6,13 +6,12 @@ import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Zombie extends GameObject implements Movable, Collidable{
-    private ZombieDirection direction;
-    private ZombieDirection previousDirection;
+    private Direction direction;
+    private Direction previousDirection;
     private int movesCounter = 0;
     private Picture ZombiePicture = new Picture(0,0,"wall_32.png");
     int ZombiePictureHeight = ZombiePicture.getHeight();
     int ZombiePictureWidth = ZombiePicture.getWidth();
-    private boolean keyHolder = false;
     private boolean canIMove;
 
 
@@ -24,11 +23,11 @@ public class Zombie extends GameObject implements Movable, Collidable{
     public void move(Direction direction) {
     }
 
-    public ZombieDirection turn() {
+    public Direction turn() {
         if (movesCounter < 50 && movesCounter != 0 && canIMove == true) {
             return direction;
         }
-        direction = ZombieDirection.random();
+        direction = Direction.random();
         if (!canTurn(direction)) {
             turn();
         }
@@ -76,7 +75,7 @@ public class Zombie extends GameObject implements Movable, Collidable{
         previousDirection = direction;
     }
 
-    private boolean canTurn(ZombieDirection direction) {
+    private boolean canTurn(Direction direction) {
         switch (direction) {
             case RIGHT:
                 return getPos().getX()+ZombiePictureWidth + direction.getXDifference() < Field.width+Field.PADDING;
