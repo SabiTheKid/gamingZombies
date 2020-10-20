@@ -30,12 +30,19 @@ public class Game {
         gameObjects.add(key);
     }
 
-    public void start() throws InterruptedException {
+    public void start() {
 
-        while(player.isAlive() || !door.isOpened()) {
 
-            // Pause for a while
-            Thread.sleep(delay);
+        // falta a condiçao de a porta estar fechada
+        while(player.isAlive()) {
+
+            //Pause for a while
+
+            try{
+                Thread.sleep(delay);
+            } catch (Exception ex){
+                System.out.println(ex);
+            }
 
             collisiondetector.checkCollision(player);
 
@@ -43,7 +50,8 @@ public class Game {
 
         }
 
-        throw new InterruptedException("morreu");
+        player.stopPlayer();
+        field.getMap().load("game_field");
     }
 
     public void moveZombies(){

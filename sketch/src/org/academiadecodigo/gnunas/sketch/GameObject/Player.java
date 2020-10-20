@@ -12,7 +12,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
-    private boolean hittedWall;
     private int velocity;
     private boolean keyHolder;
     private boolean alive;
@@ -21,16 +20,15 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     private KeyboardEvent keyboardEventMoveLeft;
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
+    private boolean paralyzed;
 
     public Player(Position pos) {
 
         super(pos,new Picture(pos.getX(), pos.getY(), "player_right.png"));
-        this.hittedWall = false;
-        velocity = 5;
-        hittedWall = false;
         this.keyHolder = false;
         this.alive = true;
         this.velocity = 5;
+        paralyzed = false;
         keyboard = new Keyboard(this);
 
         keyboardEventMoveRight = new KeyboardEvent();
@@ -117,6 +115,9 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         //implement keys for movement
+        if (paralyzed) {
+            return;
+        }
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT) {
             move(Direction.RIGHT);
@@ -143,11 +144,10 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         if (object instanceof Zombie){
             setAlive(false);
         }
-        if (object instanceof Door && keyHolder){
+        if (object instanceof Door && keyHolder) {
             Door door = (Door) object;
             door.openDoor();
         }
-        hittedWall = true;
     }
         /*int rightLimitX = getPos().getX() + picture.getWidth();
         int leftLimitX = getPos().getX();
@@ -238,4 +238,8 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         }
 */
 
+    public void stopPlayer(){
+        paralyzed = true;
+
+    }
 }

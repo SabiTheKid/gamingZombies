@@ -9,12 +9,8 @@ public class Main {
         Game game = new Game(20);
 
         game.init();
-        try {
-            game.start();
-        } catch (Exception ex){
-            System.out.println(ex);
-        }
 
+        game.start();
 
 
     }
