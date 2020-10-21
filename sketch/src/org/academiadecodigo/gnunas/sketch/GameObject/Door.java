@@ -8,15 +8,16 @@ public class Door extends GameObject{
 
     private boolean opened;
 
-    public Door(Position pos) {
-        super(pos, new Picture());
+    public Door(Position pos, Picture picture) {
+        super(pos, picture);
         opened = false;
     }
 
     public void openDoor(){
         opened = true;
         super.getPos().moveUp();
-        super.getPicture().load("");
+        super.getPicture().delete();
+        //super.getPicture().load("");
 
     }
 

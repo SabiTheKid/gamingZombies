@@ -1,7 +1,6 @@
 package org.academiadecodigo.gnunas.sketch.GameObject;
 
 import org.academiadecodigo.gnunas.sketch.Position;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class GameObject implements Collidable {
@@ -24,8 +23,6 @@ public class GameObject implements Collidable {
         return pos;
     }
 
-
-
     public void collided() {
 
     }
@@ -40,7 +37,7 @@ public class GameObject implements Collidable {
 
     }
 
-    @Override
+  /*  @Override
     public boolean equals(Object object) {
 
         if (object instanceof GameObject) {
@@ -61,5 +58,5 @@ public class GameObject implements Collidable {
             }
         }
         return false;
-    }
+    }*/
 }

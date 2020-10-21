@@ -4,7 +4,6 @@ package org.academiadecodigo.gnunas.sketch;
 public class Position {
     private int x;
     private int y;
-    private int padding = Field.PADDING;
 
     public Position(int x, int y) {
         this.x = x;
@@ -19,8 +18,12 @@ public class Position {
         return y;
     }
 
-    public void moveRight() {
-        if(x == Field.PADDING + Field.width - 150){
+    public void moveRight(boolean keyHolder) {
+
+        if (x == Field.width && y == Field.height / 2 && keyHolder == true){
+            x += 1;
+        }
+        if(x == Field.PADDING + Field.width-32){
             return;
         }
         x += 1;
@@ -41,11 +44,15 @@ public class Position {
     }
 
     public void moveDown(){
-        if (y == Field.PADDING + Field.height - 150){
+        if (y >= Field.PADDING + Field.height-32){
             return;
         }
         y += 1;
 
+    }
+    public void move(Direction direction) {
+        x += direction.getXDifference();
+        y += direction.getYDifference();
     }
 
 }
