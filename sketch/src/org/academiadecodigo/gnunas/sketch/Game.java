@@ -34,7 +34,7 @@ public class Game {
 
 
         // falta a condiçao de a porta estar fechada
-        while(player.isAlive()) {
+        while(player.isAlive() || (player.isOpenedDoor())) {
 
             //Pause for a while
 

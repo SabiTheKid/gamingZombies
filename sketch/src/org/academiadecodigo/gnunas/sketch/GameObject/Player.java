@@ -21,6 +21,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
     private boolean paralyzed;
+    private boolean openedDoor;
 
     public Player(Position pos) {
 
@@ -29,6 +30,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         this.alive = true;
         this.velocity = 5;
         paralyzed = false;
+        openedDoor = false;
         keyboard = new Keyboard(this);
 
         keyboardEventMoveRight = new KeyboardEvent();
@@ -149,6 +151,14 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             door.openDoor();
         }
     }
+    public void openDoor(boolean openedDoor) {
+        this.openedDoor = openedDoor;
+    }
+
+    public boolean isOpenedDoor(){
+        return openedDoor;
+    }
+
         /*int rightLimitX = getPos().getX() + picture.getWidth();
         int leftLimitX = getPos().getX();
         int lowerLimitY = getPos().getY() + picture.getHeight();
