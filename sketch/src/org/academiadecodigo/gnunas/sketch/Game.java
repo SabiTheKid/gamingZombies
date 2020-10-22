@@ -15,6 +15,9 @@ public class Game {
     private Player player;
     private Level[] levels = Level.values();
     private int level = 0;
+    private boolean inMenu;
+    private StartMenu startMenu;
+    private GameOverMenu gameOverMenu;
 
     public Game(){
 
@@ -29,7 +32,10 @@ public class Game {
         player = new Player(new Position(40, (field.getHeight()/2)));
     }
     public void start() {
-
+        inMenu = true;
+        while (inMenu){
+            startMenu();
+        }
         init();
 
         while (player.isAlive()) {
@@ -101,6 +107,18 @@ public class Game {
         for(Zombie zombie: zombieList){
             zombie.getPicture().delete();
         }
+    }
+
+    public void startMenu(){
+        startMenu = new StartMenu(this);
+    }
+
+    public void gameOverMenu(){
+        gameOverMenu = new GameOverMenu(this);
+    }
+
+    public void setInMenu(boolean inMenu) {
+        this.inMenu = inMenu;
     }
 }
 

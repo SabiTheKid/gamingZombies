@@ -1,0 +1,44 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]" date="1603377707132" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 22/10/2020, 15:41 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Zombie.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/CollisionDetector.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Level.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Position.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Player$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Player.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Game.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_15_41_[Default_Changelist]/Main.class" />
+  </binary>
+</changelist>
