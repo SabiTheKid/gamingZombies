@@ -118,6 +118,7 @@ public class Game {
                     if (level < levels.length) {
                         start();
                     }
+                    new Sound("/resources/sexualhealing.wav").play(true);
                     new Picture(32,32, "resources/Webp.png").draw();
 
                     break;

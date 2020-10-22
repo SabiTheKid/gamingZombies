@@ -19,12 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1afdab60-0164-4b0d-ac91-711cf8e2af68" name="Default Changelist" comment="">
+    <list default="true" id="1afdab60-0164-4b0d-ac91-711cf8e2af68" name="Default Changelist" comment="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ZombieHorde.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/ZombieHorde.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/org/academiadecodigo/gnunas/sketch/StartMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603398660558</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;">
+      <created>1603406337054</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1603406337054</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,30 +330,30 @@
     </state>
     <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
     <state x="856" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603398660423" />
-    <state width="1550" height="283" key="GridCell.Tab.0.bottom" timestamp="1603405959414">
+    <state width="1550" height="283" key="GridCell.Tab.0.bottom" timestamp="1603406356728">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
-    <state width="1550" height="283" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603405959414" />
-    <state width="1550" height="283" key="GridCell.Tab.0.center" timestamp="1603405959413">
+    <state width="1550" height="283" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603406356728" />
+    <state width="1550" height="283" key="GridCell.Tab.0.center" timestamp="1603406356728">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
-    <state width="1550" height="283" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603405959413" />
-    <state width="1550" height="283" key="GridCell.Tab.0.left" timestamp="1603405959412">
+    <state width="1550" height="283" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603406356728" />
+    <state width="1550" height="283" key="GridCell.Tab.0.left" timestamp="1603406356727">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756721" />
     <state width="1395" height="289" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
-    <state width="1550" height="283" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603405959412" />
-    <state width="1550" height="283" key="GridCell.Tab.0.right" timestamp="1603405959413">
+    <state width="1550" height="283" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603406356727" />
+    <state width="1550" height="283" key="GridCell.Tab.0.right" timestamp="1603406356728">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
-    <state width="1550" height="283" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603405959413" />
+    <state width="1550" height="283" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603406356728" />
     <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1603379810550">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -378,11 +386,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="589" y="246" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1602945295911" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603398665445">
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603406346420">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603225848933" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603398665445" />
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603406346420" />
     <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603234975728">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
