@@ -1,21 +1,21 @@
 package org.academiadecodigo.gnunas.sketch;
 
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Field {
 
-    private Rectangle map;
-    public final int PADDING = 10;
-    public final int width;
-    public final int height;
+    private Picture map;
+    public static final int PADDING = 32;
+    public static final int width = 1024;
+    public static final int height = 768;
 
     public Field(){
-        this.width = 1900;
-        this.height = 1060;
-        map = new Rectangle(PADDING, PADDING, width, height);
-        //map = new Picture(PADDING, PADDING,"game_field.jpg");
+        map = new Picture(PADDING, PADDING,"field_bg_4.png");
         map.draw();
+    }
+
+    public Picture getMap() {
+        return map;
     }
 
     public int getHeight() {

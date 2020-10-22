@@ -2,15 +2,18 @@ package org.academiadecodigo.gnunas.sketch.GameObject;
 
 import org.academiadecodigo.gnunas.sketch.Direction;
 import org.academiadecodigo.gnunas.sketch.Field;
+import org.academiadecodigo.gnunas.sketch.LanternView;
 import org.academiadecodigo.gnunas.sketch.Position;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player extends GameObject implements KeyboardHandler, Movable, Collidable {
 
+    private int velocity = 2;
     private boolean keyHolder;
     private boolean alive;
     private Keyboard keyboard;
@@ -18,13 +21,17 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     private KeyboardEvent keyboardEventMoveLeft;
     private KeyboardEvent keyboardEventMoveUp;
     private KeyboardEvent keyboardEventMoveDown;
-
+    private boolean paralyzed;
+    private LanternView lanternView;
+    private boolean openedDoor;
 
     public Player(Position pos) {
 
-        super(pos);
+        super(pos,new Picture(pos.getX(), pos.getY(), "player_right.png"));
         this.keyHolder = false;
         this.alive = true;
+        lanternView = new LanternView(pos.getX(),pos.getY());
+
         keyboard = new Keyboard(this);
 
         keyboardEventMoveRight = new KeyboardEvent();
@@ -47,9 +54,6 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         keyboardEventMoveDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(keyboardEventMoveDown);
 
-        //Insert position, graphic representation, alive = true etc...
-
-        //Insert position, graphic representation, alive = true etc...
     }
 
     public boolean isKeyHolder() {
@@ -70,25 +74,41 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     }
 
     @Override
+    public void move() {
+
+    }
+
+    public boolean isOpenedDoor() {
+        return openedDoor;
+    }
+
+    @Override
     public void move(Direction direction) {
         //Implement every type of movement
         //Position previousPosition = pos;
         int prevPosX = super.getPos().getX();
         int prevPosY = super.getPos().getY();
-        switch (direction) {
-            case RIGHT:
-                super.getPos().moveRight();
-                break;
-            case LEFT:
-                super.getPos().moveLeft();
-                break;
-            case UP:
-                super.getPos().moveUp();
-                break;
-            case DOWN:
-                super.getPos().moveDown();
-                break;
+        for (int i = 0; i < velocity; i++) {
+            switch (direction) {
+                case RIGHT:
+                    super.getPos().moveRight(keyHolder, lanternView);
+                    super.getPicture().load("player_right.png");
+                    break;
+                case LEFT:
+                    super.getPos().moveLeft(lanternView);
+                    super.getPicture().load("player_left.png");
+                    break;
+                case UP:
+                    super.getPos().moveUp(lanternView);
+                    super.getPicture().load("player_up.png");
+                    break;
+                case DOWN:
+                    super.getPos().moveDown(lanternView);
+                    super.getPicture().load("player_down.png");
+                    break;
+            }
         }
+
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
         super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
     }
@@ -102,6 +122,9 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         //implement keys for movement
+        if (paralyzed) {
+            return;
+        }
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT) {
             move(Direction.RIGHT);
@@ -122,8 +145,23 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
         if (object instanceof Key) {
             Key key = (Key) object;
-            setKeyHolder(true);
+            keyHolder = true;
             key.removeKey();
         }
+        if (object instanceof Zombie){
+            setAlive(false);
+        }
+        if (object instanceof Door && keyHolder) {
+            Door door = (Door) object;
+            door.openDoor();
+            if(super.getPos().getX()>Field.width+10) {
+                openedDoor = true;
+            }
+        }
+    }
+
+    public void stopPlayer(){
+        paralyzed = true;
+
     }
 }
