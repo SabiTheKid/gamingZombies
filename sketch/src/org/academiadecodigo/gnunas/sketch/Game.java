@@ -30,7 +30,7 @@ public class Game {
         zombieList = GameObjectFactory.createZombies(Level.ONE);
         collisiondetector = new CollisionDetector(gameObjects);
         player = new Player(new Position(50, (field.getHeight()/2)));
-        start();
+        start(Level.ONE.getDelay());
     }
     public void initLevelTwo() throws InterruptedException {
 
@@ -41,7 +41,7 @@ public class Game {
         player = new Player(new Position(40, (field.getHeight()/2)));
     }
     public void start() {
-        menu();
+
         init();
 
         while (player.isAlive()) {
@@ -113,18 +113,6 @@ public class Game {
         for(Zombie zombie: zombieList){
             zombie.getPicture().delete();
         }
-    }
-    public void setInMenu(Boolean inMenu){
-        this.inMenu = inMenu;
-    }
-
-    public void menu(){
-        inMenu = true;
-        StartMenu startMenu = new StartMenu(this);
-    }
-    public void gameOverMenu(){
-        GameOverMenu gameOverMenu = new GameOverMenu(this);
-        inMenu = true;
     }
 }
 
