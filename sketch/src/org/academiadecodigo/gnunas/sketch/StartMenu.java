@@ -23,6 +23,8 @@ public class StartMenu implements KeyboardHandler {
     private KeyboardEvent moveDown;
     private KeyboardEvent select;
     private Game game;
+    private Picture arrows;
+    private Picture instructions;
 
     public StartMenu(Game game){
         this.game = game;
@@ -33,7 +35,11 @@ public class StartMenu implements KeyboardHandler {
         background = new Picture(0,0, "resources/startMenuBackground4.jpg");
         quitButton = new Picture(buttonX,buttonY, "resources/quitButton.png");
         playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"resources/playButton.png");
+        arrows = new Picture(100,320,"resources/instructionsArrows.png");
+        instructions = new Picture(150,600,"resources/instructionsSentence.png");
         background.draw();
+        arrows.draw();
+        instructions.draw();
         cursor = new Rectangle(playButton.getX()-10, playButton.getY()-10, playButton.getWidth()+20, playButton.getHeight()+20);
         cursor.setColor(Color.WHITE);
         cursor.fill();
@@ -72,6 +78,8 @@ public class StartMenu implements KeyboardHandler {
     }
 
     public void delete(){
+        instructions.delete();
+        arrows.delete();
         background.delete();
         playButton.delete();
         quitButton.delete();

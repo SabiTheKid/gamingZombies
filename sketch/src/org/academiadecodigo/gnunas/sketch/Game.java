@@ -19,6 +19,7 @@ public class Game {
     private GameOverMenu gameOverMenu;
     private GameState gameState;
     private boolean inGameOverMenu;
+    private Sound sound;
 
     public Game() {
         gameState = GameState.STARTMENU;
@@ -34,13 +35,13 @@ public class Game {
         collisiondetector = new CollisionDetector(gameObjects);
         gameObjects.add(new Key(GameObjectFactory.generatePositionForKeyAndZombies()));
         player = new Player(new Position(40, (field.getHeight() / 2)+Field.DEFAULT_PADDING));
+        sound = new Sound("/resources/Game playing sounds.wav");
 
     }
 
 
     public void start() {
 
-        System.out.println(gameState);
         switch (gameState) {
             case GAMEOVERMENU:
                 gameOverMenu();
@@ -51,7 +52,6 @@ public class Game {
                         e.printStackTrace();
                     }
                 }
-                System.out.println(gameState);
                 start();
                 break;
             case STARTMENU:
@@ -64,12 +64,12 @@ public class Game {
                         e.printStackTrace();
                     }
                 }
-                System.out.println(gameState);
                 start();
                 break;
             case PLAY:
 
                 init();
+                sound.play(true);
 
                 while (player.isAlive()) {
 
@@ -90,6 +90,7 @@ public class Game {
                     }
                     if (!player.isAlive()) {
 
+                        sound.close();
                         deleteAllGraphics();
                         level = 0;
                         inGameOverMenu = true;
@@ -98,6 +99,7 @@ public class Game {
                         break;
                     }
 
+                    sound.close();
                     player.stopPlayer();
                     level++;
                     try {
@@ -111,8 +113,6 @@ public class Game {
                     }
                     break;
                 }
-
-
         }
     }
 
