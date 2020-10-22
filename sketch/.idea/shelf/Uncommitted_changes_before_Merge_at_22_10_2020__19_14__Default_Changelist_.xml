@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Merge_at_22_10_2020,_19_14_[Default_Changelist]" date="1603391035617" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_22_10_2020,_19_14_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 22/10/2020, 19:14 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_22_10_2020,_19_14_[Default_Changelist]/GameObject.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/MenuDirection.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Door.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Door.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_22_10_2020,_19_14_[Default_Changelist]/Door.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_22_10_2020,_19_14_[Default_Changelist]/Main.class" />
+  </binary>
+</changelist>

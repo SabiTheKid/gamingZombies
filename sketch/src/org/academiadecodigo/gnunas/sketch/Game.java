@@ -10,55 +10,109 @@ public class Game {
     private Field field;
     private CollisionDetector collisiondetector;
     private List<GameObject> gameObjects;
-    private GameObjectFactory gameObjectFactory;
     private List<Zombie> zombieList;
-    private int delay;
     private Player player;
-    private Door door;
+    private Level[] levels = Level.values();
+    private int level = 0;
+    private boolean inMenu;
+    private StartMenu startMenu;
+    private GameOverMenu gameOverMenu;
+    private GameState gameState;
+    private boolean inGameOverMenu;
 
-    public Game(int delay){
-        this.delay = delay;
+    public Game() {
+        gameState = GameState.STARTMENU;
+        inMenu = true;
+        inGameOverMenu = false;
     }
 
-    public void init(){
+    public void init() {
         field = new Field();
-        gameObjectFactory = new GameObjectFactory();
-        gameObjects = GameObjectFactory.createAllGameObjects();
+        gameObjects = GameObjectFactory.createFixedGameObjects();
+        zombieList = GameObjectFactory.createZombies(levels[level]);
+        gameObjects.addAll(zombieList);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(50, (field.getHeight()/2)));
-        Key key = new Key(new Position(500, 500));
-        gameObjects.add(key);
+        player = new Player(new Position(40, (field.getHeight() / 2)+Field.DEFAULT_PADDING));
+
     }
+
 
     public void start() {
 
+        System.out.println(gameState);
+        switch (gameState) {
+            case GAMEOVERMENU:
+                gameOverMenu();
+                while (inGameOverMenu) {
+                    System.out.println(""); //This sout is vital to the game, DO NOT DELETE!!!
+                }
+                System.out.println(gameState);
+                start();
+                break;
+            case STARTMENU:
+                menu();
+                while (inMenu) {
+                    System.out.println(""); //This sout is vital to the game, DO NOT DELETE!!!
+                }
+                System.out.println(gameState);
+                start();
+                break;
+            case PLAY:
 
-        // falta a condiçao de a porta estar fechada
-        while(player.isAlive() || (player.isOpenedDoor())) {
+                init();
 
-            //Pause for a while
+                while (player.isAlive()) {
 
-            try{
-                Thread.sleep(delay);
-            } catch (Exception ex){
-                System.out.println(ex);
-            }
+                    while (!(player.isOpenedDoor()) && player.isAlive()) {
 
-            collisiondetector.checkCollision(player);
+                        try {
 
-            moveZombies();
+                            Thread.sleep(levels[level].getDelay());
+                        } catch (Exception ex) {
+
+                            System.out.println(ex);
+                        }
+
+                        collisiondetector.checkCollision(player);
+
+                        moveZombies();
+
+                    }
+                    if (!player.isAlive()) {
+
+                        deleteAllGraphics();
+                        level = 0;
+                        inGameOverMenu = true;
+                        gameState = GameState.GAMEOVERMENU;
+                        start();
+                        break;
+                    }
+
+                    player.stopPlayer();
+                    level++;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    deleteAllGraphics();
+                    if (level < levels.length) {
+                        start();
+                    }
+                    break;
+                }
+
 
         }
-
-        player.stopPlayer();
-        field.getMap().load("game_field");
     }
+    //}
 
-    public void moveZombies(){
 
-        for (GameObject zombie : gameObjects){
+    public void moveZombies() {
 
-            if (zombie instanceof Zombie){
+        for (Zombie zombie : zombieList) {
+
+            if (zombie instanceof Zombie) {
 
                 Zombie zombie1 = (Zombie) zombie;
                 zombie1.move();
@@ -66,6 +120,45 @@ public class Game {
             }
         }
     }
+
+    private void deleteAllGraphics() {
+        player.getLanternView().delete();
+        player.getPicture().delete();
+        field.getMap().delete();
+        for (GameObject gameObject : gameObjects) {
+            gameObject.getPicture().delete();
+        }
+        for (Zombie zombie : zombieList) {
+            zombie.getPicture().delete();
+        }
+    }
+
+    public void menu() {
+        startMenu = new StartMenu(this);
+    }
+
+    public void setInMenu(boolean inMenu) {
+        this.inMenu = inMenu;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
+    public void gameOverMenu(){
+        gameOverMenu = new GameOverMenu(this);
+    }
+
+    public void setInGameOverMenu(boolean inGameOverMenu) {
+        this.inGameOverMenu = inGameOverMenu;
+    }
+    public boolean getInGameOverMenu(){
+        return inGameOverMenu;
+    }
+    public boolean getInMenu(){
+        return inMenu;
+    }
 }
+
 
 

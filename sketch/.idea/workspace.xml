@@ -19,10 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="">
+    <list default="true" id="1afdab60-0164-4b0d-ac91-711cf8e2af68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +44,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -40,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="CollisionDetector" />
+        <entry key="$PROJECT_DIR$/.." value="player" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -99,8 +111,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -110,7 +135,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="" />
+      <changelist id="1afdab60-0164-4b0d-ac91-711cf8e2af68" name="Default Changelist" comment="" />
       <created>1602708813585</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -134,10 +159,13 @@
       <workItem from="1602970264431" duration="3000" />
       <workItem from="1603029745661" duration="3211000" />
       <workItem from="1603199961894" duration="107000" />
-      <workItem from="1603215638733" duration="7874000" />
-      <workItem from="1603268896273" duration="970000" />
-      <workItem from="1603275418092" duration="1909000" />
-      <workItem from="1603286492455" duration="2998000" />
+      <workItem from="1603215638733" duration="13588000" />
+      <workItem from="1603271695496" duration="88000" />
+      <workItem from="1603272686125" duration="791000" />
+      <workItem from="1603274272940" duration="15192000" />
+      <workItem from="1603360068711" duration="1451000" />
+      <workItem from="1603377777240" duration="847000" />
+      <workItem from="1603394888703" duration="2779000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Compatible problems with master fixed and merged with the master&quot;">
       <created>1603048682721</created>
@@ -195,21 +223,42 @@
       <option name="project" value="LOCAL" />
       <updated>1603225842376</updated>
     </task>
-    <task id="LOCAL-00009" summary="&quot;Zombies movement implemented&quot;">
-      <created>1603233678339</created>
+    <task id="LOCAL-00009" summary="&quot;New resources and ZombieDirection merged into Direction&quot;">
+      <created>1603229261589</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1603233678339</updated>
+      <updated>1603229261589</updated>
     </task>
-    <task id="LOCAL-00010" summary="&quot;Zombies movement implemented&quot;">
-      <created>1603234264311</created>
+    <task id="LOCAL-00010" summary="&quot;Levels implemented&quot;">
+      <created>1603234780982</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1603234264311</updated>
+      <updated>1603234780982</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="&quot;Door now is working and other problems fixed&quot;">
+      <created>1603325890124</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603325890124</updated>
+    </task>
+    <task id="LOCAL-00012" summary="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;">
+      <created>1603396131852</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603396131852</updated>
+    </task>
+    <task id="LOCAL-00013" summary="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;">
+      <created>1603396150505</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603396150505</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,18 +282,23 @@
     <MESSAGE value="&quot;Game class implemented 1&quot;" />
     <MESSAGE value="&quot;Monday player collisions and catch key&quot;" />
     <MESSAGE value="&quot;Zombies movement implemented&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Zombies movement implemented&quot;" />
+    <MESSAGE value="&quot;New resources and ZombieDirection merged into Direction&quot;" />
+    <MESSAGE value="&quot;Levels implemented&quot;" />
+    <MESSAGE value="&quot;Door now is working and other problems fixed&quot;" />
+    <MESSAGE value="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="448" y="93" key="#Project_Structure" timestamp="1602753377235">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="448" y="93" key="#Project_Structure/0.23.1920.977@0.23.1920.977" timestamp="1602753377235" />
-    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1603136753893">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state x="773" y="271" key="#com.intellij.ide.util.MemberChooser" timestamp="1603385189412">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603127783406" />
-    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1603136753893" />
+    <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603233409421" />
+    <state x="773" y="271" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1603385189412" />
+    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1603322134128" />
     <state x="718" y="422" width="822" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603050687290">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -254,64 +308,85 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="618" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.977@0.23.1920.977" timestamp="1603193283119" />
-    <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603142516418">
+    <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603395961216">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1603142516418" />
-    <state x="859" y="127" key="CommitChangelistDialog2" timestamp="1603234264169">
+    <state x="698" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1603389213278" />
+    <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1603395961216" />
+    <state x="856" y="127" key="CommitChangelistDialog2" timestamp="1603396150376">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
-    <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603234264169" />
-    <state width="939" height="218" key="GridCell.Tab.0.bottom" timestamp="1603234331562">
+    <state x="856" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603396150376" />
+    <state width="1877" height="180" key="GridCell.Tab.0.bottom" timestamp="1603397814082">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603226174371" />
-    <state width="939" height="218" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603234331562" />
-    <state width="939" height="218" key="GridCell.Tab.0.center" timestamp="1603234331561">
+    <state width="939" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
+    <state width="1395" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
+    <state width="1877" height="180" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603397814082" />
+    <state width="1877" height="180" key="GridCell.Tab.0.center" timestamp="1603397814081">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="296" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603226174370" />
-    <state width="939" height="218" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603234331561" />
-    <state width="939" height="218" key="GridCell.Tab.0.left" timestamp="1603234331560">
+    <state width="939" height="210" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
+    <state width="1395" height="289" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
+    <state width="1877" height="180" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603397814081" />
+    <state width="1877" height="180" key="GridCell.Tab.0.left" timestamp="1603397814081">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="296" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603226174369" />
-    <state width="939" height="218" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603234331560" />
-    <state width="939" height="218" key="GridCell.Tab.0.right" timestamp="1603234331561">
+    <state width="939" height="210" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756721" />
+    <state width="1395" height="289" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
+    <state width="1877" height="180" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603397814081" />
+    <state width="1877" height="180" key="GridCell.Tab.0.right" timestamp="1603397814082">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="296" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603226174370" />
-    <state width="939" height="218" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603234331561" />
-    <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603233693212">
+    <state width="939" height="210" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
+    <state width="1395" height="289" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
+    <state width="1877" height="180" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603397814082" />
+    <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
+    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603144893946" />
+    <state width="1878" height="358" key="GridCell.Tab.1.center" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
+    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state width="1878" height="358" key="GridCell.Tab.1.left" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
+    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state width="1878" height="358" key="GridCell.Tab.1.right" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
+    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state x="0" y="112" key="MergeDialog" timestamp="1603234945615">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603233693212" />
-    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603233693212">
+    <state x="0" y="112" key="MergeDialog/0.23.1920.977@0.23.1920.977" timestamp="1603234945615" />
+    <state x="213" y="282" key="MultipleFileMergeDialog" timestamp="1603234945655">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603233693212" />
-    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1603233693211">
-      <screen x="0" y="23" width="1920" height="977" />
-    </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603233693211" />
-    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1603233693212">
-      <screen x="0" y="23" width="1920" height="977" />
-    </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603233693212" />
+    <state x="213" y="282" key="MultipleFileMergeDialog/0.23.1920.977@0.23.1920.977" timestamp="1603234945655" />
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="589" y="246" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1602945295911" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603234270822">
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603396155214">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603225848933" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603234270822" />
-    <state x="762" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603233477791">
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603396155214" />
+    <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603234975728">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state x="762" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.977@0.23.1920.977" timestamp="1603233477791" />
+    <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.977@0.23.1920.977" timestamp="1603234975728" />
+    <state x="100" y="254" width="913" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603323347739">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="100" y="254" width="913" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.977@0.23.1920.977" timestamp="1603323347739" />
     <state x="0" y="36" width="1666" height="704" key="dock-window-1" timestamp="1603136839614">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -325,7 +400,17 @@
     </state>
     <state x="708" y="134" key="new project wizard/0.23.1920.977@0.23.1920.977" timestamp="1603044767064" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="javax.imageio.IIOException" package="javax.imageio" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sketch$Main.ic" NAME="Main Coverage Results" MODIFIED="1603143284876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sketch$Main.ic" NAME="Main Coverage Results" MODIFIED="1603313568053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

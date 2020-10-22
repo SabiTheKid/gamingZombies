@@ -5,10 +5,9 @@ import org.academiadecodigo.gnunas.sketch.GameObject.GameObject;
 import java.util.List;
 
 public class CollisionDetector {
+    private final int COLLISION_MARGIN = 3;
 
-    //Implements the logic for analysing the collisions between objects( Player and Walls)
 
-    // Have an array with all the gameObjects
     private List<GameObject> objectsGame;
 
     public CollisionDetector(List<GameObject> objectsGame) {
@@ -24,14 +23,14 @@ public class CollisionDetector {
                 continue;
             }
 
-            int rightLimitX = object.getPos().getX() + object.getPicture().getWidth();
-            int leftLimitX = object.getPos().getX();
-            int lowerLimitY = object.getPos().getY() + object.getPicture().getHeight();
-            int upperLimitY = object.getPos().getY();
-            int objLeftLimitX = obj.getPos().getX();
-            int objRightLimitX = obj.getPos().getX() + obj.getPicture().getWidth();
-            int objLowerLimitY = obj.getPos().getY() + obj.getPicture().getHeight();
-            int objUpperLimitY = obj.getPos().getY();
+            int rightLimitX = object.getPos().getX() + object.getPicture().getWidth() - COLLISION_MARGIN;
+            int leftLimitX = object.getPos().getX() + COLLISION_MARGIN;
+            int lowerLimitY = object.getPos().getY() + object.getPicture().getHeight() - COLLISION_MARGIN;
+            int upperLimitY = object.getPos().getY() + COLLISION_MARGIN;
+            int objLeftLimitX = obj.getPos().getX() + COLLISION_MARGIN;
+            int objRightLimitX = obj.getPos().getX() + obj.getPicture().getWidth() - COLLISION_MARGIN;
+            int objLowerLimitY = obj.getPos().getY() + obj.getPicture().getHeight() - COLLISION_MARGIN;
+            int objUpperLimitY = obj.getPos().getY() + COLLISION_MARGIN;
 
             if (rightLimitX >= objLeftLimitX && leftLimitX <= objRightLimitX) {
 
@@ -40,8 +39,6 @@ public class CollisionDetector {
                 }
             }
 
-            //if (obj.getPos().equals(object.getPos())){
-            // obj.collided(object);
         }
     }
 }

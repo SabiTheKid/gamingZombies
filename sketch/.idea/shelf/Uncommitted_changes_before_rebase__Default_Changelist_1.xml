@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_rebase_[Default_Changelist]1" date="1603391288379" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/GameObject.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/MenuDirection.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Door.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Door.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/Door.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/Main.class" />
+  </binary>
+</changelist>

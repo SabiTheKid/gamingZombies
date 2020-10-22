@@ -1,10 +1,10 @@
 package org.academiadecodigo.gnunas.sketch;
 
 public enum Direction {
-    RIGHT(1, 0),
-    LEFT(-1, 0),
-    UP(0, -1),
-    DOWN(0, 1);
+    RIGHT(4, 0),
+    LEFT(-4, 0),
+    UP(0, -4),
+    DOWN(0, 4);
 
     private int xDifference;
     private int yDifference;

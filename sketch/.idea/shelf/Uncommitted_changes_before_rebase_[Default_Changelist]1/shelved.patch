@@ -1,0 +1,290 @@
+Index: src/org/academiadecodigo/gnunas/sketch/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.*;\nimport org.academiadecodigo.simplegraphics.pictures.Picture;\n\nimport java.util.List;\n\npublic class Game {\n\n    private Field field;\n    private CollisionDetector collisiondetector;\n    private List<GameObject> gameObjects;\n    private GameObjectFactory gameObjectFactory = new GameObjectFactory();\n    private List<Zombie> zombieList;\n    private Player player;\n    private Level[] levels = Level.values();\n    private int level = 0;\n    private boolean inMenu;\n    private StartMenu startMenu;\n    private GameOverMenu gameOverMenu;\n    private GameState gameState;\n    private boolean inGameOverMenu;\n\n    public Game() {\n        gameState = GameState.STARTMENU;\n        inMenu = true;\n        inGameOverMenu = false;\n    }\n\n    public void init(){\n        field = new Field();\n        gameObjects = GameObjectFactory.createObjectLimits();\n        zombieList = GameObjectFactory.createZombies(levels[level]);\n        gameObjects.addAll(zombieList);\n        collisiondetector = new CollisionDetector(gameObjects);\n        gameObjects.add(new Key(GameObjectFactory.generatePositionForKeyAndZombies()));\n        player = new Player(new Position(40, (field.getHeight()/2)+Field.DEFAULT_PADDING));\n    }\n\n\n    public void start() {\n\n        System.out.println(gameState);\n        switch (gameState) {\n            case GAMEOVERMENU:\n                gameOverMenu();\n                while (inGameOverMenu) {\n                    System.out.println(\"\"); //This sout is vital to the game, DO NOT DELETE!!!\n                }\n                System.out.println(gameState);\n                start();\n                break;\n            case STARTMENU:\n                menu();\n                while (inMenu) {\n                    System.out.println(\"\"); //This sout is vital to the game, DO NOT DELETE!!!\n                }\n                System.out.println(gameState);\n                start();\n                break;\n            case PLAY:\n\n                init();\n\n                while (player.isAlive()) {\n\n                    while (!(player.isOpenedDoor()) && player.isAlive()) {\n\n                        try {\n\n                            Thread.sleep(levels[level].getDelay());\n                        } catch (Exception ex) {\n\n                            System.out.println(ex);\n                        }\n\n                        collisiondetector.checkCollision(player);\n\n                        moveZombies();\n\n                    }\n                    if (!player.isAlive()) {\n\n                        deleteAllGraphics();\n                        level = 0;\n                        inGameOverMenu = true;\n                        gameState = GameState.GAMEOVERMENU;\n                        start();\n                        break;\n                    }\n\n                    player.stopPlayer();\n                    level++;\n                    try {\n                        Thread.sleep(1000);\n                    } catch (InterruptedException e) {\n                        e.printStackTrace();\n                    }\n                    deleteAllGraphics();\n                    if (level < levels.length) {\n                        start();\n                    }\n                    break;\n                }\n\n\n        }\n    }\n    //}\n\n\n    public void moveZombies(){\n\n        for (Zombie zombie : zombieList){\n                zombie.move();\n                collisiondetector.checkCollision(zombie);\n            }\n        }\n    }\n\n    private void deleteAllGraphics() {\n        player.getLanternView().delete();\n        player.getPicture().delete();\n        field.getMap().delete();\n        for (GameObject gameObject : gameObjects) {\n            gameObject.getPicture().delete();\n        }\n        for (Zombie zombie : zombieList) {\n            zombie.getPicture().delete();\n        }\n    }\n\n    public void menu() {\n        startMenu = new StartMenu(this);\n    }\n\n    public void setInMenu(boolean inMenu) {\n        this.inMenu = inMenu;\n    }\n\n    public void setGameState(GameState gameState) {\n        this.gameState = gameState;\n    }\n\n    public void gameOverMenu(){\n        gameOverMenu = new GameOverMenu(this);\n    }\n\n    public void setInGameOverMenu(boolean inGameOverMenu) {\n        this.inGameOverMenu = inGameOverMenu;\n    }\n    public boolean getInGameOverMenu(){\n        return inGameOverMenu;\n    }\n    public boolean getInMenu(){\n        return inMenu;\n    }\n}\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/Game.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
++++ src/org/academiadecodigo/gnunas/sketch/Game.java	(date 1603391137589)
+@@ -116,7 +116,7 @@
+                 collisiondetector.checkCollision(zombie);
+             }
+         }
+-    }
++
+ 
+     private void deleteAllGraphics() {
+         player.getLanternView().delete();
+Index: src/org/academiadecodigo/gnunas/sketch/MenuDirection.java
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/MenuDirection.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
++++ src/org/academiadecodigo/gnunas/sketch/MenuDirection.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
+@@ -1,6 +0,0 @@
+-package org.academiadecodigo.gnunas.sketch;
+-
+-public enum MenuDirection {
+-    UP,
+-    DOWN,
+-}
+Index: src/org/academiadecodigo/gnunas/sketch/StartMenu.java
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/StartMenu.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
++++ src/org/academiadecodigo/gnunas/sketch/StartMenu.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
+@@ -1,114 +0,0 @@
+-package org.academiadecodigo.gnunas.sketch;
+-
+-import org.academiadecodigo.simplegraphics.graphics.Color;
+-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+-import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+-import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+-import org.academiadecodigo.simplegraphics.pictures.Picture;
+-
+-public class StartMenu implements KeyboardHandler {
+-
+-
+-    private Picture background;
+-    private Rectangle cursor;
+-    private Picture playButton;
+-    private Picture quitButton;
+-    private int buttonX;
+-    private int buttonY;
+-    private int buttonPadding;
+-    private Keyboard keyboard;
+-    private KeyboardEvent moveUp;
+-    private KeyboardEvent moveDown;
+-    private KeyboardEvent select;
+-    private Game game;
+-
+-    public StartMenu(Game game){
+-        this.game = game;
+-        game.setInMenu(true);
+-        buttonX = Field.width-300;
+-        buttonY = Field.height-150;
+-        buttonPadding = 40;
+-        background = new Picture(10,10, "startMenuBackground.jpg");
+-        quitButton = new Picture(buttonX,buttonY, "quitButton.png");
+-        playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"playButton.png");
+-        background.draw();
+-        cursor = new Rectangle(playButton.getX()-10, playButton.getY()-10, playButton.getWidth()+20, playButton.getHeight()+20);
+-        cursor.setColor(Color.WHITE);
+-        cursor.fill();
+-        playButton.draw();
+-        quitButton.draw();
+-        keyboard = new Keyboard(this);
+-        moveUp = new KeyboardEvent();
+-        moveUp.setKey(KeyboardEvent.KEY_UP);
+-        moveUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+-        keyboard.addEventListener(moveUp);
+-        moveDown = new KeyboardEvent();
+-        moveDown.setKey(KeyboardEvent.KEY_DOWN);
+-        moveDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+-        keyboard.addEventListener(moveDown);
+-        select = new KeyboardEvent();
+-        select.setKey(KeyboardEvent.KEY_ENTER);
+-        select.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+-        keyboard.addEventListener(select);
+-
+-    }
+-
+-    public void move(Direction direction){
+-        switch (direction){
+-            case UP:
+-                if(cursor.getY()+10 == playButton.getY()){
+-                    return;
+-                }
+-                cursor.translate(0, -(buttonPadding + playButton.getHeight()));
+-                break;
+-            case DOWN:
+-                if(cursor.getY()+10 == quitButton.getY()){
+-                    return;
+-                }
+-                cursor.translate(0, buttonPadding + playButton.getHeight());
+-        }
+-    }
+-
+-    public void delete(){
+-        background.delete();
+-        playButton.delete();
+-        quitButton.delete();
+-        cursor.delete();
+-    }
+-
+-    @Override
+-    public void keyPressed(KeyboardEvent keyboardEvent) {
+-        if (!game.getInMenu()){
+-            return;
+-    }
+-        if (keyboardEvent == moveUp) {
+-                move(Direction.UP);
+-            }
+-            if (keyboardEvent == moveDown) {
+-                move(Direction.DOWN);
+-            }
+-            if (keyboardEvent == select) {
+-
+-                if ((cursor.getY() + 10) == playButton.getY()) {
+-                    delete();
+-                    game.setGameState(GameState.PLAY);
+-                    game.setInMenu(false);
+-
+-                }
+-                if ((cursor.getY() + 10) == quitButton.getY()) {
+-                    exit();
+-                }
+-            }
+-        }
+-
+-    @Override
+-    public void keyReleased(KeyboardEvent keyboardEvent) {
+-
+-    }
+-
+-    public void exit(){
+-        System.exit(0);
+-    }
+-}
+Index: src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
++++ src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java	(revision 91f9b73750861fa76f1c8f291a41e7fb6fac3918)
+@@ -1,137 +0,0 @@
+-package org.academiadecodigo.gnunas.sketch;
+-
+-import org.academiadecodigo.simplegraphics.graphics.Color;
+-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+-import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+-import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+-import org.academiadecodigo.simplegraphics.pictures.Picture;
+-
+-public class GameOverMenu implements KeyboardHandler {
+-
+-
+-    private Picture background;
+-    private Picture foreground;
+-    private Rectangle cursor;
+-    private Picture tryAgainButton;
+-    private Picture quitButton;
+-    private Picture gameOverLettering;
+-    private int buttonX;
+-    private int buttonY;
+-    private int buttonPadding;
+-    private Keyboard keyboard;
+-    private KeyboardEvent moveUp;
+-    private KeyboardEvent moveDown;
+-    private KeyboardEvent select;
+-    private Game game;
+-
+-    public GameOverMenu(Game game){
+-        this.game = game;
+-        game.setInMenu(true);
+-        buttonX = Field.width/2-110;
+-        buttonY = Field.height-300;
+-        buttonPadding = 40;
+-        background = new Picture(10,10, "startMenuBackground.jpg");
+-        foreground = new Picture(10, 10, "gameOverForeground.png");
+-        gameOverLettering = new Picture(Field.PADDING+(Field.width/2 - 315), Field.PADDING + buttonPadding*3, "gameOverButton.png");
+-        tryAgainButton = new Picture(Field.PADDING+(Field.width/2 - 190), gameOverLettering.getMaxY() + buttonPadding,"tryAgainButton.png");
+-        quitButton = new Picture(Field.PADDING+(Field.width/2 - 105),tryAgainButton.getMaxY()+buttonPadding, "quitButton.png");
+-        background.draw();
+-        foreground.draw();
+-        cursor = new Rectangle(tryAgainButton.getX()-10, tryAgainButton.getY()-10, tryAgainButton.getWidth()+20, tryAgainButton.getHeight()+20);
+-        cursor.setColor(Color.WHITE);
+-        cursor.fill();
+-        tryAgainButton.draw();
+-        quitButton.draw();
+-        gameOverLettering.draw();
+-        keyboard = new Keyboard(this);
+-        moveUp = new KeyboardEvent();
+-        moveUp.setKey(KeyboardEvent.KEY_UP);
+-        moveUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+-        keyboard.addEventListener(moveUp);
+-        moveDown = new KeyboardEvent();
+-        moveDown.setKey(KeyboardEvent.KEY_DOWN);
+-        moveDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+-        keyboard.addEventListener(moveDown);
+-        select = new KeyboardEvent();
+-        select.setKey(KeyboardEvent.KEY_ENTER);
+-        select.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+-        keyboard.addEventListener(select);
+-
+-    }
+-
+-    public void move(Direction direction){
+-        switch (direction){
+-            case UP:
+-                if(cursor.getY()+10 == tryAgainButton.getY()){
+-                    return;
+-                }
+-                if (!game.getInGameOverMenu()){
+-                    return;
+-                }
+-                cursor.delete();
+-                cursor = new Rectangle(tryAgainButton.getX()-10, tryAgainButton.getY()-10, tryAgainButton.getWidth()+20, tryAgainButton.getHeight()+20);
+-                cursor.setColor(Color.WHITE);
+-                cursor.fill();
+-                tryAgainButton.delete();
+-                tryAgainButton.draw();
+-                break;
+-            case DOWN:
+-                if (!game.getInGameOverMenu()){
+-                    return;
+-                }
+-                if(cursor.getY()+10 == quitButton.getY()){
+-                    return;
+-                }
+-                cursor.delete();
+-                cursor = new Rectangle(quitButton.getX()-10, quitButton.getY()-10, quitButton.getWidth()+20, quitButton.getHeight()+20);
+-                cursor.setColor(Color.WHITE);
+-                cursor.fill();
+-                quitButton.delete();
+-                quitButton.draw();
+-        }
+-    }
+-
+-    public void delete(){
+-        foreground.delete();
+-        background.delete();
+-        tryAgainButton.delete();
+-        quitButton.delete();
+-        cursor.delete();
+-        gameOverLettering.delete();
+-    }
+-
+-    @Override
+-    public void keyPressed(KeyboardEvent keyboardEvent) {
+-        if (!game.getInGameOverMenu()){
+-            return;
+-        }
+-        if (keyboardEvent == moveUp){
+-            move(Direction.UP);
+-        }
+-        if (keyboardEvent == moveDown){
+-            move(Direction.DOWN);
+-        }
+-        if (keyboardEvent == select){
+-
+-
+-            if ((cursor.getY()+10) == tryAgainButton.getY()){
+-                delete();
+-                game.setGameState(GameState.PLAY);
+-                game.setInGameOverMenu(false);
+-            }
+-
+-            if ((cursor.getY()+10) == quitButton.getY()) {
+-                delete();
+-                game.setGameState(GameState.STARTMENU);
+-                game.setInGameOverMenu(false);
+-                game.setInMenu(true);
+-            }
+-        }
+-    }
+-
+-    @Override
+-    public void keyReleased(KeyboardEvent keyboardEvent) {
+-    }
+-}

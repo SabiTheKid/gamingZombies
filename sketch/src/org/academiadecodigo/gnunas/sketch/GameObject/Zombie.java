@@ -9,7 +9,7 @@ public class Zombie extends GameObject implements Movable, Collidable{
     private Direction direction;
     private Direction previousDirection;
     private int movesCounter = 0;
-    private Picture ZombiePicture = new Picture(0,0,"wall_32.png");
+    private Picture ZombiePicture = new Picture(0,0,"resources/zombie_2_down.png");
     int ZombiePictureHeight = ZombiePicture.getHeight();
     int ZombiePictureWidth = ZombiePicture.getWidth();
     private boolean canIMove;
@@ -24,7 +24,7 @@ public class Zombie extends GameObject implements Movable, Collidable{
     }
 
     public Direction turn() {
-        if (movesCounter < 50 && movesCounter != 0 && canIMove == true) {
+        if (movesCounter < 25 && movesCounter != 0 && canIMove == true) {
             return direction;
         }
         direction = Direction.random();
@@ -45,31 +45,31 @@ public class Zombie extends GameObject implements Movable, Collidable{
 
         direction = turn();
 
-
-
         if (!canTurn(direction)) {
             canIMove = false;
             turn();
         }
         canIMove = true;
         movesCounter++;
-        /*
-        movesCounter++;
+
         switch (direction) {
             case UP:
+                getPicture().load("resources/zombie_2_up.png");
                 //getPos().moveUp();
                 break;
             case DOWN:
                 //getPos().moveDown();
+                getPicture().load("resources/zombie_2_down.png");
                 break;
             case RIGHT:
                 //getPos().moveRight(keyHolder);
+                getPicture().load("resources/zombie_2_right.png");
                 break;
             case LEFT:
                 //getPos().moveLeft();
+                getPicture().load("resources/zombie_2_left.png");
                 break;
-        }*/
-        //super.getPicture().translate(10,0);
+        }
         super.getPicture().translate(direction.getXDifference(), direction.getYDifference());
         getPos().move(direction);
         previousDirection = direction;
@@ -78,13 +78,13 @@ public class Zombie extends GameObject implements Movable, Collidable{
     private boolean canTurn(Direction direction) {
         switch (direction) {
             case RIGHT:
-                return getPos().getX()+ZombiePictureWidth + direction.getXDifference() < Field.width+Field.PADDING;
+                return getPos().getX()+ZombiePictureWidth + direction.getXDifference() < Field.width+Field.PADDING+Field.DEFAULT_PADDING;
             case LEFT:
-                return getPos().getX() + direction.getXDifference() > Field.PADDING;
+                return getPos().getX() + direction.getXDifference() > Field.PADDING+Field.DEFAULT_PADDING;
             case UP:
-                return getPos().getY() + direction.getYDifference() > Field.PADDING;
+                return getPos().getY() + direction.getYDifference() > Field.PADDING+Field.DEFAULT_PADDING;
             case DOWN:
-                return getPos().getY()+ZombiePictureHeight + direction.getYDifference() < Field.height+Field.PADDING;
+                return getPos().getY()+ZombiePictureHeight + direction.getYDifference() < Field.height+Field.PADDING+Field.DEFAULT_PADDING;
             default:
                 return false;
         }
