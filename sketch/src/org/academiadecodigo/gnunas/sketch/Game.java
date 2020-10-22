@@ -30,7 +30,7 @@ public class Game {
         zombieList = GameObjectFactory.createZombies(Level.ONE);
         collisiondetector = new CollisionDetector(gameObjects);
         player = new Player(new Position(50, (field.getHeight()/2)));
-        start(Level.ONE.getDelay());
+        start();
     }
     public void initLevelTwo() throws InterruptedException {
 
@@ -41,7 +41,7 @@ public class Game {
         player = new Player(new Position(40, (field.getHeight()/2)));
     }
     public void start() {
-
+        menu();
         init();
 
         while (player.isAlive()) {
