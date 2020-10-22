@@ -21,43 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1afdab60-0164-4b0d-ac91-711cf8e2af68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/entrance_door.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/entrance_door.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/gameOverForeground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Direction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/LanternView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/LanternView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/startMenuBackground.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/entrance_door.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/gameOverForeground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/startMenuBackground.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Key.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/LanternView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/LanternView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,11 +96,11 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.academiadecodigo.gnunas.sketch" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
   </component>
   <component name="RunManager">
@@ -189,7 +165,7 @@
       <workItem from="1603274272940" duration="15192000" />
       <workItem from="1603360068711" duration="1451000" />
       <workItem from="1603377777240" duration="847000" />
-      <workItem from="1603394888703" duration="1096000" />
+      <workItem from="1603394888703" duration="2779000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Compatible problems with master fixed and merged with the master&quot;">
       <created>1603048682721</created>
@@ -268,7 +244,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603325890124</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;">
+      <created>1603396131852</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603396131852</updated>
+    </task>
+    <task id="LOCAL-00013" summary="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;">
+      <created>1603396150505</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603396150505</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +285,8 @@
     <MESSAGE value="&quot;New resources and ZombieDirection merged into Direction&quot;" />
     <MESSAGE value="&quot;Levels implemented&quot;" />
     <MESSAGE value="&quot;Door now is working and other problems fixed&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Door now is working and other problems fixed&quot;" />
+    <MESSAGE value="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Final version (almost) Lacking implement sounds and good exit door&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="448" y="93" key="#Project_Structure" timestamp="1602753377235">
@@ -322,35 +313,35 @@
     </state>
     <state x="698" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1603389213278" />
     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1603395961216" />
-    <state x="936" y="57" key="CommitChangelistDialog2" timestamp="1603144471784">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="856" y="127" key="CommitChangelistDialog2" timestamp="1603396150376">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
-    <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603140702780" />
-    <state width="1877" height="180" key="GridCell.Tab.0.bottom" timestamp="1603396031705">
+    <state x="856" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603396150376" />
+    <state width="1877" height="180" key="GridCell.Tab.0.bottom" timestamp="1603397814082">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
-    <state width="1877" height="180" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603396031705" />
-    <state width="1877" height="180" key="GridCell.Tab.0.center" timestamp="1603396031704">
+    <state width="1877" height="180" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603397814082" />
+    <state width="1877" height="180" key="GridCell.Tab.0.center" timestamp="1603397814081">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
-    <state width="1877" height="180" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603396031704" />
-    <state width="1877" height="180" key="GridCell.Tab.0.left" timestamp="1603396031703">
+    <state width="1877" height="180" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603397814081" />
+    <state width="1877" height="180" key="GridCell.Tab.0.left" timestamp="1603397814081">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756721" />
     <state width="1395" height="289" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
-    <state width="1877" height="180" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603396031703" />
-    <state width="1877" height="180" key="GridCell.Tab.0.right" timestamp="1603396031704">
+    <state width="1877" height="180" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603397814081" />
+    <state width="1877" height="180" key="GridCell.Tab.0.right" timestamp="1603397814082">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
-    <state width="1877" height="180" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603396031704" />
+    <state width="1877" height="180" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603397814082" />
     <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1603379810550">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -383,11 +374,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="589" y="246" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1602945295911" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603325894640">
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603396155214">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603225848933" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603325894640" />
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603396155214" />
     <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603234975728">
       <screen x="0" y="23" width="1920" height="977" />
     </state>

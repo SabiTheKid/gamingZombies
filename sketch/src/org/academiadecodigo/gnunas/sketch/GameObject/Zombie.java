@@ -9,7 +9,7 @@ public class Zombie extends GameObject implements Movable, Collidable{
     private Direction direction;
     private Direction previousDirection;
     private int movesCounter = 0;
-    private Picture ZombiePicture = new Picture(0,0,"zombie_2_down.png");
+    private Picture ZombiePicture = new Picture(0,0,"resources/zombie_2_down.png");
     int ZombiePictureHeight = ZombiePicture.getHeight();
     int ZombiePictureWidth = ZombiePicture.getWidth();
     private boolean canIMove;
@@ -54,20 +54,20 @@ public class Zombie extends GameObject implements Movable, Collidable{
 
         switch (direction) {
             case UP:
-                getPicture().load("zombie_2_up.png");
+                getPicture().load("resources/zombie_2_up.png");
                 //getPos().moveUp();
                 break;
             case DOWN:
                 //getPos().moveDown();
-                getPicture().load("zombie_2_down.png");
+                getPicture().load("resources/zombie_2_down.png");
                 break;
             case RIGHT:
                 //getPos().moveRight(keyHolder);
-                getPicture().load("zombie_2_right.png");
+                getPicture().load("resources/zombie_2_right.png");
                 break;
             case LEFT:
                 //getPos().moveLeft();
-                getPicture().load("zombie_2_left.png");
+                getPicture().load("resources/zombie_2_left.png");
                 break;
         }
         super.getPicture().translate(direction.getXDifference(), direction.getYDifference());

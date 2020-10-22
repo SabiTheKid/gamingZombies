@@ -87,19 +87,19 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
             switch (direction) {
                 case RIGHT:
                     super.getPos().moveRight(keyHolder, lanternView);
-                    super.getPicture().load("player_right.png");
+                    super.getPicture().load("resources/player_right.png");
                     break;
                 case LEFT:
                     super.getPos().moveLeft(lanternView);
-                    super.getPicture().load("player_left.png");
+                    super.getPicture().load("resources/player_left.png");
                     break;
                 case UP:
                     super.getPos().moveUp(lanternView);
-                    super.getPicture().load("player_up.png");
+                    super.getPicture().load("resources/player_up.png");
                     break;
                 case DOWN:
                     super.getPos().moveDown(lanternView);
-                    super.getPicture().load("player_down.png");
+                    super.getPicture().load("resources/player_down.png");
                     break;
             }
         }
