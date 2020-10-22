@@ -10,23 +10,25 @@ public class Game {
     private Field field;
     private CollisionDetector collisiondetector;
     private List<GameObject> gameObjects;
-    private GameObjectFactory gameObjectFactory = new GameObjectFactory();
     private List<Zombie> zombieList;
     private Player player;
     private Level[] levels = Level.values();
     private int level = 0;
+    private boolean menu;
 
-    public Game(){
-
+    public void setMenu(boolean menu) {
+        this.menu = menu;
     }
+
 
     public void init(){
         field = new Field();
-        gameObjects = GameObjectFactory.createFixedGameObjects();
+        gameObjects = GameObjectFactory.createObjectLimits();
         zombieList = GameObjectFactory.createZombies(levels[level]);
         gameObjects.addAll(zombieList);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(40, (field.getHeight()/2)));
+        gameObjects.add(new Key(GameObjectFactory.generatePositionForKeyAndZombies()));
+        player = new Player(new Position(40, (field.getHeight()/2)+Field.DEFAULT_PADDING));
     }
     public void start() {
 
@@ -83,16 +85,12 @@ public class Game {
     public void moveZombies(){
 
         for (Zombie zombie : zombieList){
-
-            if (zombie instanceof Zombie){
-
-                Zombie zombie1 = (Zombie) zombie;
-                zombie1.move();
+                zombie.move();
                 collisiondetector.checkCollision(zombie);
-            }
         }
     }
     private void deleteAllGraphics() {
+        player.getLanternView().delete();
         player.getPicture().delete();
         field.getMap().delete();
         for(GameObject gameObject: gameObjects){

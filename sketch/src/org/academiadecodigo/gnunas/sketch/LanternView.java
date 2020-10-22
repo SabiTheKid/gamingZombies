@@ -11,14 +11,14 @@ public class LanternView {
 
     public LanternView(int initialPlayerX, int initialPlayerY) {
 
-        leftRectangle = new Rectangle(Field.PADDING, Field.PADDING, 0, Field.height);
-        leftRectangle.fill();
-        rightRectangle = new Rectangle(Field.PADDING+initialPlayerX+viewZone, Field.PADDING, (Field.width-(initialPlayerX+viewZone)), Field.height);
-        rightRectangle.fill();
-        upRectangle = new Rectangle(Field.PADDING, Field.PADDING, Field.width, initialPlayerY-viewZone);
-        upRectangle.fill();
-        downRectangle = new Rectangle(Field.PADDING, Field.PADDING+initialPlayerY+viewZone, Field.width, Field.height-(initialPlayerY+viewZone));
-        downRectangle.fill();
+        leftRectangle = new Rectangle(Field.PADDING+Field.DEFAULT_PADDING, Field.PADDING+Field.DEFAULT_PADDING, 0, Field.height);
+        //leftRectangle.fill();
+        rightRectangle = new Rectangle(Field.DEFAULT_PADDING+Field.PADDING+initialPlayerX+viewZone, Field.PADDING+Field.DEFAULT_PADDING, (Field.width-(initialPlayerX+viewZone)), Field.height);
+        //rightRectangle.fill();
+        upRectangle = new Rectangle(Field.PADDING+Field.DEFAULT_PADDING, Field.PADDING+Field.DEFAULT_PADDING, Field.width, initialPlayerY-viewZone);
+        //upRectangle.fill();
+        downRectangle = new Rectangle(Field.PADDING+Field.DEFAULT_PADDING, Field.PADDING+initialPlayerY+viewZone+Field.DEFAULT_PADDING, Field.width, Field.height-(initialPlayerY+viewZone));
+        //downRectangle.fill();
     }
     public void moveRight() {
         leftRectangle.grow(1,0);
@@ -51,5 +51,11 @@ public class LanternView {
         upRectangle.translate(0,1);
         downRectangle.grow(0,-1);
         downRectangle.translate(0,1);
+    }
+    public void delete() {
+        leftRectangle.delete();
+        rightRectangle.delete();
+        upRectangle.delete();
+        downRectangle.delete();
     }
 }
