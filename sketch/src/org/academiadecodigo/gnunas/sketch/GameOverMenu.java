@@ -1,7 +1,5 @@
 package org.academiadecodigo.gnunas.sketch;
 
-package org.academiadecodigo.gnunas.sketch;
-
 import org.academiadecodigo.gnunas.sketch.GameObject.Key;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -15,9 +13,11 @@ public class GameOverMenu implements KeyboardHandler {
 
 
     private Picture background;
+    private Picture foreground;
     private Rectangle cursor;
     private Picture tryAgainButton;
     private Picture quitButton;
+    private Picture gameOverLettering;
     private int buttonX;
     private int buttonY;
     private int buttonPadding;
@@ -29,18 +29,22 @@ public class GameOverMenu implements KeyboardHandler {
 
     public GameOverMenu(Game game){
         this.game = game;
-        buttonX = Field.width-300;
-        buttonY = Field.height-150;
+        buttonX = Field.width/2-110;
+        buttonY = Field.height-300;
         buttonPadding = 40;
         background = new Picture(Field.PADDING,Field.PADDING, "startMenuBackground.jpg");
-        quitButton = new Picture(buttonX,buttonY, "quitButton.png");
-        playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"playButton.png");
+        foreground = new Picture(Field.PADDING, Field.PADDING, "gameOverForeground.png");
+        gameOverLettering = new Picture(Field.PADDING+(Field.width/2 - 315), Field.PADDING + buttonPadding*3, "gameOverButton.png");
+        tryAgainButton = new Picture(Field.PADDING+(Field.width/2 - 190), gameOverLettering.getMaxY() + buttonPadding,"tryAgainButton.png");
+        quitButton = new Picture(Field.PADDING+(Field.width/2 - 105),tryAgainButton.getMaxY()+buttonPadding, "quitButton.png");
         background.draw();
-        cursor = new Rectangle(playButton.getX()-10, playButton.getY()-10, playButton.getWidth()+20, playButton.getHeight()+20);
+        foreground.draw();
+        cursor = new Rectangle(tryAgainButton.getX()-10, tryAgainButton.getY()-10, tryAgainButton.getWidth()+20, tryAgainButton.getHeight()+20);
         cursor.setColor(Color.WHITE);
         cursor.fill();
-        playButton.draw();
+        tryAgainButton.draw();
         quitButton.draw();
+        gameOverLettering.draw();
         keyboard = new Keyboard(this);
         moveUp = new KeyboardEvent();
         moveUp.setKey(KeyboardEvent.KEY_UP);
@@ -60,24 +64,36 @@ public class GameOverMenu implements KeyboardHandler {
     public void move(Direction direction){
         switch (direction){
             case UP:
-                if(cursor.getY()+10 == playButton.getY()){
+                if(cursor.getY()+10 == tryAgainButton.getY()){
                     return;
                 }
-                cursor.translate(0, -(buttonPadding + playButton.getHeight()));
+                cursor.delete();
+                cursor = new Rectangle(tryAgainButton.getX()-10, tryAgainButton.getY()-10, tryAgainButton.getWidth()+20, tryAgainButton.getHeight()+20);
+                cursor.setColor(Color.WHITE);
+                cursor.fill();
+                tryAgainButton.delete();
+                tryAgainButton.draw();
                 break;
             case DOWN:
                 if(cursor.getY()+10 == quitButton.getY()){
                     return;
                 }
-                cursor.translate(0, buttonPadding + playButton.getHeight());
+                cursor.delete();
+                cursor = new Rectangle(quitButton.getX()-10, quitButton.getY()-10, quitButton.getWidth()+20, quitButton.getHeight()+20);
+                cursor.setColor(Color.WHITE);
+                cursor.fill();
+                quitButton.delete();
+                quitButton.draw();
         }
     }
 
     public void delete(){
+        foreground.delete();
         background.delete();
-        playButton.delete();
+        tryAgainButton.delete();
         quitButton.delete();
         cursor.delete();
+        gameOverLettering.delete();
     }
 
     @Override
@@ -90,8 +106,8 @@ public class GameOverMenu implements KeyboardHandler {
         }
         if (keyboardEvent == select){
             System.out.println(cursor.getY()+10);
-            System.out.println(playButton.getY());
-            if ((cursor.getY()+10) == playButton.getY()){
+            System.out.println(tryAgainButton.getY());
+            if ((cursor.getY()+10) == tryAgainButton.getY()){
                 delete();
                 game.setInMenu(false);
             }
@@ -103,6 +119,5 @@ public class GameOverMenu implements KeyboardHandler {
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
-
     }
 }

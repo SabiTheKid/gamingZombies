@@ -13,6 +13,7 @@ public class Game {
     private GameObjectFactory gameObjectFactory = new GameObjectFactory();
     private List<Zombie> zombieList;
     private Player player;
+    private boolean inMenu;
 
     public Game(){
 
@@ -39,18 +40,21 @@ public class Game {
     }
 
     public void start(int delay) throws InterruptedException {
+        menu();
 
-        while(player.isAlive()/* || !door.isOpened()*/) {
+        while (!inMenu) {
+            while (player.isAlive()/* || !door.isOpened()*/) {
 
-            // Pause for a while
-            Thread.sleep(delay);
+                // Pause for a while
+                Thread.sleep(delay);
 
-            collisiondetector.checkCollision(player);
+                collisiondetector.checkCollision(player);
 
-            moveZombies();
+                moveZombies();
+
+            }
 
         }
-
         throw new InterruptedException("morreu");
     }
 
@@ -65,6 +69,18 @@ public class Game {
                 collisiondetector.checkCollision(zombie);
             }
         }
+    }
+    public void setInMenu(Boolean inMenu){
+        this.inMenu = inMenu;
+    }
+
+    public void menu(){
+        inMenu = true;
+        StartMenu startMenu = new StartMenu(this);
+    }
+    public void gameOverMenu(){
+        GameOverMenu gameOverMenu = new GameOverMenu(this);
+        inMenu = true;
     }
 }
 
