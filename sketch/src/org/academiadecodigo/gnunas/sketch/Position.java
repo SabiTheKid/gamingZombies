@@ -20,14 +20,14 @@ public class Position {
 
     public void moveRight(boolean keyHolder, LanternView lanternView) {
 
-        if (x >= Field.width-1 && (y == Field.height/2 || y == Field.height/2+1) && keyHolder == true){
+        if (x >= Field.DEFAULT_PADDING + Field.width-1 && (y == Field.DEFAULT_PADDING + Field.height/2 || y == Field.DEFAULT_PADDING + Field.height/2+1) && keyHolder == true){
             x += 2;
         }
-        if(x == Field.PADDING + Field.width-32 || x == Field.PADDING + Field.width-31){
+        if(x == Field.DEFAULT_PADDING + Field.PADDING + Field.width-32 || x == Field.DEFAULT_PADDING + Field.PADDING + Field.width-31){
             return;
         }
         x += 2;
-        if(x<150) {
+        if(x<160) {
             lanternView.moveSpecialRight();
             return;
         }
@@ -35,7 +35,7 @@ public class Position {
     }
 
     public void moveLeft(LanternView lanternView){
-        if (x <= Field.PADDING+1){
+        if (x <= Field.DEFAULT_PADDING+Field.PADDING+1){
             return;
         }
         x -= 2;
@@ -43,7 +43,7 @@ public class Position {
     }
 
     public void moveUp(LanternView lanternView){
-        if (y <= Field.PADDING+1){
+        if (y <= Field.DEFAULT_PADDING+Field.PADDING+1){
             return;
         }
         y -= 2;
@@ -54,7 +54,7 @@ public class Position {
     }
 
     public void moveDown(LanternView lanternView){
-        if (y >= Field.PADDING + Field.height-31){
+        if (y >= Field.PADDING + Field.DEFAULT_PADDING + Field.height-31){
             return;
         }
         y += 2;

@@ -2,10 +2,10 @@ package org.academiadecodigo.gnunas.sketch;
 
 public enum Level {
     ONE(20, 15),
-    TWO(35, 12),
-    THREE(50, 8),
-    FOUR(75, 5),
-    FIVE(90, 1);
+    TWO(30, 12),
+    THREE(45, 10),
+    FOUR(60, 5),
+    FIVE(70, 5);
 
     private int numberOfZombies;
     private int delay;

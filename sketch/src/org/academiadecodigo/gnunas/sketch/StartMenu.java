@@ -30,7 +30,7 @@ public class StartMenu implements KeyboardHandler {
         buttonX = Field.width-300;
         buttonY = Field.height-150;
         buttonPadding = 40;
-        background = new Picture(10,10, "startMenuBackground.jpg");
+        background = new Picture(10,10, "startMenuBackground4.jpg");
         quitButton = new Picture(buttonX,buttonY, "quitButton.png");
         playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"playButton.png");
         background.draw();

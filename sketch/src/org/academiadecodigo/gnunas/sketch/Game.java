@@ -10,7 +10,6 @@ public class Game {
     private Field field;
     private CollisionDetector collisiondetector;
     private List<GameObject> gameObjects;
-    private GameObjectFactory gameObjectFactory = new GameObjectFactory();
     private List<Zombie> zombieList;
     private Player player;
     private Level[] levels = Level.values();
@@ -33,7 +32,7 @@ public class Game {
         zombieList = GameObjectFactory.createZombies(levels[level]);
         gameObjects.addAll(zombieList);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(40, (field.getHeight() / 2)));
+        player = new Player(new Position(40, (field.getHeight() / 2)+Field.DEFAULT_PADDING));
 
     }
 

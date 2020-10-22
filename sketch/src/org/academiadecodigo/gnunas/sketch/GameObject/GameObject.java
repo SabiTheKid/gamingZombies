@@ -27,9 +27,7 @@ public class GameObject implements Collidable {
 
     }
 
-    public void deletePicture() {
-        picture.delete();
-    }
+
 
 
     @Override
@@ -37,26 +35,5 @@ public class GameObject implements Collidable {
 
     }
 
-  /*  @Override
-    public boolean equals(Object object) {
 
-        if (object instanceof GameObject) {
-
-            GameObject object1 = (GameObject) object;
-
-            int rightLimitX = getPos().getX() + picture.getWidth();
-            int leftLimitX = getPos().getX();
-            int lowerLimitY = getPos().getY() + picture.getHeight();
-            int upperLimitY = getPos().getY();
-            int objLeftLimitX = object1.getPos().getX();
-            int objRightLimitX = object1.getPos().getX() + object1.getPicture().getWidth();
-            int objLowerLimitY = object1.getPos().getY() + object1.getPicture().getHeight();
-            int objUpperLimitY = object1.getPos().getY();
-
-            if ((rightLimitX >= objLeftLimitX || leftLimitX <= objRightLimitX)  && (upperLimitY <= objLowerLimitY || lowerLimitY >= objUpperLimitY)) {
-                    return true;
-            }
-        }
-        return false;
-    }*/
 }

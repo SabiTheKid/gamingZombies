@@ -32,8 +32,8 @@ public class GameOverMenu implements KeyboardHandler {
         buttonX = Field.width/2-110;
         buttonY = Field.height-300;
         buttonPadding = 40;
-        background = new Picture(10,10, "startMenuBackground.jpg");
-        foreground = new Picture(10, 10, "gameOverForeground.png");
+        background = new Picture(10,10, "startMenuBackground4.jpg");
+        foreground = new Picture(10, 10, "GameOverBackground3.png");
         gameOverLettering = new Picture(Field.PADDING+(Field.width/2 - 315), Field.PADDING + buttonPadding*3, "gameOverButton.png");
         tryAgainButton = new Picture(Field.PADDING+(Field.width/2 - 190), gameOverLettering.getMaxY() + buttonPadding,"tryAgainButton.png");
         quitButton = new Picture(Field.PADDING+(Field.width/2 - 105),tryAgainButton.getMaxY()+buttonPadding, "quitButton.png");

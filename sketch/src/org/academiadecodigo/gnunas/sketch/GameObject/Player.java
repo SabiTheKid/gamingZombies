@@ -56,17 +56,8 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
 
     }
 
-    public boolean isKeyHolder() {
-        return keyHolder;
-    }
-
     public boolean isAlive() {
         return alive;
-    }
-
-    public void setKeyHolder(boolean keyHolder) {
-        this.keyHolder = keyHolder;
-
     }
 
     public void setAlive(boolean alive) {
@@ -112,7 +103,6 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
                     break;
             }
         }
-
         //player.translate(pos.getX()-previousPosition.getX(), pos.getY()-previousPosition.getY());
         super.getPicture().translate((super.getPos().getX() - prevPosX), (super.getPos().getY() - prevPosY));
     }
@@ -144,6 +134,8 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         }
     }
 
+
+
     @Override
     public void collided(GameObject object) {
 
@@ -158,7 +150,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         if (object instanceof Door && keyHolder) {
             Door door = (Door) object;
             door.openDoor();
-            if(super.getPos().getX()>Field.width+17) {
+            if(super.getPos().getX()>Field.DEFAULT_PADDING+Field.width+17) {
                 openedDoor = true;
             }
         }

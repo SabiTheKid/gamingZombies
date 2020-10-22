@@ -17,7 +17,6 @@ public class Door extends GameObject{
         opened = true;
         super.getPos().moveUp();
         super.getPicture().delete();
-        //super.getPicture().load("");
 
     }
 
