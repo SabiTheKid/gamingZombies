@@ -6,9 +6,7 @@ import java.util.List;
 
 public class CollisionDetector {
 
-    //Implements the logic for analysing the collisions between objects( Player and Walls)
 
-    // Have an array with all the gameObjects
     private List<GameObject> objectsGame;
 
     public CollisionDetector(List<GameObject> objectsGame) {

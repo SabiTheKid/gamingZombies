@@ -72,7 +72,6 @@ public class Zombie extends GameObject implements Movable, Collidable{
                 getPicture().load("zombie_2_left.png");
                 break;
         }
-        //super.getPicture().translate(10,0);
         super.getPicture().translate(direction.getXDifference(), direction.getYDifference());
         getPos().move(direction);
         previousDirection = direction;

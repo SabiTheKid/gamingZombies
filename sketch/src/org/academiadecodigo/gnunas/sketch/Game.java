@@ -13,6 +13,8 @@ public class Game {
     private GameObjectFactory gameObjectFactory = new GameObjectFactory();
     private List<Zombie> zombieList;
     private Player player;
+    private Level[] levels = Level.values();
+    private int level = 0;
 
     public Game(){
 
@@ -20,38 +22,62 @@ public class Game {
 
     public void init(){
         field = new Field();
-    }
-    public void initLevelOne() throws InterruptedException {
-
         gameObjects = GameObjectFactory.createFixedGameObjects();
-        zombieList = GameObjectFactory.createZombies(Level.ONE);
+        zombieList = GameObjectFactory.createZombies(levels[level]);
+        gameObjects.addAll(zombieList);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(50, (field.getHeight()/2)));
-        start(Level.ONE.getDelay());
+        player = new Player(new Position(40, (field.getHeight()/2)));
     }
-    public void initLevelTwo() throws InterruptedException {
+    public void start() {
 
-        gameObjects = GameObjectFactory.createFixedGameObjects();
-        zombieList = GameObjectFactory.createZombies(Level.TWO);
-        collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(50, (field.getHeight()/2)));
-        start(Level.TWO.getDelay());
-    }
+        init();
 
-    public void start(int delay) throws InterruptedException {
+        while (player.isAlive()) {
 
-        while(player.isAlive()/* || !door.isOpened()*/) {
+            while (!(player.isOpenedDoor()) && player.isAlive()){
 
-            // Pause for a while
-            Thread.sleep(delay);
+                try {
 
-            collisiondetector.checkCollision(player);
+                    Thread.sleep(levels[level].getDelay());
+                } catch (Exception ex) {
 
-            moveZombies();
+                    System.out.println(ex);
+                }
 
+                collisiondetector.checkCollision(player);
+
+                moveZombies();
+
+            }
+            if(!player.isAlive()){
+                new Picture(0,0,"floor_bg.png").draw();
+                deleteAllGraphics();
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                //Insert something to go back to initial menu
+                break;
+            }
+            //Player abre a porta e da ordem para começar novo nivel
+            player.stopPlayer();
+            level++;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            deleteAllGraphics();
+            //o init recebe um numero do lvl para criar um determinado lvl, de forma crescente
+            if (level < levels.length){
+                start();
+            }
+            break;
         }
-
-        throw new InterruptedException("morreu");
+        player.stopPlayer();
+        new Picture(0,0,"floor_bg.png").draw();
+        // depois de parar o jogador , mostra-se no screen Parabens;
     }
 
     public void moveZombies(){
@@ -64,6 +90,16 @@ public class Game {
                 zombie1.move();
                 collisiondetector.checkCollision(zombie);
             }
+        }
+    }
+    private void deleteAllGraphics() {
+        player.getPicture().delete();
+        field.getMap().delete();
+        for(GameObject gameObject: gameObjects){
+            gameObject.getPicture().delete();
+        }
+        for(Zombie zombie: zombieList){
+            zombie.getPicture().delete();
         }
     }
 }
