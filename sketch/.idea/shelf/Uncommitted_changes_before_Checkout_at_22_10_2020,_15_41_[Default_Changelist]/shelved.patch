@@ -1,0 +1,225 @@
+Index: src/org/academiadecodigo/gnunas/sketch/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.*;\nimport org.academiadecodigo.simplegraphics.pictures.Picture;\n\nimport java.util.List;\n\npublic class Game {\n\n    private Field field;\n    private CollisionDetector collisiondetector;\n    private List<GameObject> gameObjects;\n    private GameObjectFactory gameObjectFactory = new GameObjectFactory();\n    private List<Zombie> zombieList;\n    private Player player;\n    private Level[] levels = Level.values();\n    private int level = 0;\n\n    public Game(){\n\n    }\n\n    public void init(){\n        field = new Field();\n        gameObjects = GameObjectFactory.createFixedGameObjects();\n        zombieList = GameObjectFactory.createZombies(levels[level]);\n        gameObjects.addAll(zombieList);\n        collisiondetector = new CollisionDetector(gameObjects);\n        player = new Player(new Position(40, (field.getHeight()/2)));\n    }\n    public void start() {\n\n        init();\n\n        while (player.isAlive()) {\n\n            while (!(player.isOpenedDoor()) && player.isAlive()){\n\n                try {\n\n                    Thread.sleep(levels[level].getDelay());\n                } catch (Exception ex) {\n\n                    System.out.println(ex);\n                }\n\n                collisiondetector.checkCollision(player);\n\n                moveZombies();\n\n            }\n            if(!player.isAlive()){\n                new Picture(0,0,\"floor_bg.png\").draw();\n                deleteAllGraphics();\n                try {\n                    Thread.sleep(5000);\n                } catch (InterruptedException e) {\n                    e.printStackTrace();\n                }\n                //Insert something to go back to initial menu\n                break;\n            }\n            //Player abre a porta e da ordem para começar novo nivel\n            player.stopPlayer();\n            level++;\n            try {\n                Thread.sleep(1000);\n            } catch (InterruptedException e) {\n                e.printStackTrace();\n            }\n            deleteAllGraphics();\n            //o init recebe um numero do lvl para criar um determinado lvl, de forma crescente\n            if (level < levels.length){\n                start();\n            }\n            break;\n        }\n        player.stopPlayer();\n        new Picture(0,0,\"floor_bg.png\").draw();\n        // depois de parar o jogador , mostra-se no screen Parabens;\n    }\n\n    public void moveZombies(){\n\n        for (Zombie zombie : zombieList){\n\n            if (zombie instanceof Zombie){\n\n                Zombie zombie1 = (Zombie) zombie;\n                zombie1.move();\n                collisiondetector.checkCollision(zombie);\n            }\n        }\n    }\n    private void deleteAllGraphics() {\n        player.getPicture().delete();\n        field.getMap().delete();\n        for(GameObject gameObject: gameObjects){\n            gameObject.getPicture().delete();\n        }\n        for(Zombie zombie: zombieList){\n            zombie.getPicture().delete();\n        }\n    }\n}\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/Game.java	(revision 8e85cca214721c9847b04acb2b83bda4e1fe25bf)
++++ src/org/academiadecodigo/gnunas/sketch/Game.java	(date 1603376660091)
+@@ -15,6 +15,9 @@
+     private Player player;
+     private Level[] levels = Level.values();
+     private int level = 0;
++    private boolean inMenu;
++    private StartMenu startMenu;
++    private GameOverMenu gameOverMenu;
+ 
+     public Game(){
+ 
+@@ -29,7 +32,10 @@
+         player = new Player(new Position(40, (field.getHeight()/2)));
+     }
+     public void start() {
+-
++        inMenu = true;
++        while (inMenu){
++            startMenu();
++        }
+         init();
+ 
+         while (player.isAlive()) {
+@@ -102,6 +108,18 @@
+             zombie.getPicture().delete();
+         }
+     }
++
++    public void startMenu(){
++        startMenu = new StartMenu(this);
++    }
++
++    public void gameOverMenu(){
++        gameOverMenu = new GameOverMenu(this);
++    }
++
++    public void setInMenu(boolean inMenu) {
++        this.inMenu = inMenu;
++    }
+ }
+ 
+ 
+Index: src/org/academiadecodigo/gnunas/sketch/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.academiadecodigo.gnunas.sketch;\n\nimport org.academiadecodigo.gnunas.sketch.GameObject.Player;\n\npublic class Main {\n\n    public static void main(String[] args) {\n\n        Game game = new Game();\n\n        game.start();\n\n\n\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/academiadecodigo/gnunas/sketch/Main.java	(revision 8e85cca214721c9847b04acb2b83bda4e1fe25bf)
++++ src/org/academiadecodigo/gnunas/sketch/Main.java	(date 1603375729314)
+@@ -1,7 +1,5 @@
+ package org.academiadecodigo.gnunas.sketch;
+ 
+-import org.academiadecodigo.gnunas.sketch.GameObject.Player;
+-
+ public class Main {
+ 
+     public static void main(String[] args) {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"9eb20561-3304-41cf-acc6-06ecc0b81567\" name=\"Default Changelist\" comment=\"&quot;Levels implemented&quot;\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$/..\" value=\"CollisionDetector\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"mavenHome\" value=\"$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"1isuqr091ciHoYmLUv3ANjJjQPp\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"ExtractSuperBase.RECENT_KEYS\">\n      <recent name=\"org.academiadecodigo.gnunas.sketch.GameObject\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"org.academiadecodigo.gnunas.sketch\" />\n    </key>\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"org.academiadecodigo.gnunas.sketch\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/resources\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.academiadecodigo.gnunas.sketch.Main\" />\n      <module name=\"sketch\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"9eb20561-3304-41cf-acc6-06ecc0b81567\" name=\"Default Changelist\" comment=\"\" />\n      <created>1602708813585</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1602708813585</updated>\n      <workItem from=\"1602708814595\" duration=\"198000\" />\n      <workItem from=\"1602709166994\" duration=\"134000\" />\n      <workItem from=\"1602753373764\" duration=\"320000\" />\n      <workItem from=\"1602795111171\" duration=\"1092000\" />\n      <workItem from=\"1602798178357\" duration=\"3457000\" />\n      <workItem from=\"1602864699379\" duration=\"164000\" />\n      <workItem from=\"1602884226109\" duration=\"335000\" />\n      <workItem from=\"1602884592712\" duration=\"73000\" />\n      <workItem from=\"1602884688086\" duration=\"3157000\" />\n      <workItem from=\"1602942880004\" duration=\"2084000\" />\n      <workItem from=\"1602948126233\" duration=\"1417000\" />\n      <workItem from=\"1602949908827\" duration=\"3269000\" />\n      <workItem from=\"1602954930855\" duration=\"149000\" />\n      <workItem from=\"1602955314525\" duration=\"991000\" />\n      <workItem from=\"1602959654728\" duration=\"519000\" />\n      <workItem from=\"1602955314525\" duration=\"6958000\" />\n      <workItem from=\"1602970264431\" duration=\"3000\" />\n      <workItem from=\"1603029745661\" duration=\"3211000\" />\n      <workItem from=\"1603199961894\" duration=\"107000\" />\n      <workItem from=\"1603215638733\" duration=\"13588000\" />\n      <workItem from=\"1603271695496\" duration=\"88000\" />\n      <workItem from=\"1603272686125\" duration=\"791000\" />\n      <workItem from=\"1603274272940\" duration=\"14985000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"&quot;Compatible problems with master fixed and merged with the master&quot;\">\n      <created>1603048682721</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603048682721</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"&quot;Game class implemented&quot;\">\n      <created>1603127880441</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603127880441</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"&quot;Game class implemented&quot;\">\n      <created>1603128419276</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603128419276</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"&quot;Game class implemented&quot;\">\n      <created>1603129318827</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603129318827</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"&quot;Game class implemented 1&quot;\">\n      <created>1603130222831</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603130222831</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"&quot;Game class implemented 1&quot;\">\n      <created>1603140702971</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603140702971</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"&quot;Monday player collisions and catch key&quot;\">\n      <created>1603144471899</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603144471899</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"&quot;Zombies movement implemented&quot;\">\n      <created>1603225842376</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603225842376</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"&quot;New resources and ZombieDirection merged into Direction&quot;\">\n      <created>1603229261589</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603229261589</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"&quot;Levels implemented&quot;\">\n      <created>1603234780982</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603234780982</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"11\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"&quot;Compatible problems with master fixed&quot;\" />\n    <MESSAGE value=\"&quot;Game class implemented&quot;\" />\n    <MESSAGE value=\"&quot;Game class implemented 1&quot;\" />\n    <MESSAGE value=\"&quot;Monday player collisions and catch key&quot;\" />\n    <MESSAGE value=\"&quot;Zombies movement implemented&quot;\" />\n    <MESSAGE value=\"&quot;New resources and ZombieDirection merged into Direction&quot;\" />\n    <MESSAGE value=\"&quot;Levels implemented&quot;\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;Levels implemented&quot;\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"448\" y=\"93\" key=\"#Project_Structure\" timestamp=\"1602753377235\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"448\" y=\"93\" key=\"#Project_Structure/0.23.1920.977@0.23.1920.977\" timestamp=\"1602753377235\" />\n    <state x=\"773\" y=\"252\" key=\"#com.intellij.ide.util.MemberChooser\" timestamp=\"1603322134128\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"773\" y=\"253\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603233409421\" />\n    <state x=\"773\" y=\"252\" key=\"#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977\" timestamp=\"1603322134128\" />\n    <state x=\"718\" y=\"422\" width=\"822\" height=\"205\" key=\"#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes\" timestamp=\"1603050687290\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"718\" y=\"441\" width=\"822\" height=\"205\" key=\"#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602951051661\" />\n    <state x=\"718\" y=\"422\" width=\"822\" height=\"205\" key=\"#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.977@0.23.1920.977\" timestamp=\"1603050687290\" />\n    <state x=\"618\" y=\"23\" key=\"#com.intellij.refactoring.rename.AutomaticRenamingDialog\" timestamp=\"1603193283119\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"618\" y=\"23\" key=\"#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.977@0.23.1920.977\" timestamp=\"1603193283119\" />\n    <state x=\"698\" y=\"265\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1603142516418\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"698\" y=\"265\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977\" timestamp=\"1603142516418\" />\n    <state x=\"936\" y=\"57\" key=\"CommitChangelistDialog2\" timestamp=\"1603144471784\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1080\" />\n    </state>\n    <state x=\"936\" y=\"57\" key=\"CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603144471784\" />\n    <state x=\"859\" y=\"127\" key=\"CommitChangelistDialog2/0.23.1920.977@0.23.1920.977\" timestamp=\"1603140702780\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1603325630689\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"296\" key=\"GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603234372852\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977\" timestamp=\"1603325630689\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.center\" timestamp=\"1603325630689\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"296\" key=\"GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603234372851\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977\" timestamp=\"1603325630689\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.left\" timestamp=\"1603325630689\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"296\" key=\"GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603234372850\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977\" timestamp=\"1603325630689\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.right\" timestamp=\"1603325630689\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"296\" key=\"GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603234372851\" />\n    <state width=\"1071\" height=\"288\" key=\"GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977\" timestamp=\"1603325630689\" />\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1603144893946\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977\" timestamp=\"1603144893946\" />\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.center\" timestamp=\"1603144893945\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977\" timestamp=\"1603144893945\" />\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.left\" timestamp=\"1603144893945\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977\" timestamp=\"1603144893945\" />\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.right\" timestamp=\"1603144893945\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state width=\"1878\" height=\"326\" key=\"GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977\" timestamp=\"1603144893945\" />\n    <state x=\"0\" y=\"112\" key=\"MergeDialog\" timestamp=\"1603234945615\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"0\" y=\"112\" key=\"MergeDialog/0.23.1920.977@0.23.1920.977\" timestamp=\"1603234945615\" />\n    <state x=\"213\" y=\"282\" key=\"MultipleFileMergeDialog\" timestamp=\"1603234945655\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"213\" y=\"282\" key=\"MultipleFileMergeDialog/0.23.1920.977@0.23.1920.977\" timestamp=\"1603234945655\" />\n    <state x=\"589\" y=\"246\" key=\"NewModule_or_Project.wizard\" timestamp=\"1602945295911\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1080\" />\n    </state>\n    <state x=\"589\" y=\"246\" key=\"NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1602945295911\" />\n    <state x=\"580\" y=\"251\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1603234991409\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"580\" y=\"252\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080\" timestamp=\"1603225848933\" />\n    <state x=\"580\" y=\"251\" key=\"Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977\" timestamp=\"1603234991409\" />\n    <state x=\"375\" y=\"434\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1603234975728\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"375\" y=\"434\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.977@0.23.1920.977\" timestamp=\"1603234975728\" />\n    <state x=\"100\" y=\"254\" width=\"913\" height=\"617\" key=\"com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2\" timestamp=\"1603323347739\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"100\" y=\"254\" width=\"913\" height=\"617\" key=\"com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.977@0.23.1920.977\" timestamp=\"1603323347739\" />\n    <state x=\"0\" y=\"36\" width=\"1666\" height=\"704\" key=\"dock-window-1\" timestamp=\"1603136839614\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"0\" y=\"36\" width=\"1666\" height=\"704\" key=\"dock-window-1/0.23.1920.977@0.23.1920.977\" timestamp=\"1603136839614\" />\n    <state x=\"726\" y=\"231\" key=\"git4idea.branch.GitSmartOperationDialog\" timestamp=\"1603048616826\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"726\" y=\"231\" key=\"git4idea.branch.GitSmartOperationDialog/0.23.1920.977@0.23.1920.977\" timestamp=\"1603048616826\" />\n    <state x=\"708\" y=\"134\" key=\"new project wizard\" timestamp=\"1603044767064\">\n      <screen x=\"0\" y=\"23\" width=\"1920\" height=\"977\" />\n    </state>\n    <state x=\"708\" y=\"134\" key=\"new project wizard/0.23.1920.977@0.23.1920.977\" timestamp=\"1603044767064\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"javax.imageio.IIOException\" package=\"javax.imageio\" />\n          <option name=\"timeStamp\" value=\"1\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/sketch$Main.ic\" NAME=\"Main Coverage Results\" MODIFIED=\"1603143284876\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 8e85cca214721c9847b04acb2b83bda4e1fe25bf)
++++ .idea/workspace.xml	(date 1603377603020)
+@@ -19,15 +19,18 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="&quot;Levels implemented&quot;">
++    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -89,18 +92,29 @@
+     </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="org.academiadecodigo.gnunas.sketch" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/resources" />
+     </key>
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="org.academiadecodigo.gnunas.sketch" />
+     </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/resources" />
+-    </key>
+   </component>
+   <component name="RunManager">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.gnunas.sketch.Main" />
+       <module name="sketch" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
++      <option name="arquillianRunConfiguration">
++        <value>
++          <option name="containerStateName" value="" />
++        </value>
++      </option>
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -215,7 +229,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1603234780982</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="&quot;Levels implemented&quot;">
++      <created>1603374400895</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1603374400895</updated>
++    </task>
++    <task id="LOCAL-00012" summary="&quot;Levels implemented&quot;">
++      <created>1603377296632</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1603377296632</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -266,30 +294,30 @@
+       <screen x="0" y="23" width="1920" height="977" />
+     </state>
+     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1603142516418" />
+-    <state x="936" y="57" key="CommitChangelistDialog2" timestamp="1603144471784">
++    <state x="936" y="57" key="CommitChangelistDialog2" timestamp="1603377296510">
+       <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+-    <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
++    <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603377296510" />
+     <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603140702780" />
+-    <state width="1071" height="288" key="GridCell.Tab.0.bottom" timestamp="1603325630689">
+-      <screen x="0" y="23" width="1920" height="977" />
++    <state width="1878" height="245" key="GridCell.Tab.0.bottom" timestamp="1603377573598">
++      <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+-    <state width="1878" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372852" />
++    <state width="1878" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603377573598" />
+     <state width="1071" height="288" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+-    <state width="1071" height="288" key="GridCell.Tab.0.center" timestamp="1603325630689">
+-      <screen x="0" y="23" width="1920" height="977" />
++    <state width="1878" height="245" key="GridCell.Tab.0.center" timestamp="1603377573597">
++      <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+-    <state width="1878" height="296" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372851" />
++    <state width="1878" height="245" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603377573597" />
+     <state width="1071" height="288" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+-    <state width="1071" height="288" key="GridCell.Tab.0.left" timestamp="1603325630689">
+-      <screen x="0" y="23" width="1920" height="977" />
++    <state width="1878" height="245" key="GridCell.Tab.0.left" timestamp="1603377573597">
++      <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+-    <state width="1878" height="296" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372850" />
++    <state width="1878" height="245" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603377573597" />
+     <state width="1071" height="288" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+-    <state width="1071" height="288" key="GridCell.Tab.0.right" timestamp="1603325630689">
+-      <screen x="0" y="23" width="1920" height="977" />
++    <state width="1878" height="245" key="GridCell.Tab.0.right" timestamp="1603377573598">
++      <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+-    <state width="1878" height="296" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372851" />
++    <state width="1878" height="245" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603377573598" />
+     <state width="1071" height="288" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+     <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603144893946">
+       <screen x="0" y="23" width="1920" height="977" />
+@@ -319,10 +347,10 @@
+       <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+     <state x="589" y="246" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1602945295911" />
+-    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603234991409">
+-      <screen x="0" y="23" width="1920" height="977" />
++    <state x="580" y="252" key="Vcs.Push.Dialog.v2" timestamp="1603374406236">
++      <screen x="0" y="0" width="1920" height="1080" />
+     </state>
+-    <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603225848933" />
++    <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603374406236" />
+     <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603234991409" />
+     <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603234975728">
+       <screen x="0" y="23" width="1920" height="977" />
+@@ -356,6 +384,6 @@
+     </breakpoint-manager>
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/sketch$Main.ic" NAME="Main Coverage Results" MODIFIED="1603143284876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/sketch$Main.ic" NAME="Main Coverage Results" MODIFIED="1603313568053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_22_10_2020,_19_08_[Default_Changelist]" date="1603390113284" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_19_08_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 22/10/2020, 19:08 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_19_08_[Default_Changelist]/StartMenu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/game_field.jpg" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu$1.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_19_08_[Default_Changelist]/StartMenu$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" />
+    <option name="AFTER_PATH" value="out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2020,_19_08_[Default_Changelist]/Game.class" />
+  </binary>
+</changelist>
