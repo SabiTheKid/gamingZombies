@@ -5,7 +5,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Field {
 
     private Picture map;
-    public static final int DEFAULT_PADDING = 10;
+    public static final int DEFAULT_PADDING = 0;
     public static final int PADDING = 32;
     public static final int width = 1024;
     public static final int height = 768;

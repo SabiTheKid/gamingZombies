@@ -30,9 +30,9 @@ public class StartMenu implements KeyboardHandler {
         buttonX = Field.width-300;
         buttonY = Field.height-150;
         buttonPadding = 40;
-        background = new Picture(10,10, "startMenuBackground4.jpg");
-        quitButton = new Picture(buttonX,buttonY, "quitButton.png");
-        playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"playButton.png");
+        background = new Picture(0,0, "resources/startMenuBackground4.jpg");
+        quitButton = new Picture(buttonX,buttonY, "resources/quitButton.png");
+        playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"resources/playButton.png");
         background.draw();
         cursor = new Rectangle(playButton.getX()-10, playButton.getY()-10, playButton.getWidth()+20, playButton.getHeight()+20);
         cursor.setColor(Color.WHITE);

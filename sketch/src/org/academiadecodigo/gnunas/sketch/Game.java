@@ -44,7 +44,11 @@ public class Game {
             case GAMEOVERMENU:
                 gameOverMenu();
                 while (inGameOverMenu) {
-                    System.out.println(""); //This sout is vital to the game, DO NOT DELETE!!!
+                    try {
+                        Thread.sleep(25);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 System.out.println(gameState);
                 start();
@@ -52,7 +56,12 @@ public class Game {
             case STARTMENU:
                 menu();
                 while (inMenu) {
-                    System.out.println(""); //This sout is vital to the game, DO NOT DELETE!!!
+
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 System.out.println(gameState);
                 start();
