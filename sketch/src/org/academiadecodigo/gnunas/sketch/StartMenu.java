@@ -26,10 +26,11 @@ public class StartMenu implements KeyboardHandler {
 
     public StartMenu(Game game){
         this.game = game;
+        game.setInMenu(true);
         buttonX = Field.width-300;
         buttonY = Field.height-150;
         buttonPadding = 40;
-        background = new Picture(Field.PADDING,Field.PADDING, "startMenuBackground.jpg");
+        background = new Picture(10,10, "startMenuBackground.jpg");
         quitButton = new Picture(buttonX,buttonY, "quitButton.png");
         playButton = new Picture(buttonX, quitButton.getY()-buttonPadding-quitButton.getHeight(),"playButton.png");
         background.draw();
@@ -79,27 +80,35 @@ public class StartMenu implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-        if (keyboardEvent == moveUp){
-            move(Direction.UP);
-        }
-        if (keyboardEvent == moveDown){
-            move(Direction.DOWN);
-        }
-        if (keyboardEvent == select){
-            System.out.println(cursor.getY()+10);
-            System.out.println(playButton.getY());
-            if ((cursor.getY()+10) == playButton.getY()){
-                delete();
-                game.setInMenu(false);
-            }
-            if ((cursor.getY()+10) == quitButton.getY()) {
-                System.exit(0);
-            }
-        }
+        if (!game.getInMenu()){
+            return;
     }
+        if (keyboardEvent == moveUp) {
+                move(Direction.UP);
+            }
+            if (keyboardEvent == moveDown) {
+                move(Direction.DOWN);
+            }
+            if (keyboardEvent == select) {
+
+                if ((cursor.getY() + 10) == playButton.getY()) {
+                    delete();
+                    game.setGameState(GameState.PLAY);
+                    game.setInMenu(false);
+
+                }
+                if ((cursor.getY() + 10) == quitButton.getY()) {
+                    exit();
+                }
+            }
+        }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
+    }
+
+    public void exit(){
+        System.exit(0);
     }
 }

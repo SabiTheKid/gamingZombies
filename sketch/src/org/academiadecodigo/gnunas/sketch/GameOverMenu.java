@@ -28,11 +28,12 @@ public class GameOverMenu implements KeyboardHandler {
 
     public GameOverMenu(Game game){
         this.game = game;
+        game.setInMenu(true);
         buttonX = Field.width/2-110;
         buttonY = Field.height-300;
         buttonPadding = 40;
-        background = new Picture(Field.PADDING,Field.PADDING, "startMenuBackground.jpg");
-        foreground = new Picture(Field.PADDING, Field.PADDING, "gameOverForeground.png");
+        background = new Picture(10,10, "startMenuBackground.jpg");
+        foreground = new Picture(10, 10, "gameOverForeground.png");
         gameOverLettering = new Picture(Field.PADDING+(Field.width/2 - 315), Field.PADDING + buttonPadding*3, "gameOverButton.png");
         tryAgainButton = new Picture(Field.PADDING+(Field.width/2 - 190), gameOverLettering.getMaxY() + buttonPadding,"tryAgainButton.png");
         quitButton = new Picture(Field.PADDING+(Field.width/2 - 105),tryAgainButton.getMaxY()+buttonPadding, "quitButton.png");
@@ -66,6 +67,9 @@ public class GameOverMenu implements KeyboardHandler {
                 if(cursor.getY()+10 == tryAgainButton.getY()){
                     return;
                 }
+                if (!game.getInGameOverMenu()){
+                    return;
+                }
                 cursor.delete();
                 cursor = new Rectangle(tryAgainButton.getX()-10, tryAgainButton.getY()-10, tryAgainButton.getWidth()+20, tryAgainButton.getHeight()+20);
                 cursor.setColor(Color.WHITE);
@@ -74,6 +78,9 @@ public class GameOverMenu implements KeyboardHandler {
                 tryAgainButton.draw();
                 break;
             case DOWN:
+                if (!game.getInGameOverMenu()){
+                    return;
+                }
                 if(cursor.getY()+10 == quitButton.getY()){
                     return;
                 }
@@ -97,6 +104,9 @@ public class GameOverMenu implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
+        if (!game.getInGameOverMenu()){
+            return;
+        }
         if (keyboardEvent == moveUp){
             move(Direction.UP);
         }
@@ -104,14 +114,19 @@ public class GameOverMenu implements KeyboardHandler {
             move(Direction.DOWN);
         }
         if (keyboardEvent == select){
-            System.out.println(cursor.getY()+10);
-            System.out.println(tryAgainButton.getY());
+
+
             if ((cursor.getY()+10) == tryAgainButton.getY()){
                 delete();
-                game.setInMenu(false);
+                game.setGameState(GameState.PLAY);
+                game.setInGameOverMenu(false);
             }
+
             if ((cursor.getY()+10) == quitButton.getY()) {
-                System.exit(0);
+                delete();
+                game.setGameState(GameState.STARTMENU);
+                game.setInGameOverMenu(false);
+                game.setInMenu(true);
             }
         }
     }

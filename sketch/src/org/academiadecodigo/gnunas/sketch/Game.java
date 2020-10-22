@@ -13,90 +13,107 @@ public class Game {
     private GameObjectFactory gameObjectFactory = new GameObjectFactory();
     private List<Zombie> zombieList;
     private Player player;
-    private boolean inMenu;
     private Level[] levels = Level.values();
     private int level = 0;
+    private boolean inMenu;
+    private StartMenu startMenu;
+    private GameOverMenu gameOverMenu;
+    private GameState gameState;
+    private boolean inGameOverMenu;
 
-    public Game(){
-
+    public Game() {
+        gameState = GameState.STARTMENU;
+        inMenu = true;
+        inGameOverMenu = false;
     }
 
-    public void init(){
+    public void init() {
         field = new Field();
-    }
-    public void initLevelOne() throws InterruptedException {
-
-        gameObjects = GameObjectFactory.createFixedGameObjects();
-        zombieList = GameObjectFactory.createZombies(Level.ONE);
-        collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(50, (field.getHeight()/2)));
-        start(Level.ONE.getDelay());
-    }
-    public void initLevelTwo() throws InterruptedException {
-
         gameObjects = GameObjectFactory.createFixedGameObjects();
         zombieList = GameObjectFactory.createZombies(levels[level]);
         gameObjects.addAll(zombieList);
         collisiondetector = new CollisionDetector(gameObjects);
-        player = new Player(new Position(40, (field.getHeight()/2)));
+        player = new Player(new Position(40, (field.getHeight() / 2)));
+
     }
+
+
     public void start() {
 
-        init();
-
-        while (player.isAlive()) {
-
-            while (!(player.isOpenedDoor()) && player.isAlive()){
-
-                try {
-
-                    Thread.sleep(levels[level].getDelay());
-                } catch (Exception ex) {
-
-                    System.out.println(ex);
+        System.out.println(gameState);
+        switch (gameState) {
+            case GAMEOVERMENU:
+                gameOverMenu();
+                while (inGameOverMenu) {
+                    System.out.println(""); //This sout is vital to the game, DO NOT DELETE!!!
                 }
-
-                collisiondetector.checkCollision(player);
-
-                moveZombies();
-
-            }
-            if(!player.isAlive()){
-                new Picture(0,0,"floor_bg.png").draw();
-                deleteAllGraphics();
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                //Insert something to go back to initial menu
-                break;
-            }
-            //Player abre a porta e da ordem para começar novo nivel
-            player.stopPlayer();
-            level++;
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            deleteAllGraphics();
-            //o init recebe um numero do lvl para criar um determinado lvl, de forma crescente
-            if (level < levels.length){
+                System.out.println(gameState);
                 start();
-            }
-            break;
+                break;
+            case STARTMENU:
+                menu();
+                while (inMenu) {
+                    System.out.println(""); //This sout is vital to the game, DO NOT DELETE!!!
+                }
+                System.out.println(gameState);
+                start();
+                break;
+            case PLAY:
+
+                init();
+
+                while (player.isAlive()) {
+
+                    while (!(player.isOpenedDoor()) && player.isAlive()) {
+
+                        try {
+
+                            Thread.sleep(levels[level].getDelay());
+                        } catch (Exception ex) {
+
+                            System.out.println(ex);
+                        }
+
+                        collisiondetector.checkCollision(player);
+
+                        moveZombies();
+
+                    }
+                    if (!player.isAlive()) {
+
+                        deleteAllGraphics();
+                        level = 0;
+                        inGameOverMenu = true;
+                        gameState = GameState.GAMEOVERMENU;
+                        start();
+                        break;
+                    }
+
+                    player.stopPlayer();
+                    level++;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    deleteAllGraphics();
+                    if (level < levels.length) {
+                        start();
+                    }
+                    break;
+                }
+
+
         }
-        player.stopPlayer();
-        new Picture(0,0,"floor_bg.png").draw();
-        // depois de parar o jogador , mostra-se no screen Parabens;
     }
+    //}
 
-    public void moveZombies(){
 
-        for (Zombie zombie : zombieList){
+    public void moveZombies() {
 
-            if (zombie instanceof Zombie){
+        for (Zombie zombie : zombieList) {
+
+            if (zombie instanceof Zombie) {
 
                 Zombie zombie1 = (Zombie) zombie;
                 zombie1.move();
@@ -104,16 +121,45 @@ public class Game {
             }
         }
     }
+
     private void deleteAllGraphics() {
+        player.getLanternView().delete();
         player.getPicture().delete();
         field.getMap().delete();
-        for(GameObject gameObject: gameObjects){
+        for (GameObject gameObject : gameObjects) {
             gameObject.getPicture().delete();
         }
-        for(Zombie zombie: zombieList){
+        for (Zombie zombie : zombieList) {
             zombie.getPicture().delete();
         }
     }
+
+    public void menu() {
+        startMenu = new StartMenu(this);
+    }
+
+    public void setInMenu(boolean inMenu) {
+        this.inMenu = inMenu;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
+    public void gameOverMenu(){
+        gameOverMenu = new GameOverMenu(this);
+    }
+
+    public void setInGameOverMenu(boolean inGameOverMenu) {
+        this.inGameOverMenu = inGameOverMenu;
+    }
+    public boolean getInGameOverMenu(){
+        return inGameOverMenu;
+    }
+    public boolean getInMenu(){
+        return inMenu;
+    }
 }
+
 
 

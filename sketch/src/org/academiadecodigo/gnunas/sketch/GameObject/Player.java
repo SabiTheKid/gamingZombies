@@ -82,6 +82,10 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         return openedDoor;
     }
 
+    public LanternView getLanternView() {
+        return lanternView;
+    }
+
     @Override
     public void move(Direction direction) {
         //Implement every type of movement

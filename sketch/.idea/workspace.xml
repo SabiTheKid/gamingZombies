@@ -21,16 +21,24 @@
   <component name="ChangeListManager">
     <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="&quot;Door now is working and other problems fixed&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/game_field.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/CollisionDetector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/gameOverForeground.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/gameOverForeground.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Level.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/LanternView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/LanternView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sketch/startMenuBackground.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/startMenuBackground.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/gameOverForeground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/startMenuBackground.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/LanternView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/LanternView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +57,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="CollisionDetector" />
+        <entry key="$PROJECT_DIR$/.." value="gameobjectFactory" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -93,11 +101,11 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.academiadecodigo.gnunas.sketch" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,6 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -272,10 +282,11 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="448" y="93" key="#Project_Structure/0.23.1920.977@0.23.1920.977" timestamp="1602753377235" />
-    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1603322134128">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state x="773" y="271" key="#com.intellij.ide.util.MemberChooser" timestamp="1603385189412">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603233409421" />
+    <state x="773" y="271" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1603385189412" />
     <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1603322134128" />
     <state x="718" y="422" width="822" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603050687290">
       <screen x="0" y="23" width="1920" height="977" />
@@ -286,50 +297,59 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="618" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.977@0.23.1920.977" timestamp="1603193283119" />
-    <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603142516418">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state x="698" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603389213278">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state x="698" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1603389213278" />
     <state x="698" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1603142516418" />
     <state x="936" y="57" key="CommitChangelistDialog2" timestamp="1603144471784">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
     <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603140702780" />
-    <state width="1071" height="288" key="GridCell.Tab.0.bottom" timestamp="1603366554737">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1395" height="289" key="GridCell.Tab.0.bottom" timestamp="1603389734992">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372852" />
+    <state width="1395" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
     <state width="1071" height="288" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603366554737" />
-    <state width="1071" height="288" key="GridCell.Tab.0.center" timestamp="1603366554736">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1395" height="289" key="GridCell.Tab.0.center" timestamp="1603389734991">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="296" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372851" />
+    <state width="1395" height="289" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
     <state width="1071" height="288" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603366554736" />
-    <state width="1071" height="288" key="GridCell.Tab.0.left" timestamp="1603366554736">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1395" height="289" key="GridCell.Tab.0.left" timestamp="1603389734991">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="296" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372850" />
+    <state width="1395" height="289" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
     <state width="1071" height="288" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603366554736" />
-    <state width="1071" height="288" key="GridCell.Tab.0.right" timestamp="1603366554737">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1395" height="289" key="GridCell.Tab.0.right" timestamp="1603389734992">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1878" height="296" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372851" />
+    <state width="1395" height="289" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
     <state width="1071" height="288" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603366554737" />
-    <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603144893946">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
     <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603144893946" />
-    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603144893945">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1878" height="358" key="GridCell.Tab.1.center" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
     <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
-    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1603144893945">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1878" height="358" key="GridCell.Tab.1.left" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
     <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
-    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1603144893945">
-      <screen x="0" y="23" width="1920" height="977" />
+    <state width="1878" height="358" key="GridCell.Tab.1.right" timestamp="1603379810550">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
+    <state width="1878" height="358" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603379810550" />
     <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
     <state x="0" y="112" key="MergeDialog" timestamp="1603234945615">
       <screen x="0" y="23" width="1920" height="977" />

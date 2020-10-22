@@ -52,4 +52,10 @@ public class LanternView {
         downRectangle.grow(0,-1);
         downRectangle.translate(0,1);
     }
+    public void delete(){
+        leftRectangle.delete();
+        rightRectangle.delete();
+        upRectangle.delete();
+        downRectangle.delete();
+    }
 }
