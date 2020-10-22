@@ -53,23 +53,25 @@ public class Zombie extends GameObject implements Movable, Collidable{
         }
         canIMove = true;
         movesCounter++;
-        /*
-        movesCounter++;
+
         switch (direction) {
             case UP:
+                getPicture().load("zombie_2_up.png");
                 //getPos().moveUp();
                 break;
             case DOWN:
                 //getPos().moveDown();
+                getPicture().load("zombie_2_down.png");
                 break;
             case RIGHT:
                 //getPos().moveRight(keyHolder);
+                getPicture().load("zombie_2_right.png");
                 break;
             case LEFT:
                 //getPos().moveLeft();
+                getPicture().load("zombie_2_left.png");
                 break;
-        }*/
-        //super.getPicture().translate(10,0);
+        }
         super.getPicture().translate(direction.getXDifference(), direction.getYDifference());
         getPos().move(direction);
         previousDirection = direction;
