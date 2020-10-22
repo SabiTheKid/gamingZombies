@@ -20,20 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afdab60-0164-4b0d-ac91-711cf8e2af68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameObjectFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/GameOverMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/LanternView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/LanternView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/StartMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/StartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObjectFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +85,12 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.academiadecodigo.gnunas.sketch" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -325,30 +315,30 @@
     </state>
     <state x="936" y="57" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603144471784" />
     <state x="856" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603398660423" />
-    <state width="1878" height="280" key="GridCell.Tab.0.bottom" timestamp="1603399697759">
+    <state width="1878" height="280" key="GridCell.Tab.0.bottom" timestamp="1603400039488">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
-    <state width="1878" height="280" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603399697759" />
-    <state width="1878" height="280" key="GridCell.Tab.0.center" timestamp="1603399697758">
+    <state width="1878" height="280" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603400039488" />
+    <state width="1878" height="280" key="GridCell.Tab.0.center" timestamp="1603400039487">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
-    <state width="1878" height="280" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603399697758" />
-    <state width="1878" height="280" key="GridCell.Tab.0.left" timestamp="1603399697758">
+    <state width="1878" height="280" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603400039487" />
+    <state width="1878" height="280" key="GridCell.Tab.0.left" timestamp="1603400039487">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756721" />
     <state width="1395" height="289" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734991" />
-    <state width="1878" height="280" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603399697758" />
-    <state width="1878" height="280" key="GridCell.Tab.0.right" timestamp="1603399697758">
+    <state width="1878" height="280" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603400039487" />
+    <state width="1878" height="280" key="GridCell.Tab.0.right" timestamp="1603400039488">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="939" height="210" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603394756722" />
     <state width="1395" height="289" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1603389734992" />
-    <state width="1878" height="280" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603399697758" />
+    <state width="1878" height="280" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603400039488" />
     <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1603379810550">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

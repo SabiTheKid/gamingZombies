@@ -32,6 +32,7 @@ public class Game {
         zombieList = GameObjectFactory.createZombies(levels[level]);
         gameObjects.addAll(zombieList);
         collisiondetector = new CollisionDetector(gameObjects);
+        gameObjects.add(new Key(GameObjectFactory.generatePositionForKeyAndZombies()));
         player = new Player(new Position(40, (field.getHeight() / 2)+Field.DEFAULT_PADDING));
 
     }
@@ -114,19 +115,14 @@ public class Game {
 
         }
     }
-    //}
 
 
     public void moveZombies() {
 
         for (Zombie zombie : zombieList) {
 
-            if (zombie instanceof Zombie) {
-
-                Zombie zombie1 = (Zombie) zombie;
-                zombie1.move();
-                collisiondetector.checkCollision(zombie);
-            }
+            zombie.move();
+            collisiondetector.checkCollision(zombie);
         }
     }
 

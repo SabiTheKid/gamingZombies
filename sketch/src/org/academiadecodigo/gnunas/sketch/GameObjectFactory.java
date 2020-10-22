@@ -22,7 +22,6 @@ public class GameObjectFactory {
 
     public static ArrayList<GameObject> createFixedGameObjects() {
         ArrayList<GameObject> gameFixedObjectsList = createObjectLimits();
-        gameFixedObjectsList.add(new Key(generatePositionForKeyAndZombies()));
         return gameFixedObjectsList;
     }
 
