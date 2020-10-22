@@ -8,12 +8,8 @@ public class Main {
 
         Game game = new Game();
 
-        game.init();
-        try {
-            game.initLevelTwo();
-        } catch (Exception ex){
-            System.out.println(ex);
-        }
+        game.start();
+
 
 
 

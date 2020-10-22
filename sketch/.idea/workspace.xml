@@ -19,11 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="&quot;New resources and ZombieDirection merged into Direction&quot;">
+    <list default="true" id="9eb20561-3304-41cf-acc6-06ecc0b81567" name="Default Changelist" comment="&quot;Levels implemented&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sketch/org/academiadecodigo/gnunas/sketch/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/CollisionDetector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameOverMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/GameObject/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/gnunas/sketch/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,6 +92,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.academiadecodigo.gnunas.sketch" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.academiadecodigo.gnunas.sketch" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
     </key>
@@ -97,6 +106,17 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.gnunas.sketch.Main" />
       <module name="sketch" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,7 +156,10 @@
       <workItem from="1602970264431" duration="3000" />
       <workItem from="1603029745661" duration="3211000" />
       <workItem from="1603199961894" duration="107000" />
-      <workItem from="1603215638733" duration="13343000" />
+      <workItem from="1603215638733" duration="13588000" />
+      <workItem from="1603271695496" duration="88000" />
+      <workItem from="1603272686125" duration="791000" />
+      <workItem from="1603274272940" duration="14985000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Compatible problems with master fixed and merged with the master&quot;">
       <created>1603048682721</created>
@@ -201,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603229261589</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&quot;Levels implemented&quot;">
+      <created>1603234780982</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603234780982</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,18 +256,19 @@
     <MESSAGE value="&quot;Monday player collisions and catch key&quot;" />
     <MESSAGE value="&quot;Zombies movement implemented&quot;" />
     <MESSAGE value="&quot;New resources and ZombieDirection merged into Direction&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;New resources and ZombieDirection merged into Direction&quot;" />
+    <MESSAGE value="&quot;Levels implemented&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Levels implemented&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="448" y="93" key="#Project_Structure" timestamp="1602753377235">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="448" y="93" key="#Project_Structure/0.23.1920.977@0.23.1920.977" timestamp="1602753377235" />
-    <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser" timestamp="1603233409421">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser" timestamp="1603322134128">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="773" y="253" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603233409421" />
-    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1603136753893" />
+    <state x="773" y="252" key="#com.intellij.ide.util.MemberChooser/0.23.1920.977@0.23.1920.977" timestamp="1603322134128" />
     <state x="718" y="422" width="822" height="205" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603050687290">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -259,24 +290,40 @@
     <state x="859" y="127" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1603140702780" />
     <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1603360218830">
       <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1071" height="288" key="GridCell.Tab.0.bottom" timestamp="1603325630689">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603360218830" />
     <state width="1071" height="296" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603231700482" />
     <state width="1878" height="304" key="GridCell.Tab.0.center" timestamp="1603360218828">
       <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372852" />
+    <state width="1071" height="288" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+    <state width="1071" height="288" key="GridCell.Tab.0.center" timestamp="1603325630689">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="304" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603360218828" />
     <state width="1071" height="296" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603231700480" />
     <state width="1878" height="304" key="GridCell.Tab.0.left" timestamp="1603360218828">
       <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="296" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372851" />
+    <state width="1071" height="288" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+    <state width="1071" height="288" key="GridCell.Tab.0.left" timestamp="1603325630689">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="304" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603360218828" />
     <state width="1071" height="296" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603231700479" />
     <state width="1878" height="304" key="GridCell.Tab.0.right" timestamp="1603360218829">
       <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="296" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372850" />
+    <state width="1071" height="288" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
+    <state width="1071" height="288" key="GridCell.Tab.0.right" timestamp="1603325630689">
+      <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="304" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603360218829" />
     <state width="1071" height="296" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603231700481" />
+    <state width="1878" height="296" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603234372851" />
+    <state width="1071" height="288" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603325630689" />
     <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603144893946">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -293,15 +340,31 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603144893945" />
+    <state x="0" y="112" key="MergeDialog" timestamp="1603234945615">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="0" y="112" key="MergeDialog/0.23.1920.977@0.23.1920.977" timestamp="1603234945615" />
+    <state x="213" y="282" key="MultipleFileMergeDialog" timestamp="1603234945655">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="213" y="282" key="MultipleFileMergeDialog/0.23.1920.977@0.23.1920.977" timestamp="1603234945655" />
     <state x="589" y="246" key="NewModule_or_Project.wizard" timestamp="1602945295911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="589" y="246" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1602945295911" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603229283832">
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2" timestamp="1603234991409">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="580" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603225848933" />
-    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603229283832" />
+    <state x="580" y="251" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1603234991409" />
+    <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603234975728">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="375" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.977@0.23.1920.977" timestamp="1603234975728" />
+    <state x="100" y="254" width="913" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603323347739">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="100" y="254" width="913" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.977@0.23.1920.977" timestamp="1603323347739" />
     <state x="0" y="36" width="1666" height="704" key="dock-window-1" timestamp="1603136839614">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -314,6 +377,16 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="708" y="134" key="new project wizard/0.23.1920.977@0.23.1920.977" timestamp="1603044767064" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="javax.imageio.IIOException" package="javax.imageio" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sketch$Main.ic" NAME="Main Coverage Results" MODIFIED="1603143284876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
