@@ -150,7 +150,7 @@ public class Player extends GameObject implements KeyboardHandler, Movable, Coll
         if (object instanceof Door && keyHolder) {
             Door door = (Door) object;
             door.openDoor();
-            if(super.getPos().getX()>Field.DEFAULT_PADDING+Field.width+17) {
+            if(super.getPos().getX()>Field.DEFAULT_PADDING+Field.width+16) {
                 openedDoor = true;
             }
         }

@@ -19,12 +19,16 @@ public class Game {
     private GameOverMenu gameOverMenu;
     private GameState gameState;
     private boolean inGameOverMenu;
-    private Sound sound;
+    private Sound musicGame;
+    private Sound musicMenu;
+
 
     public Game() {
         gameState = GameState.STARTMENU;
         inMenu = true;
         inGameOverMenu = false;
+        musicGame = new Sound("/resources/Game playing sounds.wav");
+        musicMenu = new Sound ("/resources/Zombie Music.wav");
     }
 
     public void init() {
@@ -35,27 +39,31 @@ public class Game {
         collisiondetector = new CollisionDetector(gameObjects);
         gameObjects.add(new Key(GameObjectFactory.generatePositionForKeyAndZombies()));
         player = new Player(new Position(40, (field.getHeight() / 2)+Field.DEFAULT_PADDING));
-        sound = new Sound("/resources/Game playing sounds.wav");
-
     }
 
 
     public void start() {
 
         switch (gameState) {
+
             case GAMEOVERMENU:
                 gameOverMenu();
+                musicMenu.setLoop(20);
+
                 while (inGameOverMenu) {
+
                     try {
                         Thread.sleep(25);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
+                musicMenu.stop();
                 start();
                 break;
             case STARTMENU:
                 menu();
+                musicMenu.setLoop(20);
                 while (inMenu) {
 
                     try {
@@ -64,12 +72,13 @@ public class Game {
                         e.printStackTrace();
                     }
                 }
+                musicMenu.stop();
                 start();
                 break;
             case PLAY:
-
+                musicGame = new Sound("/resources/Game playing sounds.wav");
+                musicGame.play(true);
                 init();
-                sound.play(true);
 
                 while (player.isAlive()) {
 
@@ -89,8 +98,7 @@ public class Game {
 
                     }
                     if (!player.isAlive()) {
-
-                        sound.close();
+                        musicGame.close();
                         deleteAllGraphics();
                         level = 0;
                         inGameOverMenu = true;
@@ -98,8 +106,7 @@ public class Game {
                         start();
                         break;
                     }
-
-                    sound.close();
+                    musicGame.close();
                     player.stopPlayer();
                     level++;
                     try {
@@ -111,6 +118,8 @@ public class Game {
                     if (level < levels.length) {
                         start();
                     }
+                    new Picture(32,32, "resources/Webp.png").draw();
+
                     break;
                 }
         }
